@@ -212,3 +212,39 @@
 :root .main-contextMenu-menuItemButton:not([aria-checked=true]):focus {
   color: var(--spice-subtext);
 }
+
+/* Home page ad section */
+.desktoproutes-homepage-takeover-ad-hptoComponent-parentContainer, .utUDWsORU96S7boXm2Aq{
+  display: none !important;
+}
+
+/* Remove download button */
+.x-downloadButton-DownloadButton{
+  display:none !important;
+}
+
+/* Context menu download button */
+.main-contextMenu-disabled:not([as=a]),
+.main-contextMenu-menuItemButton[aria-disabled="true"] {
+  display: none !important;
+}
+
+/* Remove sponsor ads in playlists */
+.sponsor-container,.WiPggcPDzbwGxoxwLWFf {
+  display: none !important
+}
+
+/* Context menu upgrade button */
+.upgrade-button, button[data-menu-item="upgrade-account"], .main-contextMenu-menuItem a[href="https://www.spotify.com/premium/?ref=desktop_loggedin_upgrade_menu"], button[id="upgradeAccount"] {
+  display: none !important;
+}
+
+/* Ad placeholder */
+.main-leaderboardComponent-container{
+  display: none !important; 
+}
+/* Upgrade button */
+.main-topBar-UpgradeButton,
+.Button-y0gtbx-0[aria-label="Upgrade to Premium"] {
+  display: none !important;
+}
