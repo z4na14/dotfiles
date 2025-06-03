@@ -275,3 +275,7 @@ user_pref("mousewheel.default.delta_multiplier_y", 300); // 250-400; adjust this
 /****************************************************************************
  * END: BETTERFOX                                                           *
 ****************************************************************************/
+
+// Esta wea es para el webclipper que se abra automaticamente
+
+user_pref("extensions.openPopupWithoutUserGesture.enabled", true);
