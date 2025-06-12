@@ -12,7 +12,9 @@ basic_packages = "hyprland wayland xorg-xwayland libinput libva-nvidia-driver nv
 
 required_packages = "playerctl waybar ghostty zsh fastfetch wofi xarchiver thunar unrar swww\
 	tumbler mpv keepassxc linux-zen linux-zen-headers hyprsunset cmake meson cpio\
-	pkgconf gcc libx11 libxcb libxrender xcb-proto libsecret xorg-xhost code"
+	pkgconf gcc libx11 libxcb libxrender xcb-proto libsecret xorg-xhost code gvfs\
+	otf-font-awesome hyprshot hyprpicker cliphist networkmanager nm-connection-editor\
+	bluez-utils bluez blueman"
 
 aur_packages = "fsearch qview"
 
@@ -30,9 +32,14 @@ mkdir ./temp
 
 ### Enable respective services ###
 
-systemctl --user enable --now hyprsunset.service
-systemctl --user enable --now hyprpolkitagent.service
-systemctl --user enable --now hypridle.service
+sudo systemctl --user enable --now hyprsunset.service
+sudo systemctl --user enable --now hyprpolkitagent.service
+sudo systemctl --user enable --now hypridle.service
+sudo systemctl --user enable --now NetworkManager.service
+
+
+# Remove firewalld applet
+sudo mv /etc/xdg/autostart/firewall-applet.desktop /etc/xdg/autostart/firewall-applet.desktop.old
 
 ### Install Bibata cursor ###
 
@@ -68,3 +75,7 @@ gsettings set org.gnome.desktop.wm.preferences button-layout :
 
 # Install required fonts
 sudo cp ./fonts/* /usr/share/fonts/
+
+# Remove bluetooth applet from running automatically
+sed -i 's/^Exec=blueman-applet.*/Exec=/' ~/.config/autostart/blueman.desktop
+
