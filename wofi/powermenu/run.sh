@@ -6,15 +6,15 @@ export XDG_SESSION_TYPE=wayland
 
 entries="\Uf0343 )  Logout\n\Uf04b2 )  Suspend\n\Uf0709 )  Reboot\n\Uf0425 )  Shutdown"
 
-selected=$(echo -e $entries|wofi --cache-file /dev/null --conf /home/z4na14/.config/wofi/powermenu/config --style ~/.config/wofi/powermenu/style.css | awk '{print tolower($2)}')
+selected=$(echo -e $entries|wofi --cache-file /dev/null --conf ~/.config/wofi/powermenu/config --style ~/.config/wofi/powermenu/style.css | cut -d')' -f2 | xargs)
 
 case $selected in
-  logout)
-    exec exit;;
-  suspend)
-    exec systemctl suspend;;
-  reboot)
-    exec systemctl reboot;;
-  shutdown)
-    exec systemctl poweroff -i;;
+  Logout)
+    exec hyprctl dispatch exit;;
+  Suspend)
+    exec shutdown -H 0;;
+  Reboot)
+    exec shutdown -r 0;;
+  Shutdown)
+    exec shutdown -P 0;;
 esac

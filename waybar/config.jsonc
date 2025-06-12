@@ -1,0 +1,31 @@
+{
+    // Waybar at top layer
+    "layer": "top",
+
+    "output": "DP-2",
+
+    // Waybar position (top|bottom|left|right)
+    "position": "top",
+
+    // Waybar height (to be removed for auto height)
+    // "height": 10,
+
+    // Waybar width
+    "width": 1900,
+
+    // Gaps between modules (4px)
+    "spacing": 5,
+
+    // Gap from the top of the screen
+    "margin-top": 10,
+    "margin-bottom": 0,
+
+    "include": ["/home/z4na14/.config/waybar/modules.json"],
+
+    // Choose the order of the modules
+    "modules-left": ["hyprland/workspaces", "tray"],
+
+    "modules-center": [],
+
+    "modules-right": ["cpu", "memory", "custom/separator", "pulseaudio", "bluetooth", "network", "clock"]
+}
