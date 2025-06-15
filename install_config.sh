@@ -8,7 +8,8 @@
 basic_packages = "hyprland wayland xorg-xwayland libinput libva-nvidia-driver nvidia-utils\
 	egl-wayland firefox ghostty mako pipewire wireplumber xdg-desktop-portal-hyprland\
 	xdg-desktop-portal-gtk qt5-wayland qt6-wayland hyprpolkitagent sddm uwsm libnewt\
-	qt6-svg qt6-virtualkeyboard qt6-multimedia-ffmpeg hypridle hyprlock"
+	qt6-svg qt6-virtualkeyboard qt6-multimedia-ffmpeg hypridle hyprlock layer-shell-qt\
+	layer-shell-qt5"
 
 required_packages = "playerctl waybar ghostty zsh fastfetch wofi xarchiver thunar unrar swww\
 	tumbler mpv keepassxc linux-zen linux-zen-headers hyprsunset cmake meson cpio\
@@ -79,3 +80,6 @@ sudo cp ./fonts/* /usr/share/fonts/
 # Remove bluetooth applet from running automatically
 sed -i 's/^Exec=blueman-applet.*/Exec=/' ~/.config/autostart/blueman.desktop
 
+# Add remove and clear history to drun mode
+sudo cp clear_history.desktop ~/.local/share/applications/clear_history.desktop
+sudo cp remove_history.desktop ~/.local/share/applications/remove_history.desktop

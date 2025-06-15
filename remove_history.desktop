@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=📋 Cliphist Manage
+Exec=cliphist list | wofi -S dmenu --conf ~/.config/wofi/cliphist/config --style ~/.config/wofi/cliphist/style.css --prompt="Remove an entry from history"| cliphist delete
+Icon=edit-delete
+Terminal=false
+Type=Application
+Categories=Utility;
+

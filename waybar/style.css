@@ -28,7 +28,7 @@
 
 /* Main waybar CSS style*/
 window#waybar {
-    background: linear-gradient(135deg, rgba(30, 30, 46, 0.95) 12%, rgba(17, 17, 27, 0.95) 12%, rgba(17, 17, 27, 0.95) 84.5%, rgba(24, 24, 37, 0.95) 84.5%, rgba(24, 24, 37, 0.95) 93.5%, rgba(49, 50, 68, 0.95) 93.5%, rgba(49, 50, 68, 0.95) 100%);
+    background: linear-gradient(135deg, rgba(30, 30, 46, 0.95) 12%, rgba(17, 17, 27, 0.95) 12%, rgba(17, 17, 27, 0.95) 83.2%, rgba(24, 24, 37, 0.95) 83.2%, rgba(24, 24, 37, 0.95) 93.5%, rgba(49, 50, 68, 0.95) 93.5%, rgba(49, 50, 68, 0.95) 100%);
     padding-left: 10px;
     padding-right: 10px;
     border: 2px solid #74c7ec;
@@ -73,7 +73,6 @@ window#waybar {
     color: @textcolor1;
     background: transparent; 
     border-radius: 0;
-    min-width: 40px;
     transition: all 0.3s ease-in-out;
     opacity:1.0;
 }
@@ -151,4 +150,10 @@ window#waybar {
 #custom-separator {
     color: rgba(0,0,0,0);
     margin: 0 20px;
+}
+
+#custom-gamemode {
+    color: rgb(205,214,244);
+    padding-left: 6px;
+    padding-right: 10px;
 }
