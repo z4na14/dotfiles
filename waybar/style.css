@@ -28,7 +28,7 @@
 
 /* Main waybar CSS style*/
 window#waybar {
-    background: linear-gradient(135deg, rgba(30, 30, 46, 0.95) 12%, rgba(17, 17, 27, 0.95) 12%, rgba(17, 17, 27, 0.95) 83.2%, rgba(24, 24, 37, 0.95) 83.2%, rgba(24, 24, 37, 0.95) 93.5%, rgba(49, 50, 68, 0.95) 93.5%, rgba(49, 50, 68, 0.95) 100%);
+    background: linear-gradient(135deg, rgba(30, 30, 46, 0.95) 12%, rgba(17, 17, 27, 0.95) 12%, rgba(17, 17, 27, 0.95) 40%, rgba(49, 50, 68, 0.95) 40%, rgba(49, 50, 68, 0.95) 60%, rgba(17, 17, 27, 0.95) 60% ,rgba(17, 17, 27, 0.95) 84.5%, rgba(24, 24, 37, 0.95) 84.5%, rgba(24, 24, 37, 0.95) 95%, rgba(49, 50, 68, 0.95) 95%, rgba(49, 50, 68, 0.95) 100%);
     padding-left: 10px;
     padding-right: 10px;
     border: 2px solid #74c7ec;
@@ -39,9 +39,8 @@ window#waybar {
     font-size: 14px;
     background: transparent;
     box-shadow: none;
-    margin: 5px 1px 6px 18px;
-    padding: 0px 10px;
-    border-radius: 15px;
+    margin: 5px 1px 6px 5px;
+    padding: 0px 23px; 
     font-weight: bold;
     opacity: 1;
     color: @textcolor1;
@@ -124,15 +123,12 @@ window#waybar {
 }
 
 #clock {
-    background: rgb(205,214,244);
     background: transparent;
     border: 7px solid transparent;
     font-size: 18px;
     font-weight: bold;
     font-style: italic;
-    color: @iconcolor1;
-    padding-right: 8px;
-    margin-left: 50px;
+    color: rgb(205,214,244);;
 }
 
 #tray {
@@ -154,6 +150,28 @@ window#waybar {
 
 #custom-gamemode {
     color: rgb(205,214,244);
-    padding-left: 6px;
+    padding-left: 10px;
     padding-right: 10px;
+}
+
+#custom-notification-toggle {
+    color: rgb(205,214,244);
+    padding-left: 10px;
+    padding-right: 28px
+}
+
+tooltip * {
+    background: transparent;
+}
+
+tooltip.background {
+    background: rgba(17, 17, 27, 0.92);
+}
+
+/* Style actual tooltip content */
+tooltip label {
+    border: 2px solid #74c7ec;
+    border-radius: 4px;
+    padding: 15px;                           /* add space inside the tooltip */
+    color: #cdd6f4;                         /* light text color */
 }

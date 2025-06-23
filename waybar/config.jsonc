@@ -11,19 +11,19 @@
     // "height": 10,
 
     // Waybar width
-    "width": 1900,
+    "width": 1906,
 
     // Gaps between modules (4px)
     "spacing": 5,
 
     // Gap from the top of the screen
-    "margin-top": 10,
+    "margin-top": 7,
     "margin-bottom": 0,
 
     "include": ["/home/z4na14/.config/waybar/modules.json"],
 
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "tray"],
-    "modules-center": [],
-    "modules-right": ["cpu", "memory", "custom/separator", "pulseaudio", "custom/gamemode", "bluetooth", "network", "clock"]
+    "modules-center": ["clock"],
+    "modules-right": ["cpu", "memory", "custom/separator", "pulseaudio", "custom/gamemode", "bluetooth", "network", "custom/separator", "custom/notification-toggle"]
 }
