@@ -24,6 +24,6 @@
 
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "tray"],
-    "modules-center": ["clock"],
-    "modules-right": ["cpu", "memory", "custom/separator", "pulseaudio", "custom/gamemode", "bluetooth", "network", "custom/separator", "custom/notification-toggle"]
+    "modules-center": ["clock", "custom/notification-toggle"],
+    "modules-right": ["cpu", "memory", "custom/separator", "pulseaudio", "custom/gamemode", "bluetooth", "network", "custom/separator", "custom/power-menu"]
 }
