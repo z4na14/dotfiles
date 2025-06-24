@@ -12,7 +12,7 @@ case $selected in
   Logout)
     exec hyprctl dispatch exit;;
   Suspend)
-    sudo exec shutdown -H 0;;
+    exec systemctl suspend;;
   Reboot)
     exec shutdown -r 0;;
   Shutdown)
