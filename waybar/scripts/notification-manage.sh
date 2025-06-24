@@ -13,8 +13,10 @@ i=$(<"$STATE")
 # Toggle mode
 if [[ "$i" -eq 1 ]]; then
 	makoctl mode -s dnd > /dev/null
+	pkill hypridle > /dev/null
 elif [[ "$i" -eq 0 ]]; then
 	makoctl mode -r dnd  > /dev/null
+	hypridle > /dev/null &
 fi
 
 if [[ "$i" -eq 2 ]]; then

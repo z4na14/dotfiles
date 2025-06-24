@@ -29,6 +29,11 @@
     "memory": {
         "format": "{}% "
     },
+    
+    "tray": {
+    	"icon-size": 18,
+    	"spacing": 10
+    },
 
     "backlight": {
         "device": "intel_backlight",
@@ -55,7 +60,7 @@
     },
 
     "clock": {
-        "format": "{:%a. %d  %H:%M:%S}  ",
+        "format": "{:%a. %d  %H:%M:%S}",
         "interval": 1,
 	"on-click": "ghostty -e arttime -a singingbirds -t :3",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
@@ -136,20 +141,24 @@
         "on-click": "nm-connection-editor"
     },
     "custom/gamemode": {
-	"exec": "~/.config/waybar/scripts/energy-switch.sh",
-	"return-type": "json",
-        "format": "{text}",
-	"interval": "once",
-	"on-click": "~/.config/waybar/scripts/energy-switch.sh",
-	"exec-on-event": "false"
+        "exec": "~/.config/waybar/scripts/energy-switch.sh",
+        "return-type": "json",
+            "format": "{text}",
+        "interval": "once",
+        "on-click": "~/.config/waybar/scripts/energy-switch.sh",
+        "exec-on-event": "false"
     },
     "custom/notification-toggle": {
-	"exec": "~/.config/waybar/scripts/notification-manage.sh",
-	"return-type": "json",
-	"format": "{text}",
-	"interval": "once",
-	"on-click": "~/.config/waybar/scripts/notification-manage.sh",
-	"exec-on-event": "false"
+        "exec": "~/.config/waybar/scripts/notification-manage.sh",
+        "return-type": "json",
+        "format": "{text}",
+        "interval": "once",
+        "on-click": "~/.config/waybar/scripts/notification-manage.sh",
+        "exec-on-event": "false"
+    },
+    "custom/power-menu": {
+        "format": "",
+        "on-click": "~/.config/wofi/powermenu/run.sh"
     }
 }
 
