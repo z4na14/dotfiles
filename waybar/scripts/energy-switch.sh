@@ -18,14 +18,15 @@ i=$(<"$STATE")
 
 # Toggle mode
 if [[ "$i" -eq 0 ]]; then
-    sed -i -E 's|^monitor *= *HDMI-A-1.*|monitor = HDMI-A-1 , 2560x1440@59.95Hz , 3840x0 , 1|' "$CONF"
+    hyprctl keyword monitor HDMI-A-1,2560x1440@59.95Hz,3840x0,1 >/dev/null
     hyprctl keyword animations:enabled 0 >/dev/null
     hyprctl keyword windowrulev2 "noanim,floating:1" >/dev/null
     hyprctl keyword decoration:blur:enabled false >/dev/null
     hyprctl keyword decoration:shadow:enabled false >/dev/null
+    hyprctl keyword decoration:active_opacity 1.0 >/dev/null
+    hyprctl keyword decoration:inactive_opacity 1.0 >/dev/null
     swww img --outputs HDMI-A-1,DP-1,DP-2 /home/z4na14/Imágenes/Wallpapers/static/wall_1.png --transition-type wipe
 elif [[ "$i" -eq 1 ]] || [[ "$i" -eq 2 ]]; then
-    sed -i -E 's|^monitor *= *HDMI-A-1.*|monitor = HDMI-A-1 , disable|' "$CONF"
     hyprctl reload >/dev/null
     swww img --outputs HDMI-A-1,DP-1,DP-2 /home/z4na14/Imágenes/Wallpapers/static/wall_2.jpg --transition-type wipe
 fi
