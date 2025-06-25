@@ -3,7 +3,6 @@ theme = catppuccin-mocha.conf
 window-decoration=server
 window-theme = ghostty
 
-background-opacity = 0.9
 window-padding-x = 10
 
 font-family = MesloLGM Nerd Font
