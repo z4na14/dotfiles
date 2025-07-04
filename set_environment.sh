@@ -11,6 +11,7 @@ systemctl --user enable --now hyprsunset.service
 systemctl --user enable --now hyprpolkitagent.service
 systemctl --user enable --now hypridle.service
 systemctl --user enable --now NetworkManager.service
+systemctl --user enable --now bluetooth
 
 
 # Remove firewalld applet
@@ -42,7 +43,7 @@ sudo cp ./temp/cursorconf /usr/share/icons/default/index.theme
 ln -s $(pwd)/wallpapers ~/Imágenes/Wallpapers
 
 # Add ghostty default terminal emulator to thunar config
-cat ./xfce4/helpers.rc >> ~/.config/xfce4/helpers.rc
+cat ./xfce4/helpers.rc > ~/.config/xfce4/helpers.rc
 
 # Add extra arguments to enable custom cursor in Spotify
 cat ./spotify-launcher/spotify-launcher.conf >> ~/.config/spotify-launcher.conf
@@ -54,7 +55,7 @@ gsettings set org.gnome.desktop.wm.preferences button-layout :
 sudo cp ./fonts/* /usr/share/fonts/
 
 # Remove bluetooth applet from running automatically
-sed -i 's/^Exec=blueman-applet.*/Exec=/' ~/.config/autostart/blueman.desktop
+sed -i 's/^Exec=blueman-applet.*/Exec=/' /etc/xdg/autostart/blueman.desktop
 
 # Add remove and clear history to drun mode
 sudo cp clear_history.desktop ~/.local/share/applications/clear_history.desktop

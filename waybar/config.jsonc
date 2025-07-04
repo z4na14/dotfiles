@@ -2,16 +2,16 @@
     // Waybar at top layer
     "layer": "top",
 
-    "output": "DP-2",
+    "output": "eDP-2",
 
     // Waybar position (top|bottom|left|right)
     "position": "top",
 
     // Waybar height (to be removed for auto height)
-    // "height": 10,
+    // "height": 8,
 
     // Waybar width
-    "width": 1906,
+    "width": 2546,
 
     // Gaps between modules (4px)
     "spacing": 5,
@@ -24,6 +24,6 @@
 
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "tray"],
-    "modules-center": ["clock", "custom/notification-toggle"],
-    "modules-right": ["cpu", "memory", "custom/separator", "pulseaudio", "custom/gamemode", "bluetooth", "network", "custom/separator", "custom/power-menu"]
+    "modules-center": ["custom/power-menu", "clock", "custom/notification-toggle"],
+    "modules-right": ["cpu", "memory", "custom/separator", "pulseaudio", "backlight", "custom/gamemode", "bluetooth", "network", "battery"]
 }

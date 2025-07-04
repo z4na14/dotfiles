@@ -12,45 +12,47 @@
         "warp-on-scroll": false,
         "format": "{icon}",
         "format-icons": {
-            "urgent": "",
-            "default": ""
+            "urgent": "<span font_desc='Font Awesome 6 Free'></span>",
+            "default": "<span font_desc='Font Awesome 6 Free'></span>"
         },
         "persistent-workspaces": {
-            "DP-1":[1,2,3,4,5],
-            "DP-2":[1,2,3,4,5]
+            "eDP-2":[1,2,3,4,5]
         }
     },
 
     "cpu": {
         "interval": 1,
-        "format": "{usage}% "
+        "format": "{usage}% <span font_desc='Font Awesome 6 Free'></span>"
     },
 
     "memory": {
-        "format": "{}% "
+        "format": "{}% <span font_desc='Font Awesome 6 Free'></span>"
     },
     "backlight": {
         "device": "intel_backlight",
-        "format": "  Bright: {percent}% {icon} "
-    },
-
-    "wireplumber": {
-        "format": "  Vol:{volume}%  ",
-        "format-muted": " Vol: X ",
-        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-        "max-volume": 100,
-        "scroll-step": 5
+        "format": "{percent} <span font_desc='Font Awesome 6 Free'></span>"
     },
 
     "battery": {
-        "bat": "BAT0",
+        "bat": "BAT1",
         "interval": 60,
         "states": {
+	    "full": 100,
+	    "quart": 75,
+	    "halfed": 45,
             "warning": 30,
-            "critical": 20
+            "critical": 15
         },
-        "format": "  Bat: {capacity}% {icon} ",
-        "max-length": 25
+        "format": "{capacity} <span font_desc='Font Awesome 6 Free'>{icon}</span>",
+        "max-length": 25,
+	"format-icons": {
+	    "full": "",
+	    "quart": "",
+	    "halfed": "",
+	    "warning": "",
+	    "critical": ""
+	},
+	"format-charging": "{capacity} <span font_desc='Font Awesome 6 Free'></span>"
     },
 
     "clock": {
@@ -80,15 +82,15 @@
                     }
     },
     "pulseaudio": {
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}",
-        "format-muted": " ",
+        "format": "{volume} <span font_desc='Font Awesome 6 Free'>{icon}</span>",
+        "format-bluetooth": "{volume} <span font_desc='Font Awesome 6 Free'>{icon}</span>",
+        "format-muted": "<span font_desc='Font Awesome 6 Free'></span>",
         "format-icons": {
             "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
             "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
             "headphone": " ",
-            "hands-free": " ",
-            "headset": " ",
+            "hands-free": " ",
+            "headset": " ",
             "phone": " ",
             "phone-muted": " ",
             "portable": " ",
@@ -99,13 +101,6 @@
         "on-click": "pavucontrol",
         "ignored-sinks": ["Easy Effects Sink"]
     },
-    "custom/vpn": {
-        "format": "VPN ",
-        "exec": "echo '{\"class\": \"connected\"}'",
-        "exec-if": "test -d /proc/sys/net/ipv4/conf/tun0",
-        "return-type": "json",
-        "interval": 5
-    },
     "custom/separator": {
         "format": " ",
         "interval": "once",
@@ -113,23 +108,23 @@
     },
     "bluetooth": {
         // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
-        "format": "",
-        "format-disabled": " ", // an empty format will hide the module
-        "format-connected": "",
+        "format": "<span font_desc='Font Awesome 6 Free'></span>",
+        "format-disabled": "<span font_desc='Font Awesome 6 Free'> </span>", // an empty format will hide the module
+        "format-connected": "<span font_desc='Font Awesome 6 Free'></span>",
         "tooltip-format": "{controller_alias}",
         "tooltip-format-connected": "{controller_alias}\n\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
         "on-click": "blueman-manager"
     },
     "network": {
-        "interface": "eno1",
+        "interface": "wlo1",
         "format": "{ifname}",
-        "format-wifi": "({signalStrength}%) ",
-        "format-ethernet": "",
-        "format-disconnected": "", //An empty format will hide the module.
-        "tooltip-format": "{ifname} via {gwaddr} 󰊗",
-        "tooltip-format-wifi": "{essid} ({signalStrength}%) ",
-        "tooltip-format-ethernet": "{ifname} ",
+        "format-wifi": "<span font_desc='Font Awesome 6 Free'></span>",
+        "format-ethernet": "<span font_desc='Font Awesome 6 Free'></span>",
+        "format-disconnected": "<span font_desc='Font Awesome 6 Free'></span>",
+	"tooltip-format": "{ifname} via {gwaddr}",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "{ifname}",
         "tooltip-format-disconnected": "Disconnected",
         "max-length": 50,
         "on-click": "nm-connection-editor"
@@ -137,21 +132,21 @@
     "custom/gamemode": {
         "exec": "~/.config/waybar/scripts/energy-switch.sh",
         "return-type": "json",
-            "format": "{text}",
+	"format": "<span font_desc='Font Awesome 6 Free'>{text}</span>",
         "interval": "once",
-        "on-click": "~/.config/waybar/scripts/energy-switch.sh",
-        "exec-on-event": "false"
+        "on-click": "notify-send 'Changing energy mode'",
+        "exec-on-event": "true"
     },
     "custom/notification-toggle": {
         "exec": "~/.config/waybar/scripts/notification-manage.sh",
         "return-type": "json",
-        "format": "{text}",
+        "format": "<span font_desc='Font Awesome 6 Free'>{text}</span>",
         "interval": "once",
-        "on-click": "~/.config/waybar/scripts/notification-manage.sh",
-        "exec-on-event": "false"
+        "on-click": "notify-send 'Changing notification mode'",
+        "exec-on-event": "true"
     },
     "custom/power-menu": {
-        "format": "",
+        "format": "<span font_desc='Font Awesome 6 Free'></span>",
         "on-click": "~/.config/wofi/powermenu/run.sh"
     }
 }

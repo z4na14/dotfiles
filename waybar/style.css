@@ -18,20 +18,20 @@
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: "JetBrainsMonoNL Nerd Font";
+    font-family: "Adawita Sans";
     min-height: 0;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 30px;
     padding: 0;
     /*font-size: 11px;*/
 }
 
 /* Main waybar CSS style*/
 window#waybar {
-    background: linear-gradient(135deg, rgba(30, 30, 46, 0.95) 12%, rgba(17, 17, 27, 0.95) 12%,rgba(17, 17, 27, 0.95) 84.5%, rgba(24, 24, 37, 0.95) 84.5%, rgba(24, 24, 37, 0.95) 95.2%, rgba(49, 50, 68, 0.95) 95.2%, rgba(49, 50, 68, 0.95) 100%);
+    background: linear-gradient(135deg, rgba(30, 30, 46, 0.95) 12%, rgba(17, 17, 27, 0.95) 12%,rgba(17, 17, 27, 0.95) 81.5%, rgba(24, 24, 37, 0.95) 81.5%, rgba(24, 24, 37, 0.95) 95%, rgba(49, 50, 68, 0.95) 95%, rgba(49, 50, 68, 0.95) 100%);
     padding-left: 10px;
     padding-right: 10px;
-    border: 2px solid #74c7ec;
+    border: 3px solid #74c7ec;
     border-radius: 5px;
 }
 
@@ -86,46 +86,58 @@ window#waybar {
 #memory,
 #cpu,
 #language,
-#wireplumber,
 #pulseaudio,
 #backlight {
     background: rgb(205,214,244);
     background: transparent;
     border: 7px solid transparent;
-    font-size: 16px;
+    font-size: 28px;
     /*font-weight: bold;*/
     font-style: normal;
     color: @iconcolor1;
 }
 
 #battery {
-    background: transparent;
-    border: 7px solid transparent;
-    font-size: 16px;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 25%, rgba(166, 227, 161, 0.95) 25%, rgba(166, 227, 161, 0.95) 100%);
+    font-size: 28px;
     font-style: normal;
-    color: @iconcolor1;
+    color: rgb(17, 17, 27);
+    padding-right: 16px;
+    padding-left: 62px;
+    margin-right: 3px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+#battery.full {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 25%, rgba(166, 227, 161, 0.95) 25%, rgba(166, 227, 161, 0.95) 100%);
+}
+
+#battery.quart {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 25%, rgba(148, 226, 213, 0.95) 25%, rgba(148, 226, 213, 0.95) 100%);
+}
+
+#battery.halfed {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 25%, rgba(249, 226, 175, 0.95) 25%, rgba(249, 226, 175, 0.95) 100%);
 }
 
 #battery.warning {
-    background: transparent; 
-    border: 7px solid transparent;
-    font-size: 16px;
-    font-style: normal;
-    color: #000000;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 25%, rgba(235, 160, 172, 0.95) 25%, rgba(235, 160, 172, 0.95) 100%);
 }
 
 #battery.critical {
-    background: transparent; 
-    border: 7px solid transparent;
-    font-size: 16px;
-    font-style: normal;
-    color: @iconcolor1;
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 25%, rgba(243, 139, 168, 0.95) 25%, rgba(243, 139, 168, 0.95) 100%);
+}
+
+#battery.charging {
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 25%, rgba(116, 199, 236, 0.95) 25%, rgba(116, 199, 236, 0.95) 100%);
+
 }
 
 #clock {
     background: transparent;
     border: 7px solid transparent;
-    font-size: 18px;
+    font-size: 28px;
     font-weight: bold;
     font-style: italic;
     color: rgb(205,214,244);;
@@ -140,7 +152,7 @@ window#waybar {
     padding-right: 20px;
     padding-top: 5px;
     font-style: normal;
-    font-size: 16;
+    font-size: 28;
 }
 
 #custom-separator {
@@ -178,4 +190,8 @@ tooltip label {
 
 #custom-power-menu {
     margin: 5 35 6 5;
+}
+
+#network {
+    margin-right: 8px;
 }

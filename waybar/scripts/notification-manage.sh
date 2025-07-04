@@ -20,7 +20,7 @@ elif [[ "$i" -eq 0 ]]; then
 fi
 
 if [[ "$i" -eq 2 ]]; then
-    echo 1 >"$STATE"
+    echo 0 >"$STATE"
     printf '{"text":"%s"}\n' "${ICONS[0]}"
     exit 0
 fi
