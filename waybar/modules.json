@@ -1,11 +1,9 @@
 {
-    // Left modules
     "tray": {
-        "icon-size": 18,
+        "icon-size": 28,
         "spacing": 10
     },
 
-    // Center modules
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,

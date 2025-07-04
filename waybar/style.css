@@ -146,13 +146,12 @@ window#waybar {
 #tray {
     background: transparent; 
     border: 3px solid transparent;
-    margin: 5px 0px 8px 5px;
-    padding: 2px;
-    padding-left: 20px;
+    margin: 5px 0px 8px 8px;
+    padding-left: 30px;
     padding-right: 20px;
     padding-top: 5px;
     font-style: normal;
-    font-size: 28;
+    font-size: 32;
 }
 
 #custom-separator {
@@ -189,7 +188,7 @@ tooltip label {
 }
 
 #custom-power-menu {
-    margin: 5 35 6 5;
+    padding: 0 10 0 0;
 }
 
 #network {
