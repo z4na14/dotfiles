@@ -32,7 +32,7 @@ elif [[ "$i" -eq 1 ]] || [[ "$i" -eq 2 ]]; then
 fi
 
 if [[ "$i" -eq 2 ]]; then
-    echo 1 >"$STATE"
+    echo 0 >"$STATE"
     printf '{"text":"%s"}\n' "${ICONS[1]}"
     exit 0
 fi

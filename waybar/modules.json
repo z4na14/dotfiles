@@ -29,29 +29,7 @@
     "memory": {
         "format": "{}% "
     },
-    "backlight": {
-        "device": "intel_backlight",
-        "format": "  Bright: {percent}% {icon} "
-    },
 
-    "wireplumber": {
-        "format": "  Vol:{volume}%  ",
-        "format-muted": " Vol: X ",
-        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-        "max-volume": 100,
-        "scroll-step": 5
-    },
-
-    "battery": {
-        "bat": "BAT0",
-        "interval": 60,
-        "states": {
-            "warning": 30,
-            "critical": 20
-        },
-        "format": "  Bat: {capacity}% {icon} ",
-        "max-length": 25
-    },
 
     "clock": {
         "format": "{:%a. %d  %H:%M:%S}",
@@ -99,13 +77,7 @@
         "on-click": "pavucontrol",
         "ignored-sinks": ["Easy Effects Sink"]
     },
-    "custom/vpn": {
-        "format": "VPN ",
-        "exec": "echo '{\"class\": \"connected\"}'",
-        "exec-if": "test -d /proc/sys/net/ipv4/conf/tun0",
-        "return-type": "json",
-        "interval": 5
-    },
+
     "custom/separator": {
         "format": " ",
         "interval": "once",
@@ -137,18 +109,18 @@
     "custom/gamemode": {
         "exec": "~/.config/waybar/scripts/energy-switch.sh",
         "return-type": "json",
-            "format": "{text}",
+        "format": "{text}",
         "interval": "once",
-        "on-click": "~/.config/waybar/scripts/energy-switch.sh",
-        "exec-on-event": "false"
+        "on-click": "notify-send 'Changing energy mode'",
+        "exec-on-event": "true"
     },
     "custom/notification-toggle": {
         "exec": "~/.config/waybar/scripts/notification-manage.sh",
         "return-type": "json",
         "format": "{text}",
         "interval": "once",
-        "on-click": "~/.config/waybar/scripts/notification-manage.sh",
-        "exec-on-event": "false"
+        "on-click": "notify-send 'Changing notification mode'",
+        "exec-on-event": "true"
     },
     "custom/power-menu": {
         "format": "",

@@ -21,14 +21,13 @@
     font-family: "JetBrainsMonoNL Nerd Font";
     min-height: 0;
     font-weight: 500;
-    font-size: 18px;
-    padding: 0;
-    /*font-size: 11px;*/
+    font-size: 17px;
+    padding: 0; 
 }
 
 /* Main waybar CSS style*/
 window#waybar {
-    background: linear-gradient(135deg, rgba(30, 30, 46, 0.95) 12%, rgba(17, 17, 27, 0.95) 12%,rgba(17, 17, 27, 0.95) 84.5%, rgba(24, 24, 37, 0.95) 84.5%, rgba(24, 24, 37, 0.95) 95.2%, rgba(49, 50, 68, 0.95) 95.2%, rgba(49, 50, 68, 0.95) 100%);
+    background: linear-gradient(135deg, rgba(30, 30, 46, 0.95) 11.5%, rgba(17, 17, 27, 0.95) 11.5%,rgba(17, 17, 27, 0.95) 85.5%, rgba(24, 24, 37, 0.95) 85.5%, rgba(24, 24, 37, 0.95) 95.2%, rgba(49, 50, 68, 0.95) 95.2%, rgba(49, 50, 68, 0.95) 100%);
     padding-left: 10px;
     padding-right: 10px;
     border: 2px solid #74c7ec;
@@ -39,7 +38,7 @@ window#waybar {
     font-size: 14px;
     background: transparent;
     box-shadow: none;
-    margin: 5px 1px 6px 5px;
+    margin: 0px 0px 0px 0px;
     padding: 0px 23px; 
     font-weight: bold;
     opacity: 1;
@@ -83,43 +82,18 @@ window#waybar {
     /*outline: none;*/
 }
 
-#memory,
-#cpu,
-#language,
-#wireplumber,
-#pulseaudio,
-#backlight {
-    background: rgb(205,214,244);
-    background: transparent;
-    border: 7px solid transparent;
-    font-size: 16px;
-    /*font-weight: bold;*/
+#memory {
     font-style: normal;
-    color: @iconcolor1;
+    padding: 0px 5px 0px 5px;
 }
 
-#battery {
-    background: transparent;
-    border: 7px solid transparent;
-    font-size: 16px;
+#cpu {
     font-style: normal;
-    color: @iconcolor1;
+    padding: 0px 5px 0px 5px;
 }
 
-#battery.warning {
-    background: transparent; 
-    border: 7px solid transparent;
-    font-size: 16px;
+#pulseaudio {
     font-style: normal;
-    color: #000000;
-}
-
-#battery.critical {
-    background: transparent; 
-    border: 7px solid transparent;
-    font-size: 16px;
-    font-style: normal;
-    color: @iconcolor1;
 }
 
 #clock {
@@ -132,15 +106,12 @@ window#waybar {
 }
 
 #tray {
-    background: transparent; 
-    border: 3px solid transparent;
-    margin: 5px 0px 8px 5px;
+    background: transparent;
+    margin: 0px 0px 0px 0px;
     padding: 2px;
     padding-left: 20px;
     padding-right: 20px;
-    padding-top: 5px;
     font-style: normal;
-    font-size: 16;
 }
 
 #custom-separator {

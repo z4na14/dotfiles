@@ -16,8 +16,9 @@ layer-shell-qt5
 sudo pacman -Syyu playerctl waybar ghostty zsh fastfetch wofi xarchiver thunar unrar swww \
 tumbler mpv keepassxc linux-zen linux-zen-headers hyprsunset cmake meson cpio \
 pkgconf gcc libx11 libxcb libxrender xcb-proto libsecret xorg-xhost code gvfs \
-otf-font-awesome hyprshot hyprpicker cliphist networkmanager nm-connection-editor \
-bluez-utils bluez blueman smbclient gvfs gvfs-smb gvfs-dnssd nss-mdns qalculate-gtk
+ttf-font-awesome hyprshot hyprpicker cliphist networkmanager nm-connection-editor \
+bluez-utils bluez blueman smbclient gvfs gvfs-smb gvfs-dnssd nss-mdns qalculate-gtk \
+gnome-font-viewer cowsay
 
 yay -Syy fsearch qview arttime-git vesktop-bin
 
