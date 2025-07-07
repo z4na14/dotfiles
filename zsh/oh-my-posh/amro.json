@@ -5,13 +5,13 @@
       "alignment": "left",
       "segments": [
         {
-          "foreground": "#45F1C2",
+          "foreground": "#f38ba8",
           "style": "plain",
-          "template": "\ueb99 {{ .UserName }}",
+          "template": " {{ .UserName }}",
           "type": "session"
         },
         {
-          "foreground": "#0CA0D8",
+          "foreground": "#45F1C2",
           "properties": {
             "folder_separator_icon": "/",
             "style": "full"
@@ -21,15 +21,19 @@
           "type": "path"
         },
         {
-          "foreground": "#14A5AE",
+          "foreground": "#f9e2af",
           "powerline_symbol": "\ue0b0",
           "properties": {
             "fetch_stash_count": true,
             "fetch_upstream_icon": true
           },
           "style": "plain",
-          "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
-          "type": "git"
+          "template": "{{ .HEAD }} {{ .BranchStatus }}{{ if .Working.Changed }} \uF044 {{ .Working.String }}{{ end }}{{ if and (.Staging.Changed) (.Working.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uF046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0}} \uF692 {{ .StashCount }}{{ end }}{{ if gt .WorktreeCount 0}} \uf1bb {{ .WorktreeCount }}{{ end }} ",
+          "type": "git",
+	    "properties": {
+    		"fetch_status": true,
+    		"fetch_upstream_icon": true
+    	    }
         }
       ],
       "type": "prompt"
@@ -41,13 +45,13 @@
         {
           "foreground": "#cd5e42",
           "style": "plain",
-          "template": "\ue3bf ",
+          "template": "󰈸 ",
           "type": "root"
         },
         {
           "foreground": "#CD4277",
           "style": "plain",
-          "template": "# ",
+          "template": "󰘧 ",
           "type": "text"
         }
       ],

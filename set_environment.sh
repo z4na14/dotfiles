@@ -11,6 +11,7 @@ systemctl --user enable --now hyprsunset.service
 systemctl --user enable --now hyprpolkitagent.service
 systemctl --user enable --now hypridle.service
 systemctl --user enable --now NetworkManager.service
+systemctl --user enable --now bluetooth
 
 
 # Remove firewalld applet
@@ -54,14 +55,14 @@ gsettings set org.gnome.desktop.wm.preferences button-layout :
 sudo cp ./fonts/* /usr/share/fonts/
 
 # Remove bluetooth applet from running automatically
-sed -i 's/^Exec=blueman-applet.*/Exec=/' ~/.config/autostart/blueman.desktop
+sed -i 's/^Exec=blueman-applet.*/Exec=/' /etc/xdg/autostart/blueman.desktop
 
 # Add remove and clear history to drun mode
 sudo cp clear_history.desktop ~/.local/share/applications/clear_history.desktop
 sudo cp remove_history.desktop ~/.local/share/applications/remove_history.desktop
 
 # Move cow file
-sudo cp ./cowsay /usr/share/cowsay/cows
+sudo cp ./cowsay/pikachu.cow /usr/share/cowsay/cows
 
 # Vesktop theme
 cp ./vesktop/catppuccin-mocha-sapphire.theme.css ~/.config/vesktop/themes/
