@@ -18,7 +18,7 @@ tumbler mpv keepassxc linux-zen linux-zen-headers hyprsunset cmake meson cpio \
 pkgconf gcc libx11 libxcb libxrender xcb-proto libsecret xorg-xhost code gvfs \
 ttf-font-awesome hyprshot hyprpicker cliphist networkmanager nm-connection-editor \
 bluez-utils bluez blueman smbclient gvfs gvfs-smb gvfs-dnssd nss-mdns qalculate-gtk \
-gnome-font-viewer cowsay
+gnome-font-viewer cowsay tumbler
 
 yay -Syy fsearch qview arttime-git vesktop-bin
 
