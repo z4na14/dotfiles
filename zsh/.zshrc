@@ -16,8 +16,17 @@ bindkey '^H' backward-delete-word    # Ctrl + Backspace
 bindkey '^[[3~' delete-char          # Delete key (Supr)
 bindkey '^[[3;5~' delete-word        # Ctrl + Delete
 
+cowsay -f pikachu i use arch btw
+alias ls='lsd -a'
+alias cat='bat'
+alias please='sudo'
+alias '33'='nano'
+alias ld='lazydocker'
+alias get_idf='. /home/z4na14/Documentos/esp-idf/export.sh'
+
+export PATH=$PATH:/home/z4na14/.spicetify
+
 # Enable autocomplete (Always at the end)
 autoload -Uz compinit
 compinit
 
-export PATH=$PATH:/home/z4na14/.spicetify
