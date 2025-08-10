@@ -18,7 +18,8 @@ i=$(<"$STATE")
 
 # Toggle mode
 if [[ "$i" -eq 0 ]]; then
-    hyprctl keyword monitor HDMI-A-1,2560x1440@59.95Hz,3840x0,1 >/dev/null
+    hyprctl keyword monitor HDMI-A-1,2560x1440@59.95Hz,1920x0,1 >/dev/null
+    hyprctl keyword monitor DP-1,disable >/dev/null
     hyprctl keyword animations:enabled 0 >/dev/null
     hyprctl keyword windowrulev2 "noanim,floating:1" >/dev/null
     hyprctl keyword decoration:blur:enabled false >/dev/null
