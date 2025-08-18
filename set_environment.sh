@@ -59,7 +59,6 @@ sed -i 's/^Exec=blueman-applet.*/Exec=/' /etc/xdg/autostart/blueman.desktop
 
 # Add remove and clear history to drun mode
 sudo cp clear_history.desktop ~/.local/share/applications/clear_history.desktop
-sudo cp remove_history.desktop ~/.local/share/applications/remove_history.desktop
 
 # Move cow file
 sudo cp ./cowsay/pikachu.cow /usr/share/cowsay/cows
