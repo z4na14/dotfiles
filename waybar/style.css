@@ -21,14 +21,13 @@
     font-family: "Adawita Sans";
     min-height: 0;
     font-weight: 500;
-    font-size: 30px;
+    font-size: 22px;
     padding: 0;
-    /*font-size: 11px;*/
 }
 
 /* Main waybar CSS style*/
 window#waybar {
-    background: linear-gradient(135deg, rgba(30, 30, 46, 0.95) 12%, rgba(17, 17, 27, 0.95) 12%,rgba(17, 17, 27, 0.95) 81.5%, rgba(24, 24, 37, 0.95) 81.5%, rgba(24, 24, 37, 0.95) 95%, rgba(49, 50, 68, 0.95) 95%, rgba(49, 50, 68, 0.95) 100%);
+    background: linear-gradient(135deg, rgb(49, 50, 68) 13%, rgb(17, 17, 27) 13%,rgb(17, 17, 27) 77.5%, rgb(49, 50, 68) 77.5%, rgb(49, 50, 68) 95%, rgb(49, 50, 68) 95%, rgb(49, 50, 68) 100%);
     padding-left: 10px;
     padding-right: 10px;
     border: 3px solid #74c7ec;
@@ -36,7 +35,6 @@ window#waybar {
 }
 
 #workspaces {
-    font-size: 14px;
     background: transparent;
     box-shadow: none;
     margin: 5px 1px 6px 5px;
@@ -83,23 +81,19 @@ window#waybar {
     /*outline: none;*/
 }
 
-#memory,
-#cpu,
 #language,
 #pulseaudio,
 #backlight {
     background: rgb(205,214,244);
     background: transparent;
     border: 7px solid transparent;
-    font-size: 28px;
     /*font-weight: bold;*/
     font-style: normal;
     color: @iconcolor1;
 }
 
 #battery {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 25%, rgba(166, 227, 161, 0.95) 25%, rgba(166, 227, 161, 0.95) 100%);
-    font-size: 28px;
+    background: linear-gradient(135deg, rgb(49, 50, 68) 25%, rgb(166, 227, 161) 25%, rgb(166, 227, 161) 100%);
     font-style: normal;
     color: rgb(17, 17, 27);
     padding-right: 16px;
@@ -110,34 +104,33 @@ window#waybar {
 }
 
 #battery.full {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 25%, rgba(166, 227, 161, 0.95) 25%, rgba(166, 227, 161, 0.95) 100%);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 25%, rgb(166, 227, 161) 25%, rgb(166, 227, 161) 100%);
 }
 
 #battery.quart {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 25%, rgba(148, 226, 213, 0.95) 25%, rgba(148, 226, 213, 0.95) 100%);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 25%, rgb(148, 226, 213) 25%, rgb(148, 226, 213) 100%);
 }
 
 #battery.halfed {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 25%, rgba(249, 226, 175, 0.95) 25%, rgba(249, 226, 175, 0.95) 100%);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 25%, rgb(249, 226, 175) 25%, rgb(249, 226, 175) 100%);
 }
 
 #battery.warning {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 25%, rgba(235, 160, 172, 0.95) 25%, rgba(235, 160, 172, 0.95) 100%);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 25%, rgb(235, 160, 172) 25%, rgb(235, 160, 172) 100%);
 }
 
 #battery.critical {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 25%, rgba(243, 139, 168, 0.95) 25%, rgba(243, 139, 168, 0.95) 100%);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 25%, rgb(243, 139, 168) 25%, rgb(243, 139, 168) 100%);
 }
 
 #battery.charging {
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 25%, rgba(116, 199, 236, 0.95) 25%, rgba(116, 199, 236, 0.95) 100%);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 25%, rgb(116, 199, 236) 25%, rgb(116, 199, 236) 100%);
 
 }
 
 #clock {
     background: transparent;
     border: 7px solid transparent;
-    font-size: 28px;
     font-weight: bold;
     font-style: italic;
     color: rgb(205,214,244);;
@@ -147,11 +140,10 @@ window#waybar {
     background: transparent; 
     border: 3px solid transparent;
     margin: 5px 0px 8px 8px;
-    padding-left: 30px;
+    padding-left: 10px;
     padding-right: 20px;
     padding-top: 5px;
     font-style: normal;
-    font-size: 32;
 }
 
 #custom-separator {

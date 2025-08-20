@@ -12,15 +12,15 @@ i=$(<"$STATE")
 
 # Toggle mode
 if [[ "$i" -eq 1 ]]; then
-	makoctl mode -s dnd > /dev/null
-	pkill hypridle > /dev/null
+	makoctl mode -s dnd >/dev/null
+	pkill hypridle >/dev/null
 elif [[ "$i" -eq 0 ]]; then
-	makoctl mode -r dnd  > /dev/null
-	hypridle > /dev/null &
+	makoctl mode -r dnd >/dev/null
+	hyprctl dispatch -- exec hypridle --single-instance >/dev/null 
 fi
 
 if [[ "$i" -eq 2 ]]; then
-    echo 0 >"$STATE"
+    echo 1 >"$STATE"
     printf '{"text":"%s"}\n' "${ICONS[0]}"
     exit 0
 fi

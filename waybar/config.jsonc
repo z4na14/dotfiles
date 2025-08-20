@@ -11,7 +11,7 @@
     // "height": 8,
 
     // Waybar width
-    "width": 2546,
+    "width": 1906,
 
     // Gaps between modules (4px)
     "spacing": 5,
@@ -25,5 +25,5 @@
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces", "tray"],
     "modules-center": ["custom/power-menu", "clock", "custom/notification-toggle"],
-    "modules-right": ["cpu", "memory", "custom/separator", "pulseaudio", "backlight", "custom/gamemode", "bluetooth", "network", "battery"]
+    "modules-right": ["custom/separator", "pulseaudio", "backlight", "custom/gamemode", "bluetooth", "network", "battery"]
 }

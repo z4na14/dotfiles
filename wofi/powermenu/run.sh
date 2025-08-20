@@ -12,7 +12,7 @@ case $selected in
   Logout)
     exec hyprctl dispatch exit;;
   Suspend)
-    exec systemctl suspend;;
+    exec systemctl hibernate;;
   Reboot)
     exec shutdown -r 0;;
   Shutdown)
