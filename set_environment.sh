@@ -4,7 +4,6 @@
 rm -fr ./temp
 mkdir ./temp
 
-
 ### Enable respective services ###
 
 systemctl --user enable --now hyprsunset.service
@@ -12,7 +11,6 @@ systemctl --user enable --now hyprpolkitagent.service
 systemctl --user enable --now hypridle.service
 systemctl --user enable --now NetworkManager.service
 systemctl --user enable --now bluetooth
-
 
 # Remove firewalld applet
 sudo mv /etc/xdg/autostart/firewall-applet.desktop /etc/xdg/autostart/firewall-applet.desktop.old
@@ -34,7 +32,7 @@ sudo ln -s $HOME/.local/share/icons/Bibata-Modern-Ice /usr/share/icons/Bibata-Mo
 sudo mkdir -p /usr/share/icons/default
 
 echo "[Icon Theme]
-Inherits=Bibata-Modern-Ice" > ./temp/cursorconf
+Inherits=Bibata-Modern-Ice" >./temp/cursorconf
 sudo cp ./temp/cursorconf /usr/share/icons/default/index.theme
 
 ### Link and move configurations to their respective places ###
@@ -43,10 +41,10 @@ sudo cp ./temp/cursorconf /usr/share/icons/default/index.theme
 ln -s $(pwd)/wallpapers ~/Imágenes/Wallpapers
 
 # Add ghostty default terminal emulator to thunar config
-cat ./xfce4/helpers.rc >> ~/.config/xfce4/helpers.rc
+cat ./xfce4/helpers.rc >>~/.config/xfce4/helpers.rc
 
 # Add extra arguments to enable custom cursor in Spotify
-cat ./spotify-launcher/spotify-launcher.conf >> ~/.config/spotify-launcher.conf
+cat ./spotify-launcher/spotify-launcher.conf >>~/.config/spotify-launcher.conf
 
 # Hide buttons from gtk apps
 gsettings set org.gnome.desktop.wm.preferences button-layout :
@@ -87,6 +85,7 @@ ln -s $HOME/Descargas/dotfiles/zsh/.zshenv $HOME/.zshenv
 ln -s $HOME/Descargas/dotfiles/zsh/.zshrc $HOME/.zshrc
 ln -s $HOME/Descargas/dotfiles/zsh/oh-my-posh $HOME/.config/oh-my-posh
 ln -s $HOME/Descargas/dotfiles/bongocat/bongocat.conf ~/.config/bongocat.conf
+ln -s $HOME/Descargas/dotfiles/btop ~/.config/btop
 
 # For theming gtk apps that require sudo
 sudo cp -r ~/.config/gtk-3.0 /root/.config/
