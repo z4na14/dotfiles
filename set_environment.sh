@@ -86,6 +86,7 @@ ln -s $HOME/Descargas/dotfiles/zsh/.zshrc $HOME/.zshrc
 ln -s $HOME/Descargas/dotfiles/zsh/oh-my-posh $HOME/.config/oh-my-posh
 ln -s $HOME/Descargas/dotfiles/bongocat/bongocat.conf ~/.config/bongocat.conf
 ln -s $HOME/Descargas/dotfiles/btop ~/.config/btop
+ln -s $HOME/Descargas/dotfiles/hyprworm ~/.config/hyprworm
 
 # For theming gtk apps that require sudo
 sudo cp -r ~/.config/gtk-3.0 /root/.config/
