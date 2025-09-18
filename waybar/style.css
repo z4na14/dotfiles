@@ -27,7 +27,7 @@
 
 /* Main waybar CSS style*/
 window#waybar {
-    background: linear-gradient(135deg, rgb(49, 50, 68) 13%, rgb(17, 17, 27) 13%,rgb(17, 17, 27) 77.5%, rgb(49, 50, 68) 77.5%, rgb(49, 50, 68) 95%, rgb(49, 50, 68) 95%, rgb(49, 50, 68) 100%);
+    background: linear-gradient(135deg, rgb(49, 50, 68) 13%, rgb(17, 17, 27) 13%,rgb(17, 17, 27) 75.5%, rgb(49, 50, 68) 75.5%, rgb(49, 50, 68) 95%, rgb(49, 50, 68) 95%, rgb(49, 50, 68) 100%);
     padding-left: 10px;
     padding-right: 10px;
     border: 3px solid #74c7ec;
