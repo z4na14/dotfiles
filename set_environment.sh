@@ -88,3 +88,4 @@ ln -s $HOME/Descargas/dotfiles/zsh/.zshrc $HOME/.zshrc
 ln -s $HOME/Descargas/dotfiles/zsh/oh-my-posh $HOME/.config/oh-my-posh
 ln -s $HOME/Descargas/dotfiles/btop $HOME/.config/btop
 ln -s $HOME/Descargas/dotfiles/networkmanager-dmenu $HOME/.config/networkmanager-dmenu
+ln -s $HOME/Descargas/dotfiles/hyprworm/ $HOME/.config/hyprworm

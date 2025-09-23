@@ -1,0 +1,19 @@
+# Launcher command - any dmenu-compatible launcher
+launcher = wofi -S dmenu --conf /home/z4na14/Descargas/dotfiles/wofi/hyprworm/config --style /home/z4na14/Descargas/dotfiles/wofi/hyprworm/style.css
+
+# Show window titles in display (true/false)
+show_title = false
+
+# Window sorting options
+sort_order = workspace                    # workspace, application, title, none
+special_workspace_position = default      # top, bottom, default
+
+# Workspace aliases - replace names with custom symbols
+workspace_alias_special = "⭐ "
+workspace_alias_work = "💼 "
+workspace_alias_gaming = "🎮 "
+
+# Logging configuration
+log_level = INFO          # ERROR, WARNING, INFO, DEBUG
+log_file = /tmp/hyprworm.log  # Optional log file
+debug_mode = false        # Enable debug output
