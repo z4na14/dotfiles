@@ -72,6 +72,8 @@ ln -s $HOME/Descargas/dotfiles/fastfetch $HOME/.config/fastfetch
 ln -s $HOME/Descargas/dotfiles/ghostty $HOME/.config/ghostty
 ln -s $HOME/Descargas/dotfiles/gtk/gtk-3.0 $HOME/.config/gtk-3.0
 ln -s $HOME/Descargas/dotfiles/gtk/gtk-4.0 $HOME/.config/gtk-4.0
+sudo ln -s $HOME/Descargas/dotfiles/gtk/gtk-3.0 /root/.config/gtk-3.0
+sudo ln -s $HOME/Descargas/dotfiles/gtk/gtk-4.0 /root/.config/gtk-4.0
 ln -s $HOME/Descargas/dotfiles/hypr $HOME/.config/hypr
 ln -s $HOME/Descargas/dotfiles/mako $HOME/.config/mako
 ln -s $HOME/Descargas/dotfiles/nvim $HOME/.config/nvim
@@ -84,3 +86,5 @@ ln -s $HOME/Descargas/dotfiles/wofi $HOME/.config/wofi
 ln -s $HOME/Descargas/dotfiles/zsh/.zshenv $HOME/.zshenv
 ln -s $HOME/Descargas/dotfiles/zsh/.zshrc $HOME/.zshrc
 ln -s $HOME/Descargas/dotfiles/zsh/oh-my-posh $HOME/.config/oh-my-posh
+ln -s $HOME/Descargas/dotfiles/btop $HOME/.config/btop
+ln -s $HOME/Descargas/dotfiles/networkmanager-dmenu $HOME/.config/networkmanager-dmenu
