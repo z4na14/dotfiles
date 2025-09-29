@@ -9,6 +9,7 @@ alias mv='mvg --progress-bar'
 alias cp='cpg --progress-bar'
 alias df='duf'
 alias du='dust'
+alias cmm='history 0 | grep'
 
 # yays and yayr, for easily installing and removing YAY packages
 # mainly stolen and adapted from omarchy and ChrisTitusTech
