@@ -1,5 +1,6 @@
 * {
   font-family: JetBrainsMono;
+  font-size: 14;
   color: #cdd6f4;
   background: transparent;
 }
@@ -38,5 +39,5 @@
 
 #text {
   margin: 2px;
-  font-size: 18;
+  font-size: 24;
 }
