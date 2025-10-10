@@ -5,5 +5,7 @@ window-theme = ghostty
 
 window-padding-x = 10
 
-font-family = MesloLGM Nerd Font
+font-family = "JetBrains Mono NL"
 font-size = 11
+
+custom-shader = shaders/smear.glsl
