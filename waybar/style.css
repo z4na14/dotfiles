@@ -18,7 +18,7 @@
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: "JetBrainsMonoNL Nerd Font";
+    font-family: "JetBrainsMonoNL", "Font Awesome 7 Free";
     min-height: 0;
     font-weight: 500;
     font-size: 17px;
@@ -27,7 +27,7 @@
 
 /* Main waybar CSS style*/
 window#waybar {
-    background: linear-gradient(135deg, rgba(30, 30, 46, 0.95) 11.5%, rgba(17, 17, 27, 0.95) 11.5%,rgba(17, 17, 27, 0.95) 85.5%, rgba(24, 24, 37, 0.95) 85.5%, rgba(24, 24, 37, 0.95) 95.2%, rgba(49, 50, 68, 0.95) 95.2%, rgba(49, 50, 68, 0.95) 100%);
+    background: linear-gradient(135deg, rgba(30, 30, 46, 0.95) 11.5%, rgba(17, 17, 27, 0.95) 11.5%,rgba(17, 17, 27, 0.95) 84.5%, rgba(24, 24, 37, 0.95) 84.5%, rgba(24, 24, 37, 0.95) 95.5%, rgba(49, 50, 68, 0.95) 95.5%, rgba(49, 50, 68, 0.95) 100%);
     padding-left: 10px;
     padding-right: 10px;
     border: 2px solid #74c7ec;
@@ -148,5 +148,9 @@ tooltip label {
 }
 
 #custom-power-menu {
-    margin: 5 35 6 5;
+    margin: 5 28 6 0;
+}
+
+#bluetooth {
+  margin: 0 10px 0 0;
 }
