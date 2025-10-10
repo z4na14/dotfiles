@@ -18,7 +18,8 @@ sudo pacman -Syyu playerctl waybar ghostty zsh fastfetch wofi xarchiver thunar u
   pkgconf gcc libx11 libxcb libxrender xcb-proto libsecret xorg-xhost gvfs \
   ttf-font-awesome hyprshot hyprpicker cliphist networkmanager nm-connection-editor \
   bluez-utils bluez blueman smbclient gvfs gvfs-smb gvfs-dnssd nss-mdns qalculate-gtk \
-  gnome-font-viewer cowsay 7zip btop lsd bat thunar-volman dust duf
+  gnome-font-viewer cowsay 7zip btop lsd bat thunar-volman dust duf ttf-jetbrains-mono \
+  ttf-jetbrains-mono-nerd
 
 yay -Syy fsearch qview arttime-git vesktop-bin hyprworm advcpmv bongocat
 
