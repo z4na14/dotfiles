@@ -11,6 +11,7 @@ systemctl --user enable --now hyprpolkitagent.service
 systemctl --user enable --now hypridle.service
 systemctl --user enable --now NetworkManager.service
 systemctl --user enable --now bluetooth
+systemctl --user enable --now ssh-agent.service
 
 # Remove firewalld applet
 sudo mv /etc/xdg/autostart/firewall-applet.desktop /etc/xdg/autostart/firewall-applet.desktop.old
