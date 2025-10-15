@@ -17,7 +17,6 @@ bindkey '^[[3~' delete-char          # Delete key (Supr)
 bindkey '^[[3;5~' delete-word        # Ctrl + Delete
 
 export PATH=$PATH:/home/z4na14/.spicetify
-export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # Enable autocomplete (Always at the end)
 autoload -Uz compinit
