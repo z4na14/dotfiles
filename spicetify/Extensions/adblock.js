@@ -46,6 +46,16 @@ const getSlotsClient = (functionModules, transport) => {
         return null;
     }
 };
+const getTestingClient = (functionModules, transport) => {
+    try {
+        const testing = functionModules.find(m => m.SERVICE_ID === "spotify.ads.esperanto.testing.proto.Testing" || m.SERVICE_ID === "spotify.ads.esperanto.proto.Testing");
+        return new testing(transport);
+    }
+    catch (error) {
+        console.error("adblockify: Failed to get testing client", error);
+        return null;
+    }
+};
 const map = new Map();
 const retryCounter = (slotId, action) => {
     if (!map.has(slotId))
@@ -77,12 +87,17 @@ const retryCounter = (slotId, action) => {
         return;
     }
     const { CosmosAsync } = Spicetify;
-    const slots = await CosmosAsync.get("sp://ads/v1/slots");
+    let slots = [];
+    const slotsClient = getSlotsClient(webpackCache.functionModules, productState.transport);
+    if (slotsClient)
+        slots = (await slotsClient.getSlots()).adSlots;
+    else
+        slots = await CosmosAsync.get("sp://ads/v1/slots");
     const hideAdLikeElements = () => {
         const css = document.createElement("style");
         const upgradeText = Locale.get("upgrade.tooltip.title");
         css.className = "adblockify";
-        css.innerHTML = `.nHCJskDZVlmDhNNS9Ixv, .utUDWsORU96S7boXm2Aq, .cpBP3znf6dhHLA2dywjy, .G7JYBeU1c2QawLyFs5VK, .vYl1kgf1_R18FCmHgdw2, .vZkc6VwrFz0EjVBuHGmx, .iVAZDcTm1XGjxwKlQisz, ._I_1HMbDnNlNAaViEnbp, .xXj7eFQ8SoDKYXy6L3E1, .F68SsPm8lZFktQ1lWsQz, .MnW5SczTcbdFHxLZ_Z8j, .WiPggcPDzbwGxoxwLWFf, .ReyA3uE3K7oEz7PTTnAn, .x8e0kqJPS0bM4dVK7ESH, .gZ2Nla3mdRREDCwybK6X, .SChMe0Tert7lmc5jqH01, .AwF4EfqLOIJ2xO7CjHoX, .UlkNeRDFoia4UDWtrOr4, .k_RKSQxa2u5_6KmcOoSw, ._mWmycP_WIvMNQdKoAFb, .O3UuqEx6ibrxyOJIdpdg, .akCwgJVf4B4ep6KYwrk5, .bIA4qeTh_LSwQJuVxDzl, .ajr9pah2nj_5cXrAofU_, .gvn0k6QI7Yl_A0u46hKn, .obTnuSx7ZKIIY1_fwJhe, .IiLMLyxs074DwmEH4x5b, .RJjM91y1EBycwhT_wH59, .mxn5B5ceO2ksvMlI1bYz, .l8wtkGVi89_AsA3nXDSR, .Th1XPPdXMnxNCDrYsnwb, .SJMBltbXfqUiByDAkUN_, .Nayn_JfAUsSO0EFapLuY, .YqlFpeC9yMVhGmd84Gdo, .HksuyUyj1n3aTnB4nHLd, .DT8FJnRKoRVWo77CPQbQ, ._Cq69xKZBtHaaeMZXIdk, .main-leaderboardComponent-container, .sponsor-container, a.link-subtle.main-navBar-navBarLink.GKnnhbExo0U9l7Jz2rdc, button[title="${upgradeText}"], button[aria-label="${upgradeText}"], .main-topBar-UpgradeButton, .main-contextMenu-menuItem a[href^="https://www.spotify.com/premium/"], div[data-testid*="hpto"] {display: none !important;}`;
+        css.innerHTML = `.sl_aPp6GDg05ItSfmsS7, .nHCJskDZVlmDhNNS9Ixv, .utUDWsORU96S7boXm2Aq, .cpBP3znf6dhHLA2dywjy, .G7JYBeU1c2QawLyFs5VK, .vYl1kgf1_R18FCmHgdw2, .vZkc6VwrFz0EjVBuHGmx, .iVAZDcTm1XGjxwKlQisz, ._I_1HMbDnNlNAaViEnbp, .xXj7eFQ8SoDKYXy6L3E1, .F68SsPm8lZFktQ1lWsQz, .MnW5SczTcbdFHxLZ_Z8j, .WiPggcPDzbwGxoxwLWFf, .ReyA3uE3K7oEz7PTTnAn, .x8e0kqJPS0bM4dVK7ESH, .gZ2Nla3mdRREDCwybK6X, .SChMe0Tert7lmc5jqH01, .AwF4EfqLOIJ2xO7CjHoX, .UlkNeRDFoia4UDWtrOr4, .k_RKSQxa2u5_6KmcOoSw, ._mWmycP_WIvMNQdKoAFb, .O3UuqEx6ibrxyOJIdpdg, .akCwgJVf4B4ep6KYwrk5, .bIA4qeTh_LSwQJuVxDzl, .ajr9pah2nj_5cXrAofU_, .gvn0k6QI7Yl_A0u46hKn, .obTnuSx7ZKIIY1_fwJhe, .IiLMLyxs074DwmEH4x5b, .RJjM91y1EBycwhT_wH59, .mxn5B5ceO2ksvMlI1bYz, .l8wtkGVi89_AsA3nXDSR, .Th1XPPdXMnxNCDrYsnwb, .SJMBltbXfqUiByDAkUN_, .Nayn_JfAUsSO0EFapLuY, .YqlFpeC9yMVhGmd84Gdo, .HksuyUyj1n3aTnB4nHLd, .DT8FJnRKoRVWo77CPQbQ, ._Cq69xKZBtHaaeMZXIdk, .main-leaderboardComponent-container, .sponsor-container, a.link-subtle.main-navBar-navBarLink.GKnnhbExo0U9l7Jz2rdc, button[title="${upgradeText}"], button[aria-label="${upgradeText}"], .main-topBar-UpgradeButton, .main-contextMenu-menuItem a[href^="https://www.spotify.com/premium/"], div[data-testid*="hpto"] {display: none !important;}`;
         document.head.appendChild(css);
     };
     const disableAds = async () => {
@@ -96,7 +111,11 @@ const retryCounter = (slotId, action) => {
     const configureAdManagers = async () => {
         try {
             const { billboard, leaderboard, sponsoredPlaylist } = AdManagers;
-            await CosmosAsync.post("sp://ads/v1/testing/playtime", { value: -100000000000 });
+            const testingClient = getTestingClient(webpackCache.functionModules, productState.transport);
+            if (testingClient)
+                testingClient.addPlaytime({ seconds: -100000000000 });
+            else
+                await CosmosAsync.post("sp://ads/v1/testing/playtime", { value: -100000000000 });
             await audio.disable();
             audio.isNewAdsNpvEnabled = false;
             await billboard.disable();
@@ -119,8 +138,8 @@ const retryCounter = (slotId, action) => {
     };
     const bindToSlots = async () => {
         for (const slot of slots) {
-            subToSlot(slot.slot_id);
-            setTimeout(() => handleAdSlot({ adSlotEvent: { slotId: slot.slot_id } }), 50);
+            subToSlot(slot.slotId || slot.slot_id);
+            setTimeout(() => handleAdSlot({ adSlotEvent: { slotId: slot.slotId || slot.slot_id } }), 50);
         }
     };
     const handleAdSlot = (data) => {
@@ -162,7 +181,7 @@ const retryCounter = (slotId, action) => {
     };
     const intervalUpdateSlotSettings = async () => {
         for (const slot of slots) {
-            updateSlotSettings(slot.slot_id);
+            updateSlotSettings(slot.slotId || slot.slot_id);
         }
     };
     const subToSlot = (slot) => {
