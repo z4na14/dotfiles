@@ -18,7 +18,7 @@
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    font-family: "Adawita Sans";
+    font-family: "JetBrainsMonoNL", "Font Awesome 7 Free";
     min-height: 0;
     font-weight: 500;
     font-size: 24px;
@@ -27,7 +27,7 @@
 
 /* Main waybar CSS style*/
 window#waybar {
-    background: linear-gradient(135deg, rgb(49, 50, 68) 10%, rgb(17, 17, 27) 10%,rgb(17, 17, 27) 82%, rgb(49, 50, 68) 82%, rgb(49, 50, 68) 95%, rgb(49, 50, 68) 95%, rgb(49, 50, 68) 100%);
+    background: linear-gradient(135deg, rgb(49, 50, 68) 10%, rgb(17, 17, 27) 10%,rgb(17, 17, 27) 80%, rgb(49, 50, 68) 80%, rgb(49, 50, 68) 95%, rgb(49, 50, 68) 95%, rgb(49, 50, 68) 100%);
     padding-left: 10px;
     padding-right: 10px;
     border: 3px solid #74c7ec;

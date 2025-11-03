@@ -11,6 +11,7 @@ alias df='duf'
 alias du='dust'
 alias open='xdg-open'
 alias cmm='history 0 | grep'
+alias hyprestore='hyprctl --instance 0 dispatch exec hyprlock'
 
 # yays and yayr, for easily installing and removing YAY packages
 # mainly stolen and adapted from omarchy and ChrisTitusTech
