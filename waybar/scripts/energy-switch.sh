@@ -18,24 +18,26 @@ i=$(<"$STATE")
 
 # Toggle mode
 if [[ "$i" -eq 0 ]]; then
-    hyprctl keyword monitor HDMI-A-1,2560x1440@59.95Hz,1920x0,1 >/dev/null
-    hyprctl keyword monitor DP-1,disable >/dev/null
-    hyprctl keyword animations:enabled 0 >/dev/null
-    hyprctl keyword windowrulev2 "noanim,floating:1" >/dev/null
-    hyprctl keyword decoration:blur:enabled false >/dev/null
-    hyprctl keyword decoration:shadow:enabled false >/dev/null
-    hyprctl keyword decoration:active_opacity 1.0 >/dev/null
-    hyprctl keyword decoration:inactive_opacity 1.0 >/dev/null
-    swww img --outputs HDMI-A-1,DP-1,DP-2 /home/z4na14/Imágenes/Wallpapers/static/wall_1.png --transition-type wipe
+  hyprctl keyword monitor HDMI-A-1,2560x1440@59.95Hz,1920x0,1 >/dev/null
+  hyprctl keyword monitor DP-1,disable >/dev/null
+  hyprctl keyword animations:enabled 0 >/dev/null
+  hyprctl keyword windowrulev2 "noanim,floating:1" >/dev/null
+  hyprctl keyword decoration:blur:enabled false >/dev/null
+  hyprctl keyword decoration:shadow:enabled false >/dev/null
+  hyprctl keyword decoration:active_opacity 1.0 >/dev/null
+  hyprctl keyword decoration:inactive_opacity 1.0 >/dev/null
+  swww img --outputs HDMI-A-1,DP-1,DP-2 /home/z4na14/Imágenes/Wallpapers/static/wall_1.png --transition-type wipe
+  openrgb -p noche >/dev/null
 elif [[ "$i" -eq 1 ]] || [[ "$i" -eq 2 ]]; then
-    hyprctl reload >/dev/null
-    swww img --outputs HDMI-A-1,DP-1,DP-2 /home/z4na14/Imágenes/Wallpapers/static/wall_2.jpg --transition-type wipe
+  hyprctl reload >/dev/null
+  swww img --outputs HDMI-A-1,DP-1,DP-2 /home/z4na14/Imágenes/Wallpapers/static/wall_2.jpg --transition-type wipe
+  openrgb -p blanco >/dev/null
 fi
 
 if [[ "$i" -eq 2 ]]; then
-    echo 0 >"$STATE"
-    printf '{"text":"%s"}\n' "${ICONS[1]}"
-    exit 0
+  echo 0 >"$STATE"
+  printf '{"text":"%s"}\n' "${ICONS[1]}"
+  exit 0
 fi
 
 # Save next state & emit icon JSON
