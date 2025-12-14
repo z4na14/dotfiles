@@ -1,17 +1,31 @@
 cowsay -f pikachu i use arch btw
+
 alias ls='lsd -a'
 alias cat='bat'
 alias please='sudo'
 alias '33'='nano'
 alias ld='lazydocker'
 alias get_idf='. /home/z4na14/Documentos/esp-idf/export.sh'
+
 alias mv='mvg --progress-bar'
 alias cp='cpg --progress-bar'
 alias df='duf'
 alias du='dust'
+
 alias cmm='history 0 | grep'
 alias sybau='Syyu'
 alias open='xdg-open'
+
+# typos uwu
+alias ,,='cd ..'
+alias ..l='cd .. && ls'
+alias :q='exit'
+alias cd..='cd ..'
+alias mdkir='mkdir'
+alias dc='cd'
+alias sl='ls'
+alias sudp='sudo'
+
 
 # yays and yayr, for easily installing and removing YAY packages
 # mainly stolen and adapted from omarchy and ChrisTitusTech
