@@ -16,8 +16,6 @@ bindkey '^H' backward-delete-word    # Ctrl + Backspace
 bindkey '^[[3~' delete-char          # Delete key (Supr)
 bindkey '^[[3;5~' delete-word        # Ctrl + Delete
 
-export PATH=$PATH:/home/z4na14/.spicetify
-
 # Enable autocomplete (Always at the end)
 autoload -Uz compinit
 compinit
