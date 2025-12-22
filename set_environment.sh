@@ -92,6 +92,3 @@ ln -s $HOME/Descargas/dotfiles/hyprworm $HOME/.config/hyprworm
 # For theming gtk apps that require sudo
 sudo cp -r ~/.config/gtk-3.0 /root/.config/
 sudo cp -r ~/.config/gtk-4.0 /root/.config/
-
-# Telegram desktop client theme
-firefox https://t.me/addtheme/ctp_mocha
