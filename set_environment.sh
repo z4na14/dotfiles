@@ -90,3 +90,6 @@ ln -s $HOME/Descargas/dotfiles/zsh/oh-my-posh $HOME/.config/oh-my-posh
 ln -s $HOME/Descargas/dotfiles/btop $HOME/.config/btop
 ln -s $HOME/Descargas/dotfiles/networkmanager-dmenu $HOME/.config/networkmanager-dmenu
 ln -s $HOME/Descargas/dotfiles/hyprworm/ $HOME/.config/hyprworm
+
+sudo cp -r ~/.config/gtk-3.0 /root/.config/
+sudo cp -r ~/.config/gtk-4.0 /root/.config/
