@@ -93,3 +93,6 @@ ln -s $HOME/Descargas/dotfiles/hyprworm/ $HOME/.config/hyprworm
 
 sudo cp -r ~/.config/gtk-3.0 /root/.config/
 sudo cp -r ~/.config/gtk-4.0 /root/.config/
+
+# Telegram desktop client theme
+firefox https://t.me/addtheme/ctp_mocha
