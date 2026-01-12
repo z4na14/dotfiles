@@ -4,6 +4,7 @@ alias cat='bat'
 alias please='sudo'
 alias '33'='nano'
 alias ld='lazydocker'
+alias lg='lazygit'
 alias code='code --disable-gpu'
 alias mv='mvg --progress-bar'
 alias cp='cpg --progress-bar'
@@ -12,6 +13,7 @@ alias du='dust'
 alias open='xdg-open'
 alias cmm='history 0 | grep'
 alias hyprestore='hyprctl --instance 0 dispatch exec hyprlock'
+alias sybau='sudo pacman -Syyu'
 
 # yays and yayr, for easily installing and removing YAY packages
 # mainly stolen and adapted from omarchy and ChrisTitusTech
