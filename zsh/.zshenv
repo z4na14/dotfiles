@@ -13,8 +13,10 @@ alias df='duf'
 alias du='dust'
 
 alias cmm='history 0 | grep'
-alias sybau='Syyu'
+alias sybau='sudo pacman -Syyu'
 alias open='xdg-open'
+alias copy='wl-copy <'
+alias clfile='cat /dev/null >'
 
 # typos uwu
 alias ,,='cd ..'
