@@ -15,7 +15,7 @@ alias du='dust'
 alias cmm='history 0 | grep'
 alias sybau='sudo pacman -Syyu'
 alias open='xdg-open'
-alias copy='wl-copy <'
+alias wlcopy='wl-copy <'
 alias clfile='cat /dev/null >'
 
 # typos uwu
@@ -28,6 +28,8 @@ alias dc='cd'
 alias sl='ls'
 alias sudp='sudo'
 
+# hyprland restore
+alias hyprestore='hyprctl --instance 0 "dispatch exec hyprlock"'
 
 # yays and yayr, for easily installing and removing YAY packages
 # mainly stolen and adapted from omarchy and ChrisTitusTech

@@ -7,5 +7,3 @@ window-padding-x = 10
 
 font-family = "JetBrains Mono NL"
 font-size = 18
-
-custom-shader = shaders/smear.glsl
