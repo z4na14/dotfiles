@@ -17,7 +17,7 @@ sudo pacman -Syyu playerctl waybar ghostty zsh fastfetch wofi xarchiver thunar u
   tumbler mpv keepassxc linux-zen linux-zen-headers hyprsunset cmake meson cpio \
   pkgconf gcc libx11 libxcb libxrender xcb-proto libsecret xorg-xhost gvfs \
   ttf-font-awesome hyprshot hyprpicker cliphist networkmanager nm-connection-editor \
-  bluez-utils bluez blueman smbclient gvfs gvfs-smb gvfs-dnssd nss-mdns qalculate-gtk \
+  bluez-utils bluez blueman smbclient gvfs gvfs-smb gvfs-mtp gvfs-dnssd nss-mdns qalculate-gtk \
   gnome-font-viewer cowsay 7zip btop lsd bat thunar-volman dust duf ttf-jetbrains-mono \
   ttf-jetbrains-mono-nerd papers caligula telegram-desktop
 
