@@ -30,7 +30,7 @@ if [[ "$i" -eq 0 ]]; then
   openrgb -p noche >/dev/null
 elif [[ "$i" -eq 1 ]] || [[ "$i" -eq 2 ]]; then
   hyprctl reload >/dev/null
-  swww img --outputs HDMI-A-1,DP-1,DP-2 /home/z4na14/Imágenes/Wallpapers/static/wall_2.jpg --transition-type wipe
+  swww img --outputs HDMI-A-1,DP-1,DP-2 /home/z4na14/Imágenes/Wallpapers/static/wall_8.jpeg --transition-type wipe
   openrgb -p blanco >/dev/null
 fi
 
