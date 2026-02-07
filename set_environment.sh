@@ -68,6 +68,11 @@ cp ./vesktop/catppuccin-mocha-sapphire.theme.css ~/.config/vesktop/themes/
 # GTK theme
 sudo mv ./gtk/theme /usr/share/themes/catppuccin
 
+# Configure firewall backend for VMs
+echo "firewall_backend = 'iptables'" >fw_back
+cat /etc/libvirt/network.conf >>fw_back
+sudo mv fw_back /etc/libvirt/network.conf
+
 # Links (NOT EXPECTED TO WORK ON EVERY MACHINE DUE TO PATHS)
 ln -s $HOME/Descargas/dotfiles/fastfetch $HOME/.config/fastfetch
 ln -s $HOME/Descargas/dotfiles/ghostty $HOME/.config/ghostty
