@@ -9,6 +9,9 @@ PATH=$PATH:~/.local/bin
 # Loading oh-my-posh
 eval "$(oh-my-posh init zsh --config /home/z4na14/.config/oh-my-posh/amro.json)"
 
+# Fuck command
+eval $(thefuck --alias)
+
 # Adding shortcuts for CTRL + Arrows or SUPR
 bindkey '\e[1;5C' forward-word       # Ctrl + Right Arrow
 bindkey '\e[1;5D' backward-word      # Ctrl + Left Arrow
