@@ -1,5 +1,4 @@
 advcpmv
-anki
 arttime-git
 autofirma-bin
 azaharplus-appimage
@@ -9,6 +8,7 @@ davinci-resolve
 duckstation-qt-bin
 emulationstation-de
 epson-inkjet-printer-escpr
+feishin-bin
 fsearch
 grub-customizer
 hyprworm
@@ -26,10 +26,11 @@ python312
 qview
 r2modman-bin
 rpcs3-git
+ryujinx
 soundux
-spicetify-cli
 tetrio-desktop
 ungoogled-chromium-bin
 ventoy-bin
 vesktop-bin
+vi
 visual-studio-code-bin
