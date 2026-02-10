@@ -17,11 +17,11 @@ sudo pacman -Syyu playerctl waybar ghostty zsh fastfetch wofi xarchiver thunar u
   tumbler mpv keepassxc linux-zen linux-zen-headers hyprsunset cmake meson cpio \
   pkgconf gcc libx11 libxcb libxrender xcb-proto libsecret xorg-xhost code gvfs \
   otf-font-awesome hyprshot hyprpicker cliphist networkmanager nm-connection-editor \
-  bluez-utils bluez blueman smbclient gvfs gvfs-smb gvfs-dnssd nss-mdns qalculate-gtk \
+  bluez-utils bluez blueman smbclient gvfs gvfs-mtp gvfs-smb gvfs-dnssd nss-mdns qalculate-gtk \
   brightnessctl tlp gnome-font-viewer cowsay lsd bat btop thunar-volman dust duf nwg-displays \
-  ttf-jetbrains-mono ttf-jetbrains-mono-nerd papers caligula telegram-desktop
+  ttf-jetbrains-mono ttf-jetbrains-mono-nerd papers caligula telegram-desktop thefuck
 
-yay -Syy fsearch qview arttime-git vesktop-bin tlpui networkmanager-dmenu-git advcpmv hyprworm
+yay -Syy fsearch qview arttime-git vesktop-bin tlpui networkmanager-dmenu-git advcpmv hyprworm feishin-bin
 
 # Needed for the theme change
 sudo pacman -Syy nwg-look qt5ct qt6ct

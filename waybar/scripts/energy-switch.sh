@@ -24,7 +24,7 @@ if [[ "$i" -eq 0 ]]; then
   swww img --outputs eDP-2 /home/z4na14/Imágenes/Wallpapers/static/wall_1.png --transition-type wipe
 elif [[ "$i" -eq 1 ]] || [[ "$i" -eq 2 ]]; then
   hyprctl reload >/dev/null
-  swww img --outputs eDP-2 /home/z4na14/Imágenes/Wallpapers/static/wall_2.jpg --transition-type wipe
+  swww img --outputs eDP-2 /home/z4na14/Imágenes/Wallpapers/static/wall_8.jpeg --transition-type wipe
 fi
 
 if [[ "$i" -eq 2 ]]; then
