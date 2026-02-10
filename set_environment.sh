@@ -44,9 +44,6 @@ ln -s $(pwd)/wallpapers ~/Imágenes/Wallpapers
 # Add ghostty default terminal emulator to thunar config
 cat ./xfce4/helpers.rc >>~/.config/xfce4/helpers.rc
 
-# Add extra arguments to enable custom cursor in Spotify
-cat ./spotify-launcher/spotify-launcher.conf >>~/.config/spotify-launcher.conf
-
 # Hide buttons from gtk apps
 gsettings set org.gnome.desktop.wm.preferences button-layout :
 
@@ -83,7 +80,6 @@ ln -s $HOME/Descargas/dotfiles/mako $HOME/.config/mako
 ln -s $HOME/Descargas/dotfiles/nvim $HOME/.config/nvim
 ln -s $HOME/Descargas/dotfiles/qt/qt5ct $HOME/.config/qt5ct
 ln -s $HOME/Descargas/dotfiles/qt/qt6ct $HOME/.config/qt6ct
-ln -s $HOME/Descargas/dotfiles/spicetify $HOME/.config/spicetify
 ln -s $HOME/Descargas/dotfiles/uwsm $HOME/.config/uwsm
 ln -s $HOME/Descargas/dotfiles/waybar $HOME/.config/waybar
 ln -s $HOME/Descargas/dotfiles/wofi $HOME/.config/wofi
