@@ -1,9 +1,0 @@
-[11:35:49 2025-06-29] FETCHING Version 2.40.11
-[11:35:49 2025-06-29] CREATING /home/z4na14/.spicetify
-[11:35:49 2025-06-29] DOWNLOADING https://github.com/spicetify/cli/releases/download/v2.40.11/spicetify-2.40.11-linux-amd64.tar.gz
-[11:35:50 2025-06-29] EXTRACTING /home/z4na14/.spicetify/spicetify.tar.gz
-[11:35:50 2025-06-29] SETTING EXECUTABLE PERMISSIONS TO /home/z4na14/.spicetify/spicetify
-[11:35:50 2025-06-29] REMOVING /home/z4na14/.spicetify/spicetify.tar.gz
-[11:35:50 2025-06-29] spicetify path already set in /home/z4na14/.zshrc, continuing...
-[11:35:50 2025-06-29] spicetify v2.40.11 was installed successfully to /home/z4na14/.spicetify
-[11:35:50 2025-06-29] Run 'spicetify --help' to get started

@@ -99,3 +99,6 @@ sudo cp -r ~/.config/gtk-4.0 /root/.config/
 
 # Telegram desktop client theme
 firefox https://t.me/addtheme/ctp_mocha
+
+# Audacity custom theme
+cp ./audacity_theme.png ~/.local/share/audacity/Theme/custom/ImageCache.png
