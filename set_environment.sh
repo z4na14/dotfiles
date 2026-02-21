@@ -99,3 +99,6 @@ firefox https://t.me/addtheme/ctp_mocha
 
 # Audacity custom theme
 cp ./audacity_theme.png ~/.local/share/audacity/Theme/custom/ImageCache.png
+
+# Serial access to devices for development
+sudo usermod -a -G uucp $USER
