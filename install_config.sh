@@ -21,7 +21,7 @@ sudo pacman -Syyu playerctl waybar ghostty zsh fastfetch wofi xarchiver thunar u
   gnome-font-viewer cowsay 7zip btop lsd bat thunar-volman dust duf ttf-jetbrains-mono \
   ttf-jetbrains-mono-nerd papers caligula telegram-desktop thefuck audacity
 
-yay -Syy fsearch qview arttime-git vesktop-bin hyprworm advcpmv bongocat feishin-bin
+yay -Syy fsearch qview arttime-git hyprworm advcpmv bongocat feishin-bin
 
 # Needed for the theme change
 sudo pacman -Syy nwg-look qt5ct qt6ct
