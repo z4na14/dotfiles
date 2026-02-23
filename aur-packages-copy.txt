@@ -1,5 +1,4 @@
 advcpmv
-anki
 arttime-git
 feishin-bin
 fsearch
@@ -8,6 +7,7 @@ hyprworm
 jellyfin-desktop
 jetbrains-toolbox
 layer-shell-qt5
+lunar-client
 media-downloader
 networkmanager-dmenu-git
 protonup-qt-bin
@@ -15,6 +15,5 @@ qview
 tetrio-desktop
 ungoogled-chromium-bin
 ventoy-bin
-vesktop-bin
-vi
+vesktop
 visual-studio-code-bin

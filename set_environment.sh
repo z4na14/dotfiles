@@ -61,9 +61,6 @@ sudo cp clear_history.desktop ~/.local/share/applications/clear_history.desktop
 # Move cow file
 sudo cp ./cowsay /usr/share/cowsay/cows
 
-# Vesktop theme
-cp ./vesktop/catppuccin-mocha-sapphire.theme.css ~/.config/vesktop/themes/
-
 # GTK theme
 sudo mv ./gtk/theme /usr/share/themes/catppuccin
 
@@ -102,3 +99,9 @@ firefox https://t.me/addtheme/ctp_mocha
 
 # Audacity custom theme
 cp ./audacity_theme.png ~/.local/share/audacity/Theme/custom/ImageCache.png
+
+# Serial access to devices for development
+sudo usermod -a -G uucp $USER
+
+# Input group
+sudo usermod -aG input $USER

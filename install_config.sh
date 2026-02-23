@@ -19,9 +19,9 @@ sudo pacman -Syyu playerctl waybar ghostty zsh fastfetch wofi xarchiver thunar u
   otf-font-awesome hyprshot hyprpicker cliphist networkmanager nm-connection-editor \
   bluez-utils bluez blueman smbclient gvfs gvfs-mtp gvfs-smb gvfs-dnssd nss-mdns qalculate-gtk \
   brightnessctl tlp gnome-font-viewer cowsay lsd bat btop thunar-volman dust duf nwg-displays \
-  ttf-jetbrains-mono ttf-jetbrains-mono-nerd papers caligula telegram-desktop thefuck
+  ttf-jetbrains-mono ttf-jetbrains-mono-nerd papers caligula telegram-desktop thefuck audacity
 
-yay -Syy fsearch qview arttime-git vesktop-bin tlpui networkmanager-dmenu-git advcpmv hyprworm feishin-bin
+yay -Syy fsearch qview arttime-git tlpui networkmanager-dmenu-git advcpmv hyprworm feishin-bin
 
 # Needed for the theme change
 sudo pacman -Syy nwg-look qt5ct qt6ct

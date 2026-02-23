@@ -1,7 +1,9 @@
 accountsservice
 alsa-firmware
 alsa-utils
+anki
 aspell-es
+audacity
 b43-fwcutter
 base
 bat
@@ -19,7 +21,6 @@ cowsay
 cpupower
 croc
 cups
-delfin
 dmraid
 docker
 docker-compose
@@ -34,6 +35,7 @@ eos-hooks
 eos-log-tool
 eos-packagelist
 eos-rankmirrors
+ex-vi-compat
 fastfetch
 firefox
 gamemode
@@ -100,8 +102,9 @@ rpi-imager
 scrcpy
 sddm
 sg3_utils
+shotcut
+socat
 sof-firmware
-spotify-launcher
 steam
 supertuxkart
 swww
