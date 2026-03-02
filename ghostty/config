@@ -5,5 +5,8 @@ window-theme = ghostty
 
 window-padding-x = 10
 
+background-blur = true
+background-opacity = 0.88
+
 font-family = "JetBrains Mono NL"
-font-size = 18
+font-size = 16
