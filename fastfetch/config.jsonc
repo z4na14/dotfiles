@@ -1,107 +1,87 @@
-//  Thanks to Bina
 {
-  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
-  "logo": {
-      "padding": {
-      "top": 2
-      },
-      "width":32,
-      "type":"kitty",
-      "source":"~/.config/fastfetch/uwu.png"
-  },
-  "display": {
-        "separator": " ➜  "
-  },
-  "modules": [
-      "break",
-      "break",
-      "break",
-       {
-          "type": "os",
-          "key": "OS   ",
-          "keyColor": "31",  // = color1
-      },
-      {
-          "type": "kernel",
-          "key": " ├  ",
-          "keyColor": "31",
-      },
-      {
-          "type": "shell",
-          "key": " └  ",
-          "keyColor": "31", 
-      },
-      "break",
-      {
-          "type": "wm",
-          "key": "WM   ",
-          "keyColor": "32", 
-      },
-      {
-          "type": "wmtheme",
-          "key": " ├ 󰉼 ",
-          "keyColor": "32",
-      },
-      {
-          "type": "icons",
-          "key": " ├ 󰀻 ",
-          "keyColor": "32",
-      },
-      {
-          "type": "cursor",
-          "key": " ├  ",
-          "keyColor": "32", 
-      },
-      {
-          "type": "terminal",
-          "key": " ├  ",
-          "keyColor": "32",
-      },
-      {
-          "type": "terminalfont",
-          "key": " └  ",
-          "keyColor": "32", 
-      },
-      "break",
-      {
-          "type": "host",
-          "format": "{5} {1} Type {2}",
-          "key": "PC   ",
-          "keyColor": "33",
-      },
-      {
-          "type": "cpu",
-          "format": "{1} ({3}) @ {7} GHz",
-          "key": " ├  ",
-          "keyColor": "33",
-      },
-      {
-          "type": "gpu",
-          "format": "{1} {2} @ {12} GHz",            
-          "key": " ├ 󰢮 ",
-          "keyColor": "33",
-      },
-      {
-          "type": "memory",
-          "key": " ├  ",
-          "keyColor": "33",
-      },
-      {
-          "type": "swap",
-          "key": " ├ 󰓡 ",
-          "keyColor": "33",
-      },
-      {
-          "type": "disk",
-          "key": " ├ 󰋊 ",
-          "keyColor": "33",
-      },
-      {
-          "type": "monitor",
-          "key": " └  ",
-          "keyColor": "33",
-      },
-      "break",
-      "break",
-  ]
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+        "type": "small",
+        "padding": {
+            "top": 1,
+            "right": 2
+        }
+    },
+    "display": {
+        "separator": ">  ",
+        "color": {
+            "separator": "red"
+        },
+        "constants": [
+            "───────────────────────────────────────────────────────────────────────────",
+            "│\u001b[75C│\u001b[75D"
+        ]
+    },
+    "modules": [
+        {
+            "format": "{#1}{#keys}╭{$1}╮\u001b[76D {user-name-colored}{at-symbol-colored}{host-name-colored} ",
+            "type": "title"
+        },
+        {
+            "key": "{$2}{#31} kernel   ",
+            "type": "kernel"
+        },
+        {
+            "key": "{$2}{#32}󰅐 uptime   ",
+            "type": "uptime"
+        },
+        {
+            "key": "{$2}{#33}{icon} distro   ",
+            "type": "os"
+        },
+        {
+            "key": "{$2}{#34}󰇄 desktop  ",
+            "type": "de"
+        },
+        {
+            "key": "{$2}{#35} term     ",
+            "type": "terminal"
+        },
+        {
+            "key": "{$2}{#36} shell    ",
+            "type": "shell"
+        },
+        {
+            "key": "{$2}{#35}󰍛 cpu      ",
+            "type": "cpu",
+            "showPeCoreCount": true,
+            "temp": true
+        },
+        {
+            "key": "{$2}{#34}󰍛 gpu      ",
+            "type": "gpu"
+        },
+        {
+            "key": "{$2}{#33}󰉉 disk     ",
+            "type": "disk",
+            "folders": "/"
+        },
+        {
+            "key": "{$2}{#32} memory   ",
+            "type": "memory"
+        },
+        {
+            "key": "{$2}{#31}󰩟 network  ",
+            "type": "localip",
+            "format": "{ipv4} ({ifname})"
+        },
+        {
+            "format": "{#1}{#keys}├{$1}┤",
+            "type": "custom"
+        },
+        {
+            "key": "{$2}{#39} colors   ",
+            "type": "colors",
+            "symbol": "circle"
+        },
+        {
+            "format": "{#1}{#keys}╰{$1}╯",
+            "type": "custom"
+        }
+    ]
 }
