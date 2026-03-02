@@ -6,6 +6,7 @@ bongocat
 bottles
 davinci-resolve
 duckstation-qt-bin
+eden-bin
 emulationstation-de
 epson-inkjet-printer-escpr
 feishin-bin
@@ -15,10 +16,12 @@ hyprworm
 imhex-bin
 jellyfin-desktop
 layer-shell-qt5
+localsend-bin
 lunar-client
 melonds
 millennium
 naps2
+opentabletdriver
 osu-lazer-bin
 pcsx2-git
 protonup-qt
@@ -26,11 +29,9 @@ python312
 qview
 r2modman-bin
 rpcs3-git
-ryujinx
 soundux
 tetrio-desktop
 ungoogled-chromium-bin
 ventoy-bin
-vesktop-bin
-vi
+vesktop
 visual-studio-code-bin
