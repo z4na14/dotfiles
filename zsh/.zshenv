@@ -1,4 +1,5 @@
-cowsay -f pikachu i use arch btw
+echo "\n"
+fastfetch --config ~/.config/fastfetch/config-init.jsonc
 
 alias ls='lsd -a'
 alias cat='bat'

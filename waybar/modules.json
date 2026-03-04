@@ -113,7 +113,7 @@
         "format-wifi": "<span font_desc='Font Awesome 7 Free'></span>",
         "format-ethernet": "<span font_desc='Font Awesome 7 Free'></span>",
         "format-disconnected": "<span font_desc='Font Awesome 7 Free'></span>",
-	"tooltip-format": "{ifname} via {gwaddr}",
+	      "tooltip-format": "{ifname} via {gwaddr}",
         "tooltip-format-wifi": "{essid} ({signalStrength}%)",
         "tooltip-format-ethernet": "{ifname}",
         "tooltip-format-disconnected": "Disconnected",
@@ -123,7 +123,7 @@
     "custom/gamemode": {
         "exec": "~/.config/waybar/scripts/energy-switch.sh",
         "return-type": "json",
-	"format": "<span font_desc='Font Awesome 7 Free'>{text}</span>",
+        "format": "<span font_desc='Font Awesome 7 Free'>{text}</span>",
         "interval": "once",
         "on-click": "notify-send 'Changing energy mode'",
         "exec-on-event": "true"
