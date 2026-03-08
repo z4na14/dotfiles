@@ -1,21 +1,3 @@
-/* Workspaces                                    */
-@define-color textcolor1 #74c7ec;
-@define-color wsunderlinecolor #fb4a58;
-@define-color wsunderlinecoloractive #db154d;
-@define-color wsunderlinecolorurgent #75ecf8;
-/*                                               */
-
-/* CPU, memory, brightness, volume, date */
-@define-color cpu #0376f3;
-@define-color traycolor #5270d3;
-/*                                               */
-
-/* Battery                                       */
-@define-color normal #ffffff;
-@define-color warning #ff9001;
-@define-color critical #e50000;
-/*                                               */
-
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: "JetBrainsMonoNL", "Font Awesome 7 Free";
@@ -41,7 +23,7 @@ window#waybar {
     padding: 0px 23px; 
     font-weight: bold;
     opacity: 1;
-    color: @textcolor1;
+    color: #74c7ec;
     text-shadow: none;
 }
 
@@ -58,7 +40,7 @@ window#waybar {
 }
 
 #workspaces button.active {
-    color: @textcolor1;
+    color: #74c7ec;
     background: transparent; 
     /*border-radius: 0;*/
     min-width: 20px;
@@ -67,7 +49,7 @@ window#waybar {
 }
 
 #workspaces button.urgent {
-    color: @textcolor1;
+    color: #74c7ec;
     background: transparent; 
     border-radius: 0;
     transition: all 0.3s ease-in-out;
@@ -77,7 +59,7 @@ window#waybar {
 #workspaces button:hover {
     /*background: rgba(0, 0, 0, 0.2);*/
     /*border: rgba(0, 0, 0, 0.2);*/
-    color: @textcolor1;
+    color: #74c7ec;
     /*outline: none;*/
 }
 
@@ -89,7 +71,7 @@ window#waybar {
     border: 7px solid transparent;
     /*font-weight: bold;*/
     font-style: normal;
-    color: @iconcolor1;
+    color: #74c7ec;
 }
 
 #battery {
