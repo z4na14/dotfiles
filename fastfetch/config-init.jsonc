@@ -47,14 +47,6 @@
       "key": "DSK"
     },
     {
-      "type": "battery",
-      "key": "BAT"
-    },
-    {
-      "type": "brightness",
-      "key": "BGT"
-    },
-    {
       "type": "colors",
       "paddingLeft": 6,
       "symbol": "circle"
