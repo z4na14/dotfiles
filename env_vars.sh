@@ -8,4 +8,4 @@ export WLR_NO_HARDWARE_CURSORS=1
 export ELECTRON_OZONE_PLATFORM_HINT=auto
 export NVD_BACKEND=direct # Enable hardware video acceleration
 
-export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/.bitwarden-ssh-agent.sock
+export SSH_AUTH_SOCK=/home/$USER/.bitwarden-ssh-agent.sock
