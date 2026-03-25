@@ -6,7 +6,7 @@ window-theme = ghostty
 window-padding-x = 10
 
 background-blur = true
-background-opacity = 0.88
+background-opacity = 0.90
 
-font-family = "JetBrains Mono NL"
+font-family = "Lilex"
 font-size = 11
