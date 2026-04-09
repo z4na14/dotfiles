@@ -20,7 +20,7 @@ bindkey '^[[3~' delete-char          # Delete key (Supr)
 bindkey '^[[3;5~' delete-word        # Ctrl + Delete
 
 # Mommy Command
-precmd() { echo "" && mommy -1 -s $? }
+#precmd() { echo "" && mommy -1 -s $? }
 
 # Enable autocomplete (Always at the end)
 autoload -Uz compinit
