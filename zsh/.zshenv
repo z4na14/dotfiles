@@ -7,6 +7,7 @@ alias please='sudo'
 alias '33'='nano'
 alias ld='lazydocker'
 alias get_idf='. /home/z4na14/Documentos/esp-idf/export.sh'
+alias zed='zeditor'
 
 alias mv='mvg --progress-bar'
 alias cp='cpg --progress-bar'
@@ -53,4 +54,3 @@ alias yayr="yay -Qqe | \
       --bind 'ctrl-d:preview-down,ctrl-u:preview-up' \
     | \
     xargs -ro yay -Rns"
-
