@@ -36,6 +36,11 @@
           ]
         }
       ]
+    },
+    {
+      "host": "local.z4na14.dev",
+      "args": [],
+      "projects": []
     }
   ],
   "git": {
