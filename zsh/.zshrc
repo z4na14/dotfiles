@@ -26,3 +26,8 @@ bindkey '^[[3;5~' delete-word        # Ctrl + Delete
 autoload -Uz compinit
 compinit
 
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/home/z4na14/.lmstudio/bin"
+# End of LM Studio CLI section
+
