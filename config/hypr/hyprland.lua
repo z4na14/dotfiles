@@ -1,0 +1,7 @@
+require("extra/env_vars.lua")
+require("extra/monitors.lua")
+require("extra/autostart.lua")
+require("extra/decoration.lua")
+require("extra/input.lua")
+require("extra/keybindings.lua")
+require("extra/window_workspaces.lua")
