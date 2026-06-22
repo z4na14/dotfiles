@@ -1,0 +1,7 @@
+/* Flatten all major widgets, buttons, input fields, and windows */
+QWidget, 
+QPushButton, 
+QMenuBar, 
+QMenu {
+    border-radius: 0px;
+}

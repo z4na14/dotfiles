@@ -9,8 +9,6 @@ alias ld='lazydocker'
 alias get_idf='. /home/z4na14/Documentos/esp-idf/export.sh'
 alias zed='zeditor'
 
-alias mv='mvg --progress-bar'
-alias cp='cpg --progress-bar'
 alias df='duf'
 alias du='dust'
 

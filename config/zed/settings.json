@@ -1,0 +1,141 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "soft_wrap": "none",
+  "auto_indent": "preserve_indent",
+  "toolbar": {
+    "agent_review": false,
+    "selections_menu": true,
+    "quick_actions": false,
+    "breadcrumbs": false
+  },
+  "minimap": {
+    "max_width_columns": 75,
+    "current_line_highlight": "all",
+    "thumb": "hover",
+    "show": "auto"
+  },
+  "buffer_line_height": "comfortable",
+  "buffer_font_weight": 450.0,
+  "restore_on_startup": "launchpad",
+  "redact_private_values": true,
+  "ssh_connections": [
+    {
+      "host": "local.z4na14.dev",
+      "args": [],
+      "projects": [
+        {
+          "paths": [
+            "/home/z4na14/docker_containers"
+          ]
+        }
+      ]
+    },
+    {
+      "host": "local.z4na14.dev",
+      "args": [],
+      "projects": []
+    }
+  ],
+  "git": {
+    "blame": {
+      "show_avatar": false
+    },
+    "inline_blame": {
+      "enabled": false
+    },
+    "enable_status": true
+  },
+  "inline_code_actions": false,
+  "languages": {
+    "C": {
+      "indent_guides": {
+        "enabled": true
+      }
+    }
+  },
+  "diagnostics": {
+    "inline": {
+      "enabled": false
+    },
+    "lsp_pull_diagnostics": {
+      "enabled": true
+    }
+  },
+  "lsp_document_colors": "border",
+  "use_on_type_format": true,
+  "semantic_tokens": "combined",
+  "enable_language_server": true,
+  "cli_default_open_behavior": "existing_window",
+  "vim_mode": false,
+  "title_bar": {
+    "show_user_picture": false,
+    "show_sign_in": false
+  },
+  "tabs": {
+    "close_position": "right",
+    "file_icons": true,
+    "git_status": false
+  },
+  "terminal": {
+    "button": true
+  },
+  "status_bar": {
+    "cursor_position_button": true,
+    "active_encoding_button": "enabled",
+    "active_language_button": true
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  "agent": {
+    "button": false,
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "outline_panel": {
+    "button": false
+  },
+  "git_panel": {
+    "button": true
+  },
+  "project_panel": {
+    "button": true,
+    "sticky_scroll": true,
+    "git_status_indicator": false,
+    "git_status": true,
+    "folder_icons": true,
+    "file_icons": true
+  },
+  "icon_theme": "Catppuccin Mocha",
+  "session": {
+    "trust_all_worktrees": true
+  },
+  "base_keymap": "JetBrains",
+  "prettier": {
+    "allowed": true
+  },
+  "auto_signature_help": false,
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000
+    }
+  },
+  "hide_mouse": "never",
+  "buffer_font_family": "Lilex",
+  "auto_update": false,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "disable_ai": true,
+  "ui_font_size": 16,
+  "buffer_font_size": 14.0,
+  "theme": "Matugen Dark",
+}
