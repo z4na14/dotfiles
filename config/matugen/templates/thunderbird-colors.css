@@ -5,26 +5,26 @@
     /* ==========================================================================
        BASE RESTRUCTURED VARIABLE MAPS
        ========================================================================== */
-    --lwt-accent-color: #101418 !important;
-    --lwt-text-color: #e0e2e8 !important;
+    --lwt-accent-color: {{colors.background.default.hex}} !important;
+    --lwt-text-color: {{colors.on_background.default.hex}} !important;
 
-    --toolbar-bgcolor: #101418 !important;
-    --toolbar-color: #e0e2e8 !important;
-    --toolbar-field-background-color: #101418 !important;
-    --toolbar-field-color: #e0e2e8 !important;
-    --toolbar-field-focus-background-color: #101418 !important;
-    --toolbar-field-focus-color: #e0e2e8 !important;
-    --toolbar-field-border-color: #e0e2e8 !important;
+    --toolbar-bgcolor: {{colors.background.default.hex}} !important;
+    --toolbar-color: {{colors.on_background.default.hex}} !important;
+    --toolbar-field-background-color: {{colors.background.default.hex}} !important;
+    --toolbar-field-color: {{colors.on_background.default.hex}} !important;
+    --toolbar-field-focus-background-color: {{colors.background.default.hex}} !important;
+    --toolbar-field-focus-color: {{colors.on_background.default.hex}} !important;
+    --toolbar-field-border-color: {{colors.on_background.default.hex}} !important;
 
     --tab-background-color: transparent !important;
-    --tab-text-color: #e0e2e8 !important;
-    --tab-selected-bgcolor: #99ccfa !important;
-    --tab-selected-textcolor: #101418 !important;
+    --tab-text-color: {{colors.on_background.default.hex}} !important;
+    --tab-selected-bgcolor: {{colors.primary.default.hex}} !important;
+    --tab-selected-textcolor: {{colors.background.default.hex}} !important;
 
-    --purple-30: #99ccfa !important;
-    --button-primary-bgcolor: #99ccfa !important;
-    --button-primary-color: #101418 !important;
-    --ui-text-select-background-color: #99ccfa !important;
+    --purple-30: {{colors.primary.default.hex}} !important;
+    --button-primary-bgcolor: {{colors.primary.default.hex}} !important;
+    --button-primary-color: {{colors.background.default.hex}} !important;
+    --ui-text-select-background-color: {{colors.primary.default.hex}} !important;
 
     --bg-color: var(--toolbar-bgcolor) !important;
     --layout-background-0: var(--toolbar-bgcolor) !important;

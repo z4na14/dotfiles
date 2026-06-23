@@ -1,5 +1,36 @@
-/* ~/.mozilla/firefox/<profile>/chrome/userChrome.css */
-@import url("matugen.css");
+/* ~/.config/matugen/templates/firefox-colors.css */
+@namespace html url(http://www.w3.org/1999/xhtml);
+
+:root {
+    /* Main Window Background & Accent Colors */
+    --lwt-accent-color: #101418 !important;
+    --lwt-text-color: #e0e2e8 !important;
+    
+    /* Toolbars & Address Bar */
+    --toolbar-bgcolor: #101418 !important;
+    --toolbar-color: #e0e2e8 !important;
+    --toolbar-field-background-color: #101418 !important;
+    --toolbar-field-color: #e0e2e8 !important;
+    --toolbar-field-focus-background-color: #101418 !important;
+    --toolbar-field-focus-color: #e0e2e8 !important;
+    --toolbar-field-border-color: #e0e2e8 !important;
+    
+    /* Tabs */
+    --tab-background-color: transparent !important;
+    --tab-text-color: #e0e2e8 !important;
+    --tab-selected-bgcolor: #99ccfa !important;
+    --tab-selected-textcolor: #101418 !important;
+    
+    /* Buttons & Selection */
+    --purple-30: #99ccfa !important;
+    --button-primary-bgcolor: #99ccfa !important;
+    --button-primary-color: #101418 !important;
+    --ui-text-select-background-color: #99ccfa !important;
+}
+
+/* ==========================================================================
+   LAYOUT APPLICATION LAYER
+   ========================================================================== */
 
 /* 1. MAIN TOOLBARS & WINDOW CONTAINER */
 #navigator-toolbox,
