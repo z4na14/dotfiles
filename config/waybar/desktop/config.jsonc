@@ -11,9 +11,16 @@
   "passthrough": false,
   "gtk-layer-shell": true,
 
-  "modules-left": ["hyprland/workspaces"],
+  "modules-left": ["hyprland/workspaces", "hyprland/language"],
   "modules-center": ["hyprland/window"],
-  "modules-right": ["tray", "pulseaudio", "network", "clock"],
+  "modules-right": [
+    "tray",
+    "pulseaudio",
+    "bluetooth",
+    "network",
+    "custom/notification-toggle",
+    "clock",
+  ],
 
   "hyprland/workspaces": {
     "format": "󰘧",
@@ -23,6 +30,12 @@
     "active-only": false,
     "all-outputs": false,
     "on-click": "activate",
+  },
+
+  "hyprland/language": {
+    "format": " 󰌌 {}",
+    "format-en": "US",
+    "format-es": "ES",
   },
 
   "hyprland/window": {
@@ -53,8 +66,18 @@
     "show-passive-items": false,
   },
 
+  "bluetooth": {
+    "format": "",
+    "format-disabled": "󰂲",
+    "format-connected": "󰂱",
+    "on-click": "blueman-manager",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+  },
+
   "pulseaudio": {
-    "format": " {volume} {icon} ",
+    "format": "{volume} {icon}",
     "on-click": "pavucontrol",
     "tooltip-format": "Playing at {volume}%",
     "scroll-step": 5,
@@ -93,5 +116,14 @@
     "interval": 3,
     "spacing": 1,
     "on-click": "nm-connection-editor",
+  },
+
+  "custom/notification-toggle": {
+    "exec": "~/.config/waybar/scripts/notifications.sh",
+    "return-type": "json",
+    "format": "{text}",
+    "interval": "once",
+    "on-click": "notify-send 'Changing notification mode'",
+    "exec-on-event": "true",
   },
 }
