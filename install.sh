@@ -41,24 +41,24 @@ SHELL_PACKAGES="kitty zsh mako pipewire-pulse wireplumber uwsm xdg-desktop-porta
                 waybar awww grim slurp swappy fuzzel cliphist thunar thunar-volman \
                 ristretto sddm fastfetch hyprlock hypridle bluez bluez-utils blueman networkmanager \
                 nm-connection-editor pavucontrol gvfs gvfs-smb gvfs-mtp gvfs-gphoto2 gvfs-dnssd \
-		duf dust bat lsd fzf"
+		duf dust bat lsd fzf qt6-virtualkeyboard qt6-imageformats"
 
 # Utilities
 UTILITY_PACKAGES="obs-studio mpv zathura zathura-pdf-poppler xarchiver unrar \
                   nwg-displays nwg-look qt5ct qt6ct matugen qalculate-qt firefox btop"
 
 # Laptop (Battery driven devives)
-LAPTOP_PACKAGES="brightnessctl tlp iwd"
+LAPTOP_PACKAGES="brightnessctl tlp iwd impala"
 
 # NVIDIA specifics
 NVIDIA_PACKAGES="nvidia-utils lib32-nvidia-utils libva-nvidia-driver"
 
 # CachyOS specifics
-APPS_CACHY="protonup-qt ventoy-bin vesktop-bin helium-browser-bin feishin proton-cachyos-slr"
+APPS_CACHY="protonup-qt ventoy-bin vesktop-bin helium-browser-bin proton-cachyos-slr"
 # Normal apps for myself
 APPS_BASE="anki obsidian gimp inkscape blender dolphin-emu yt-dlp easytag filezilla keepassxc \
            virt-manager edk2-ovmf swtpm gparted grsync libreoffice-fresh-es vim zed gamescope \
-           steam thunderbird telegram-desktop"
+           steam thunderbird"
 
 
 # Install required packages
