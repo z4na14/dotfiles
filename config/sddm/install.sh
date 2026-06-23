@@ -1,6 +1,4 @@
-sudo mkdir -p /usr/share/sddm/themes/silent
-sudo cp -rf ./SilentSDDM/* /usr/share/sddm/themes/silent/
-
-sudo cp -r /usr/share/sddm/themes/silent/fonts/* /usr/share/fonts/
+sudo mkdir -p /usr/share/sddm/themes/simple
+sudo cp -rf ./THEME /usr/share/sddm/themes/simple
 
 sudo cp sddm.conf /etc/sddm.conf

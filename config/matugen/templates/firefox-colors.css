@@ -1,11 +1,8 @@
-/* ~/.config/matugen/templates/firefox-colors.css */
-@namespace html url(http://www.w3.org/1999/xhtml);
-
 :root {
     /* Main Window Background & Accent Colors */
     --lwt-accent-color: {{colors.background.default.hex}} !important;
     --lwt-text-color: {{colors.on_background.default.hex}} !important;
-    
+
     /* Toolbars & Address Bar */
     --toolbar-bgcolor: {{colors.background.default.hex}} !important;
     --toolbar-color: {{colors.on_background.default.hex}} !important;
@@ -13,26 +10,21 @@
     --toolbar-field-color: {{colors.on_background.default.hex}} !important;
     --toolbar-field-focus-background-color: {{colors.background.default.hex}} !important;
     --toolbar-field-focus-color: {{colors.on_background.default.hex}} !important;
-    --toolbar-field-border-color: {{colors.on_background.default.hex}} !important;
-    
+    --toolbar-field-border-color: {{colors.outline.default.hex}} !important;
+
     /* Tabs */
     --tab-background-color: transparent !important;
     --tab-text-color: {{colors.on_background.default.hex}} !important;
     --tab-selected-bgcolor: {{colors.primary.default.hex}} !important;
-    --tab-selected-textcolor: {{colors.background.default.hex}} !important;
-    
+    --tab-selected-textcolor: {{colors.on_primary.default.hex}} !important;
+
     /* Buttons & Selection */
     --purple-30: {{colors.primary.default.hex}} !important;
     --button-primary-bgcolor: {{colors.primary.default.hex}} !important;
-    --button-primary-color: {{colors.background.default.hex}} !important;
+    --button-primary-color: {{colors.on_primary.default.hex}} !important;
     --ui-text-select-background-color: {{colors.primary.default.hex}} !important;
 }
 
-/* ==========================================================================
-   LAYOUT APPLICATION LAYER
-   ========================================================================== */
-
-/* 1. MAIN TOOLBARS & WINDOW CONTAINER */
 #navigator-toolbox,
 #nav-bar,
 #PersonalToolbar,
@@ -41,7 +33,6 @@
     color: var(--toolbar-color) !important;
 }
 
-/* 2. URL / ADDRESS BAR */
 #urlbar-background,
 #searchbar {
     background-color: var(--toolbar-field-background-color) !important;
@@ -62,7 +53,6 @@
     color: var(--toolbar-field-focus-color) !important;
 }
 
-/* 3. TABS NAVIGATION */
 /* Inactive Tabs */
 .tabbrowser-tab {
     color: var(--tab-text-color) !important;
@@ -81,10 +71,9 @@
 
 /* Tab Hover state */
 .tabbrowser-tab:hover:not([selected="true"]) .tab-background {
-    background-color: rgba(255, 255, 255, 0.08) !important;
+    background-color: {{colors.surface_variant.default.hex}} !important;
 }
 
-/* 4. MISC INTERACTIVE BUTTONS */
 #back-button, #forward-button, #reload-button, #stop-button, #PanelUI-menu-button {
     fill: var(--toolbar-color) !important;
     color: var(--toolbar-color) !important;

@@ -1,10 +1,4 @@
-/* ~/.config/matugen/templates/thunderbird-colors.css */
-@namespace html url(http://www.w3.org/1999/xhtml);
-
 :root {
-    /* ==========================================================================
-       BASE RESTRUCTURED VARIABLE MAPS
-       ========================================================================== */
     --lwt-accent-color: {{colors.background.default.hex}} !important;
     --lwt-text-color: {{colors.on_background.default.hex}} !important;
 
@@ -14,16 +8,16 @@
     --toolbar-field-color: {{colors.on_background.default.hex}} !important;
     --toolbar-field-focus-background-color: {{colors.background.default.hex}} !important;
     --toolbar-field-focus-color: {{colors.on_background.default.hex}} !important;
-    --toolbar-field-border-color: {{colors.on_background.default.hex}} !important;
+    --toolbar-field-border-color: {{colors.outline.default.hex}} !important;
 
     --tab-background-color: transparent !important;
     --tab-text-color: {{colors.on_background.default.hex}} !important;
     --tab-selected-bgcolor: {{colors.primary.default.hex}} !important;
-    --tab-selected-textcolor: {{colors.background.default.hex}} !important;
+    --tab-selected-textcolor: {{colors.on_primary.default.hex}} !important;
 
     --purple-30: {{colors.primary.default.hex}} !important;
     --button-primary-bgcolor: {{colors.primary.default.hex}} !important;
-    --button-primary-color: {{colors.background.default.hex}} !important;
+    --button-primary-color: {{colors.on_primary.default.hex}} !important;
     --ui-text-select-background-color: {{colors.primary.default.hex}} !important;
 
     --bg-color: var(--toolbar-bgcolor) !important;
@@ -70,12 +64,9 @@
 
     /* Layout Framework Separators */
     --color-gray-70: var(--toolbar-field-border-color) !important;
-    --color-gray-50: var(--toolbar-bgcolor) !important;
+    --color-gray-50: {{colors.surface_variant.default.hex}} !important;
 }
 
-/* ==========================================================================
-   SOLID PANEL LAYOUT OVERRIDES (Prevents Transparency & Grey fallbacks)
-   ========================================================================== */
 #messengerWindow,
 #main-window,
 #navigator-toolbox,
@@ -112,11 +103,11 @@ li[is="folder-tree-row"][aria-selected="true"] > .container > .name {
 /* Thread Main Message Stream */
 #threadPaneHeaderBar {
     background-color: var(--tab-selected-bgcolor) !important;
-    color: var(--tab-selected-textcolor) !important;
+    color: {{colors.on_primary.default.hex}} !important;
 }
 #threadPaneFolderName,
 #threadPaneFolderCount {
-    color: var(--tab-selected-textcolor) !important;
+    color: {{colors.on_primary.default.hex}} !important;
 }
 #threadTree {
     background-color: var(--toolbar-bgcolor) !important;
@@ -130,10 +121,15 @@ tr[is="thread-card"].selected {
     background-color: var(--tab-selected-bgcolor) !important;
     color: var(--tab-selected-textcolor) !important;
 }
+tr[is="thread-card"][aria-selected="true"],
+tr[is="thread-card"].selected {
+    background-color: var(--tab-selected-bgcolor) !important;
+    color: {{colors.on_primary.default.hex}} !important;
+}
 tr[is="thread-card"][aria-selected="true"] .sender,
 tr[is="thread-card"][aria-selected="true"] .subject,
 tr[is="thread-card"][aria-selected="true"] .date {
-    color: var(--tab-selected-textcolor) !important;
+    color: {{colors.on_primary.default.hex}} !important;
 }
 
 /* Selected Email Content Summary Reading Header Desk */
@@ -167,7 +163,7 @@ tr[is="thread-card"][aria-selected="true"] .date {
     fill: var(--tab-selected-textcolor) !important;
 }
 
-/* Ensure the blue underlying selector line handles contrast nicely */
+/* Ensure the blue underlying selector line handles contrast */
 .tabmail-tab .tab-line[selected="true"] {
     background-color: var(--tab-selected-textcolor) !important;
 }
