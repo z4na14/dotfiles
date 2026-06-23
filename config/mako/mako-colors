@@ -2,7 +2,7 @@
 
 background-color=#101418
 text-color=#e0e2e8
-border-color=#9ecafc
+border-color=#99ccfa
 # Per-mode settings
 
 [mode=do-not-disturb]
