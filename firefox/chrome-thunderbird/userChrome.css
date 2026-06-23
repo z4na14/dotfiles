@@ -1,0 +1,47 @@
+/* ~/.thunderbird/<profile>/chrome/userChrome.css */
+@import url("matugen.css");
+
+:root {
+    /* 1. PRIMARY WINDOW LAYOUT & APP BACKGROUNDS */
+    --primary-background-color: var(--toolbar-bgcolor) !important;
+    --window-background-color: var(--toolbar-bgcolor) !important;
+    --layout-main-background: var(--toolbar-bgcolor) !important;
+    
+    /* 2. SIDEBAR NAVIGATION (FOLDER PANE) */
+    --sidebar-bg-color: var(--toolbar-bgcolor) !important;
+    --sidebar-text-color: var(--toolbar-color) !important;
+    
+    /* 3. MAIL & LIST VIEWS (THREAD PANE) */
+    --thread-pane-background: var(--toolbar-field-focus-background-color) !important;
+    --thread-pane-text-color: var(--toolbar-color) !important;
+    
+    /* 4. TOOLBARS, HEADERS, & SEARCH BARS */
+    --toolbar-background-color: var(--toolbar-bgcolor) !important;
+    --header-background-color: var(--toolbar-bgcolor) !important;
+    --search-box-background-color: var(--toolbar-field-background-color) !important;
+    
+    /* 5. ITEM SELECTIONS & HOVER HIGHLIGHTS */
+    --sidebar-highlight-background-color: var(--tab-selected-bgcolor) !important;
+    --sidebar-highlight-text-color: var(--tab-selected-textcolor) !important;
+    --list-selection-background-color: var(--tab-selected-bgcolor) !important;
+    --list-selection-text-color: var(--tab-selected-textcolor) !important;
+    --button-background-color-hover: rgba(255, 255, 255, 0.08) !important;
+    
+    /* 6. ACCENT INTERACTIVES (UNREAD COUNTS, BADGES) */
+    --accent-color: var(--purple-30) !important;
+}
+
+/* Hard structural fallback blocks to catch any stubborn container frames */
+#mail-toolbox, 
+#unifiedToolbar, 
+#tabs-toolbar, 
+#folderPane, 
+.main-header {
+    background-color: var(--toolbar-bgcolor) !important;
+    color: var(--toolbar-color) !important;
+}
+
+table[is="tree-view-table"] {
+    background-color: var(--toolbar-field-focus-background-color) !important;
+    color: var(--toolbar-color) !important;
+}

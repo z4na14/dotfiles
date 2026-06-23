@@ -17,6 +17,10 @@ input_path = '~/.config/matugen/templates/waybar-colors.css'
 output_path = '~/.config/waybar/colors.css'
 post_hook = 'systemctl --user restart waybar.service'
 
+[templates.firefox]
+input_path = '~/.config/matugen/templates/firefox-colors.css'
+output_path = '~/Documentos/dotfiles/firefox/matugen.css'
+
 [templates.gtk3]
 input_path = '~/.config/matugen/templates/gtk-colors.css'
 output_path = '~/.config/gtk-3.0/colors.css'
@@ -45,14 +49,27 @@ input_path = '~/.config/matugen/templates/zed-colors.json'
 output_path = '~/.config/zed/themes/matugen.json'
 
 [templates.fuzzel]
-input_path = '~/.config/matugen/templates/fuzzel.ini'
+input_path = '~/.config/matugen/templates/fuzzel-colors.ini'
 output_path = '~/.config/fuzzel/colors.ini'
 
 [templates.mako]
-input_path = '~/.config/matugen/templates/mako'
+input_path = '~/.config/matugen/templates/mako-colors'
 output_path = '~/.config/mako/mako-colors'
 post_hook = 'makoctl reload'
 
 [templates.vesktop]
-input_path = '~/.config/matugen/templates/discord.css'
+input_path = '~/.config/matugen/templates/discord-colors.css'
 output_path = '~/.config/vesktop/themes/midnight-discord.css'
+
+[templates.obsidian]
+input_path = '~/.config/matugen/templates/obsidian-colors.css'
+output_path = '~/Documentos/personal-vlt/.obsidian/snippets/matugen.css'
+
+[templates.zathura]
+input_path = '~/.config/matugen/templates/zathura-colors'
+output_path = '~/.config/zathura/zathurarc'
+
+[templates.btop]
+input_path = '~/.config/matugen/templates/btop-colors.theme'
+output_path = '~/.config/btop/themes/matugen.theme'
+post_hook = 'pkill -USR2 btop || true'

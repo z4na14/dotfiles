@@ -1,0 +1,60 @@
+/* ~/.mozilla/firefox/<profile>/chrome/userChrome.css */
+@import url("matugen.css");
+
+/* 1. MAIN TOOLBARS & WINDOW CONTAINER */
+#navigator-toolbox,
+#nav-bar,
+#PersonalToolbar,
+#titlebar {
+    background-color: var(--toolbar-bgcolor) !important;
+    color: var(--toolbar-color) !important;
+}
+
+/* 2. URL / ADDRESS BAR */
+#urlbar-background,
+#searchbar {
+    background-color: var(--toolbar-field-background-color) !important;
+    border: 1px solid var(--toolbar-field-border-color) !important;
+}
+
+#urlbar[focused] #urlbar-background {
+    background-color: var(--toolbar-field-focus-background-color) !important;
+    border-color: var(--purple-30) !important;
+}
+
+#urlbar-input,
+#searchbar .searchbar-textbox {
+    color: var(--toolbar-field-color) !important;
+}
+
+#urlbar[focused] #urlbar-input {
+    color: var(--toolbar-field-focus-color) !important;
+}
+
+/* 3. TABS NAVIGATION */
+/* Inactive Tabs */
+.tabbrowser-tab {
+    color: var(--tab-text-color) !important;
+}
+.tab-background {
+    background-color: var(--tab-background-color) !important;
+}
+
+/* Active / Selected Tab */
+.tabbrowser-tab[selected="true"] {
+    color: var(--tab-selected-textcolor) !important;
+}
+.tabbrowser-tab[selected="true"] .tab-background {
+    background-color: var(--tab-selected-bgcolor) !important;
+}
+
+/* Tab Hover state */
+.tabbrowser-tab:hover:not([selected="true"]) .tab-background {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* 4. MISC INTERACTIVE BUTTONS */
+#back-button, #forward-button, #reload-button, #stop-button, #PanelUI-menu-button {
+    fill: var(--toolbar-color) !important;
+    color: var(--toolbar-color) !important;
+}

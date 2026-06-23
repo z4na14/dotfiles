@@ -1,0 +1,32 @@
+/* ~/.config/matugen/templates/firefox-colors.css */
+:root {
+    /* Main Window Background & Accent Colors */
+    --lwt-accent-color: #1c2023 !important;
+    --lwt-text-color: #dfe3e7 !important;
+    
+    /* Toolbars & Address Bar */
+    --toolbar-bgcolor: #1c2023 !important;
+    --toolbar-color: #dfe3e7 !important;
+    --toolbar-field-background-color: #262b2e !important;
+    --toolbar-field-color: #dfe3e7 !important;
+    --toolbar-field-focus-background-color: #0f1417 !important;
+    --toolbar-field-focus-color: #dfe3e7 !important;
+    --toolbar-field-border-color: transparent !important;
+    
+    /* Tabs */
+    --tab-background-color: transparent !important;
+    --tab-text-color: #c0c7cd !important;
+    --tab-selected-bgcolor: #004c6a !important;
+    --tab-selected-textcolor: #c4e7ff !important;
+    
+    /* Buttons & Selection */
+    --purple-30: #90cef4 !important;
+    --button-primary-bgcolor: #90cef4 !important;
+    --button-primary-color: #00344a !important;
+    --ui-text-select-background-color: #90cef4 !important;
+}
+
+/* Ensure the layout wrapper respects the window background changes */
+#navigator-toolbox {
+    background-color: var(--toolbar-bgcolor) !important;
+}

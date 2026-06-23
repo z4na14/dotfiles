@@ -9,7 +9,7 @@ hl.bind(mainMod .. " + SPACE", hl.dsp.exec_cmd("hyprctl switchxkblayout all next
 -- App launchers
 hl.bind(mainMod .. " + RETURN",      hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + Q",           hl.dsp.window.close())
---hl.bind(mainMod .. " + M",           hl.dsp.exec_cmd(""))
+hl.bind(mainMod .. " + M",           hl.dsp.exec_cmd("~/.config/fuzzel/scripts/poweroff.sh"))
 hl.bind(mainMod .. " + L",           hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + E",           hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + F",           hl.dsp.window.float({ action = "toggle" }))
