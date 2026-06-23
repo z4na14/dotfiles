@@ -79,6 +79,7 @@ fi
 
 if $INSTALL_LAPTOP; then
     pacman -S $LAPTOP_PACKAGES
+    echo -e "[General]\nEnableNetworkConfiguration=true" > /etc/iwd/main.conf
 fi
 
 if $INSTALL_NVIDIA; then
@@ -96,12 +97,17 @@ systemctl --user enable --now bluetooth.service
 systemctl --user enable --now NetworkManager.service
 
 # Install cursor systemwide
+#mkdir temp
 #hyprcursor-util -x /usr/share/icons/<CURSOR> -o temp
 #hyprcursor-util -c temp/<CURSOR> -o temp
 #sudo mv ./temp/<CURSOR>_Extracted\ Theme /usr/share/icons/<CURSOR>-Hyprcursor
+#rm -rf temp
 
 # Hide buttons from windows
 #gsettings set org.gnome.desktop.wm.preferences button-layout :
 
+# Prefer dark settings
+#gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+
 # Move clear hisotry desktop entry
-#sudo cp clear_history.desktop ~/.local/share/applications/clear_history.desktop
+#sudo cp clear-history.desktop ~/.local/share/applications
