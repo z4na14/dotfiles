@@ -69,9 +69,9 @@ output_path = '~/.config/vesktop/themes/midnight-discord.css'
 input_path = '~/.config/matugen/templates/obsidian-colors.css'
 output_path = '~/Documentos/personal-vlt/.obsidian/snippets/matugen.css'
 
-[templates.zathura]
-input_path = '~/.config/matugen/templates/zathura-colors'
-output_path = '~/.config/zathura/zathurarc'
+#[templates.zathura]
+#input_path = '~/.config/matugen/templates/zathura-colors'
+#output_path = '~/.config/zathura/zathurarc'
 
 [templates.btop]
 input_path = '~/.config/matugen/templates/btop-colors.theme'

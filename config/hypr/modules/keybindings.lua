@@ -18,7 +18,9 @@ hl.bind(mainMod .. " + R",           hl.dsp.exec_cmd(menu))
 hl.bind("CTRL + SHIFT + escape",     hl.dsp.exec_cmd("kitty btop"))
 hl.bind(mainMod .. " + N",           hl.dsp.exec_cmd("kitty impala"))
 
-hl.bind(mainMod .. " + P", hl.dsp.exec_cmd('ls ~/Imágenes/wallpapers | fuzzel -d --width=30 -l 8 | sed "s|^|$HOME/Imágenes/wallpapers/|" | xargs -I {} kitty matugen image {}'))
+-- Change background
+hl.bind(mainMod .. " + P", hl.dsp.exec_cmd('matugen image "$(ls ~/Imágenes/wallpapers | fuzzel -d --width=30 -l 8 | sed "s|^|$HOME/Imágenes/wallpapers/|")" --prefer=saturation'))
+hl.bind(mainMod .. " + SHIFT + P", hl.dsp.exec_cmd('matugen image "$HOME/Imágenes/wallpapers/bg$(( $(od -An -N4 -tu4 /dev/random) % $(ls -1 $HOME/Imágenes/wallpapers/bg*.jpg | wc -l) )).jpg" --prefer=saturation'))
 
 -- Screenshots
 -- Select a region and copy directly to clipboard (No Swappy, no file saved)
