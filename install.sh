@@ -41,7 +41,7 @@ SHELL_PACKAGES="kitty zsh mako pipewire-pulse wireplumber uwsm xdg-desktop-porta
                 waybar awww grim slurp swappy fuzzel cliphist thunar thunar-volman \
                 ristretto sddm fastfetch hyprlock hypridle bluez bluez-utils blueman networkmanager \
                 nm-connection-editor pavucontrol gvfs gvfs-smb gvfs-mtp gvfs-gphoto2 gvfs-dnssd \
-		duf dust bat lsd fzf qt6-virtualkeyboard qt6-imageformats"
+		duf dust bat lsd fzf qt6-virtualkeyboard qt6-imageformats qt5-graphicaleffects"
 
 # Utilities
 UTILITY_PACKAGES="obs-studio mpv zathura zathura-pdf-poppler xarchiver unrar \
