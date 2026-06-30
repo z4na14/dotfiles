@@ -1,28 +1,28 @@
 :root {
     /* Main Window Background & Accent Colors */
-    --lwt-accent-color: #111318 !important;
-    --lwt-text-color: #e2e2e9 !important;
+    --lwt-accent-color: #0e1415 !important;
+    --lwt-text-color: #dde4e4 !important;
 
     /* Toolbars & Address Bar */
-    --toolbar-bgcolor: #111318 !important;
-    --toolbar-color: #e2e2e9 !important;
-    --toolbar-field-background-color: #111318 !important;
-    --toolbar-field-color: #e2e2e9 !important;
-    --toolbar-field-focus-background-color: #111318 !important;
-    --toolbar-field-focus-color: #e2e2e9 !important;
-    --toolbar-field-border-color: #8e9099 !important;
+    --toolbar-bgcolor: #0e1415 !important;
+    --toolbar-color: #dde4e4 !important;
+    --toolbar-field-background-color: #0e1415 !important;
+    --toolbar-field-color: #dde4e4 !important;
+    --toolbar-field-focus-background-color: #0e1415 !important;
+    --toolbar-field-focus-color: #dde4e4 !important;
+    --toolbar-field-border-color: #899393 !important;
 
     /* Tabs */
     --tab-background-color: transparent !important;
-    --tab-text-color: #e2e2e9 !important;
-    --tab-selected-bgcolor: #aac7ff !important;
-    --tab-selected-textcolor: #0b305f !important;
+    --tab-text-color: #dde4e4 !important;
+    --tab-selected-bgcolor: #80d4da !important;
+    --tab-selected-textcolor: #003739 !important;
 
     /* Buttons & Selection */
-    --purple-30: #aac7ff !important;
-    --button-primary-bgcolor: #aac7ff !important;
-    --button-primary-color: #0b305f !important;
-    --ui-text-select-background-color: #aac7ff !important;
+    --purple-30: #80d4da !important;
+    --button-primary-bgcolor: #80d4da !important;
+    --button-primary-color: #003739 !important;
+    --ui-text-select-background-color: #80d4da !important;
 }
 
 #navigator-toolbox,
@@ -71,7 +71,7 @@
 
 /* Tab Hover state */
 .tabbrowser-tab:hover:not([selected="true"]) .tab-background {
-    background-color: #44474e !important;
+    background-color: #3f4949 !important;
 }
 
 #back-button, #forward-button, #reload-button, #stop-button, #PanelUI-menu-button {
