@@ -58,7 +58,7 @@ APPS_CACHY="protonup-qt ventoy-bin vesktop-bin helium-browser-bin proton-cachyos
 # Normal apps for myself
 APPS_BASE="anki obsidian gimp inkscape blender dolphin-emu yt-dlp easytag filezilla keepassxc \
            virt-manager edk2-ovmf swtpm gparted grsync libreoffice-fresh-es vim zed gamescope \
-           steam thunderbird"
+           steam thunderbird qemu-full"
 
 
 # Install required packages
@@ -93,8 +93,8 @@ fi
 # Services
 systemctl --user enable --now hyprpolkitagent.service
 systemctl --user enable --now waybar.service
-systemctl --user enable --now bluetooth.service
-systemctl --user enable --now NetworkManager.service
+systemctl enable --now bluetooth.service
+systemctl enable --now NetworkManager.service
 
 # Install cursor systemwide
 #mkdir temp
@@ -111,3 +111,10 @@ systemctl --user enable --now NetworkManager.service
 
 # Move clear hisotry desktop entry
 #sudo cp clear-history.desktop ~/.local/share/applications
+
+# Fix network in libvirt
+#systemctl enable --now libvirtd.socket
+#for server in qemud networkd storaged nodedevd secretd nwfilterd; do
+#    systemctl enable --now virt$server.socket
+#done
+#sudo echo 'firewall_backend = "iptables"' >/etc/libvirt/network.conf

@@ -1,24 +1,24 @@
 :root {
-    --lwt-accent-color: #111318 !important;
-    --lwt-text-color: #e2e2e9 !important;
+    --lwt-accent-color: #0e1415 !important;
+    --lwt-text-color: #dde4e4 !important;
 
-    --toolbar-bgcolor: #111318 !important;
-    --toolbar-color: #e2e2e9 !important;
-    --toolbar-field-background-color: #111318 !important;
-    --toolbar-field-color: #e2e2e9 !important;
-    --toolbar-field-focus-background-color: #111318 !important;
-    --toolbar-field-focus-color: #e2e2e9 !important;
-    --toolbar-field-border-color: #8e9099 !important;
+    --toolbar-bgcolor: #0e1415 !important;
+    --toolbar-color: #dde4e4 !important;
+    --toolbar-field-background-color: #0e1415 !important;
+    --toolbar-field-color: #dde4e4 !important;
+    --toolbar-field-focus-background-color: #0e1415 !important;
+    --toolbar-field-focus-color: #dde4e4 !important;
+    --toolbar-field-border-color: #899393 !important;
 
     --tab-background-color: transparent !important;
-    --tab-text-color: #e2e2e9 !important;
-    --tab-selected-bgcolor: #aac7ff !important;
-    --tab-selected-textcolor: #0b305f !important;
+    --tab-text-color: #dde4e4 !important;
+    --tab-selected-bgcolor: #80d4da !important;
+    --tab-selected-textcolor: #003739 !important;
 
-    --purple-30: #aac7ff !important;
-    --button-primary-bgcolor: #aac7ff !important;
-    --button-primary-color: #0b305f !important;
-    --ui-text-select-background-color: #aac7ff !important;
+    --purple-30: #80d4da !important;
+    --button-primary-bgcolor: #80d4da !important;
+    --button-primary-color: #003739 !important;
+    --ui-text-select-background-color: #80d4da !important;
 
     --bg-color: var(--toolbar-bgcolor) !important;
     --layout-background-0: var(--toolbar-bgcolor) !important;
@@ -64,7 +64,7 @@
 
     /* Layout Framework Separators */
     --color-gray-70: var(--toolbar-field-border-color) !important;
-    --color-gray-50: #44474e !important;
+    --color-gray-50: #3f4949 !important;
 }
 
 #messengerWindow,
@@ -103,11 +103,11 @@ li[is="folder-tree-row"][aria-selected="true"] > .container > .name {
 /* Thread Main Message Stream */
 #threadPaneHeaderBar {
     background-color: var(--tab-selected-bgcolor) !important;
-    color: #0b305f !important;
+    color: #003739 !important;
 }
 #threadPaneFolderName,
 #threadPaneFolderCount {
-    color: #0b305f !important;
+    color: #003739 !important;
 }
 #threadTree {
     background-color: var(--toolbar-bgcolor) !important;
@@ -124,12 +124,12 @@ tr[is="thread-card"].selected {
 tr[is="thread-card"][aria-selected="true"],
 tr[is="thread-card"].selected {
     background-color: var(--tab-selected-bgcolor) !important;
-    color: #0b305f !important;
+    color: #003739 !important;
 }
 tr[is="thread-card"][aria-selected="true"] .sender,
 tr[is="thread-card"][aria-selected="true"] .subject,
 tr[is="thread-card"][aria-selected="true"] .date {
-    color: #0b305f !important;
+    color: #003739 !important;
 }
 
 /* Selected Email Content Summary Reading Header Desk */
