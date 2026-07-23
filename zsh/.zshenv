@@ -28,6 +28,9 @@ alias dc='cd'
 alias sl='ls'
 alias sudp='sudo'
 
+# uni shet
+alias uni-vpn='sudo -E gpclient connect --browser default myvpn.uc3m.es'
+
 
 # yays and yayr, for easily installing and removing YAY packages
 # mainly stolen and adapted from omarchy and ChrisTitusTech

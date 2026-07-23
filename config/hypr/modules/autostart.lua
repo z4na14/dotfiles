@@ -4,5 +4,7 @@ hl.on("hyprland.start", function()
     -- Background daemon
     hl.exec_cmd("awww-daemon")
     -- D-Bus sync
-    hl.exec_cmd("dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP")
+    hl.exec_cmd("dbus-update-activation-environment --systemd --all")
+    -- Theming?
+    hl.exec_cmd("systemctl --user import-environment QT_QPA_PLATFORMTHEME")
 end)
