@@ -36,8 +36,8 @@ done
 MAIN_PACKAGES="hyprland aquamarine hyprlang hyprcursor hyprutils \
                hyprgraphics hyprshutdown"
 SHELL_PACKAGES="kitty zsh mako pipewire-pulse wireplumber uwsm xdg-desktop-portal-hyprland \
-                xdg-user-dirs hyprpolkitagent qt5-wayland qt6-wayland ttf-lilex-nerd \
-                ttf-jetbrains-mono-nerd noto-fonts noto-fonts-emoji \
+		xdg-desktop-portal-gtk xdg-user-dirs hyprpolkitagent qt5-wayland qt6-wayland \
+		ttf-lilex-nerd ttf-jetbrains-mono-nerd noto-fonts noto-fonts-emoji \
                 waybar awww grim slurp swappy fuzzel cliphist thunar thunar-volman \
                 ristretto sddm fastfetch hyprlock hypridle bluez bluez-utils blueman networkmanager \
                 nm-connection-editor pavucontrol gvfs gvfs-smb gvfs-mtp gvfs-gphoto2 gvfs-dnssd \
@@ -54,11 +54,11 @@ LAPTOP_PACKAGES="brightnessctl tlp iwd impala"
 NVIDIA_PACKAGES="nvidia-utils lib32-nvidia-utils libva-nvidia-driver"
 
 # CachyOS specifics
-APPS_CACHY="protonup-qt ventoy-bin vesktop-bin helium-browser-bin proton-cachyos-slr"
+APPS_CACHY="protonup-qt ventoy-bin helium-browser-bin proton-cachyos-slr"
 # Normal apps for myself
 APPS_BASE="anki obsidian gimp inkscape blender dolphin-emu yt-dlp easytag filezilla keepassxc \
            virt-manager edk2-ovmf swtpm gparted grsync libreoffice-fresh-es vim zed gamescope \
-           steam thunderbird qemu-full"
+           steam thunderbird qemu-full tenacity"
 
 
 # Install required packages
@@ -118,3 +118,5 @@ systemctl enable --now NetworkManager.service
 #    systemctl enable --now virt$server.socket
 #done
 #sudo echo 'firewall_backend = "iptables"' >/etc/libvirt/network.conf
+#sudo virsh net-start default
+#sudo virsh net-autostart default

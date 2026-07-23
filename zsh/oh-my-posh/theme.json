@@ -5,6 +5,16 @@
       "alignment": "left",
       "segments": [
         {
+          "type": "python",
+          "style": "plain",
+          "foreground": "#9B59B6",
+          "template": "({{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }}{{ else }}{{ .Full }}{{ end }}{{ end }}) ",
+          "properties": {
+            "display_mode": "environment",
+            "home_enabled": true
+          }
+        },
+        {
           "foreground": "#43D426",
           "style": "plain",
           "template": "<b>{{ .UserName }}@{{ .HostName }}</b> ",
@@ -48,4 +58,3 @@
   ],
   "version": 4
 }
-
