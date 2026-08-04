@@ -4,6 +4,8 @@ hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
 hl.env("ELECTRON_OZONE_PLATFORM_HINT", "auto")
 hl.env("NVD_BACKEND", "direct")
 hl.env("GBM_BACKEND", "nvidia-drm")
+hl.env("WAYLAND_DISPLAY", "wayland-1")
+hl.env("XDG_RUNTIME_DIR", "/run/user/1000")
 
 hl.env("SSH_AUTH_SOCK", "$XDG_RUNTIME_DIR/ssh-agent.socket")
 

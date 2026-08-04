@@ -142,6 +142,6 @@
   },
   "disable_ai": true,
   "ui_font_size": 16,
-  "buffer_font_size": 14.0,
+  "buffer_font_size": 15.0,
   "theme": "Matugen Dark",
 }
