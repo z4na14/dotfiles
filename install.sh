@@ -41,7 +41,8 @@ SHELL_PACKAGES="kitty zsh mako pipewire-pulse wireplumber uwsm xdg-desktop-porta
                 waybar awww grim slurp swappy fuzzel cliphist thunar thunar-volman \
                 ristretto sddm fastfetch hyprlock hypridle bluez bluez-utils blueman networkmanager \
                 nm-connection-editor pavucontrol gvfs gvfs-smb gvfs-mtp gvfs-gphoto2 gvfs-dnssd \
-		duf dust bat lsd fzf qt6-virtualkeyboard qt6-imageformats qt5-graphicaleffects"
+		duf dust bat lsd fzf qt6-virtualkeyboard qt6-imageformats qt5-graphicaleffects \
+		gnome-keyring xorg-xhost"
 
 # Utilities
 UTILITY_PACKAGES="obs-studio mpv zathura zathura-pdf-poppler xarchiver unrar \
@@ -120,3 +121,6 @@ systemctl enable --now NetworkManager.service
 #sudo echo 'firewall_backend = "iptables"' >/etc/libvirt/network.conf
 #sudo virsh net-start default
 #sudo virsh net-autostart default
+
+# Fix xwayland sudo apps
+#xhost +local:root
