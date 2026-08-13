@@ -37,3 +37,6 @@ map('c', '<C-h>',     '<C-w>')
 map('i', '<C-z>', '<C-o>u', { desc = 'Undo in insert mode' })
 map('i', '<C-S-z>', '<C-o><C-r>', { desc = 'Redo in insert mode' })
 
+-- Buffer switching
+map('n', '<Tab>', ':bnext<CR>', { desc = 'Next buffer' })
+map('n', '<S-Tab>', ':bprev<CR>', { desc = 'Previous buffer' })
