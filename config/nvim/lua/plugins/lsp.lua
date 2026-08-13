@@ -1,13 +1,21 @@
 return {
+
+  -- Autoformatter
   {
     'stevearc/conform.nvim',
     opts = {},
   },
+
+
+  -- LSP manager
   {
     "williamboman/mason.nvim",
     cmd = "Mason",
     config = true,
   },
+
+
+  -- LSP handler
   {
     "neovim/nvim-lspconfig",
     dependencies = {
@@ -15,6 +23,7 @@ return {
       "williamboman/mason-lspconfig.nvim",
       "saghen/blink.cmp",
     },
+
     config = function()
       local capabilities = require("blink.cmp").get_lsp_capabilities()
 
@@ -42,18 +51,6 @@ return {
         })
         vim.lsp.enable(server)
       end
-
-      -- Custom configuration for lua_ls
-      vim.lsp.config("lua_ls", {
-        capabilities = capabilities,
-        settings = {
-          Lua = {
-            diagnostics = { globals = { "vim" } },
-            workspace = { checkThirdParty = false },
-          },
-        },
-      })
-      vim.lsp.enable("lua_ls")
     end,
   },
 }
