@@ -58,7 +58,7 @@ NVIDIA_PACKAGES="nvidia-utils lib32-nvidia-utils libva-nvidia-driver"
 APPS_CACHY="protonup-qt ventoy-bin helium-browser-bin proton-cachyos-slr"
 # Normal apps for myself
 APPS_BASE="anki obsidian gimp inkscape blender dolphin-emu yt-dlp easytag filezilla keepassxc \
-           virt-manager edk2-ovmf swtpm gparted grsync libreoffice-fresh-es vim zed gamescope \
+           virt-manager edk2-ovmf swtpm gparted grsync libreoffice-fresh-es nvim zed gamescope \
            steam thunderbird qemu-full tenacity"
 
 

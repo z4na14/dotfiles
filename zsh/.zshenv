@@ -17,6 +17,8 @@ alias sybau='sudo pacman -Syyu'
 alias open='xdg-open'
 alias copy='wl-copy <'
 alias clfile='cat /dev/null >'
+alias gosmb='cd /run/user/1000/gvfs'
+alias vim='nvim'
 
 # typos uwu
 alias ,,='cd ..'
