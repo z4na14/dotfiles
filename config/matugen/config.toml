@@ -48,9 +48,10 @@ input_path = '~/.config/matugen/templates/kitty-colors.css'
 output_path = '~/.config/kitty/themes/Matugen.conf'
 post_hook = "kitty +kitten themes --reload-in=all Matugen"
 
-[templates.zed]
-input_path = '~/.config/matugen/templates/zed-colors.json'
-output_path = '~/.config/zed/themes/matugen.json'
+[templates.neovim]
+input_path = "~/.config/matugen/templates/nvim-colors.json"
+output_path = "~/.config/nvim/colorscheme.json"
+post_hook = "pkill -SIGUSR1 nvim"
 
 [templates.fuzzel]
 input_path = '~/.config/matugen/templates/fuzzel-colors.ini'

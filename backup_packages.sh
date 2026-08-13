@@ -3,4 +3,3 @@
 pacman -Qentq >packages-copy.txt
 # AUR packages
 pacman -Qmeqt >aur-packages-copy.txt
-
