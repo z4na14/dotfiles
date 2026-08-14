@@ -1,9 +1,9 @@
 return {
   "nvim-treesitter/nvim-treesitter",
-  
+
   build = ":TSUpdate",
   lazy = false, -- Load on startup so it compiles/installs cleanly on first boot
-  
+
   config = function()
     local status, treesitter = pcall(require, "nvim-treesitter.configs")
     if not status then
@@ -37,5 +37,12 @@ return {
         enable = true,
       },
     })
+
+    vim.opt.foldmethod = "expr"
+    vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+    vim.opt.foldcolumn = "1"
+    vim.opt.foldlevel = 99
+    vim.opt.foldlevelstart = 99
+    vim.opt.foldenable = true
   end,
 }
