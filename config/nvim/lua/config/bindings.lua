@@ -40,3 +40,9 @@ map('i', '<C-S-z>', '<C-o><C-r>', { desc = 'Redo in insert mode' })
 -- Buffer switching
 map('n', '<Tab>', ':bnext<CR>', { desc = 'Next buffer' })
 map('n', '<S-Tab>', ':bprev<CR>', { desc = 'Previous buffer' })
+
+-- Diagnostics
+map('n', '<leader>de', vim.diagnostic.open_float, { buffer = buf, desc = 'Show Diagnostic' })
+map('n', '<leader>dj', vim.diagnostic.goto_next, { buffer = buf, desc = 'Next Diagnostic' })
+map('n', '<leader>dk', vim.diagnostic.goto_prev, { buffer = buf, desc = 'Previous Diagnostic' })
+map('n', '<leader>dq', vim.diagnostic.setloclist, { buffer = buf, desc = 'Diagnostics to Loclist' })
