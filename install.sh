@@ -11,23 +11,23 @@ INSTALL_NVIDIA=false
 INSTALL_CUSTOM=false
 
 for arg in "$@"; do
-    if [[ arg == "-P" ]]; then
+    if [[ $arg == "-P" ]]; then
         INSTALL_PACKAGES=true
     fi
 
-    if [[ arg == "-U" ]]; then
+    if [[ $arg == "-U" ]]; then
         INSTALL_UTILS=true
     fi
 
-    if [[ arg == "-L" ]]; then
+    if [[ $arg == "-L" ]]; then
         INSTALL_LAPTOP=true
     fi
 
-    if [[ arg == "-N" ]]; then
+    if [[ $arg == "-N" ]]; then
         INSTALL_NVIDIA=true
     fi
 
-    if [[ arg == "-C" ]]; then
+    if [[ $arg == "-C" ]]; then
         INSTALL_CUSTOM=true
     fi
 done
@@ -72,24 +72,24 @@ NVIM_DEPS="nodejs npm python python-pip ripgrep fd prettier"
 # INSTALL_CUSTOM
 
 if $INSTALL_PACKAGES; then
-    pacman -S $MAIN_PACKAGES $SHELL_PACKAGES
+    pacman -S "$MAIN_PACKAGES" "$SHELL_PACKAGES"
 fi
 
 if $INSTALL_UTILS; then
-    pacman -S $UTILITY_PACKAGES
+    pacman -S "$UTILITY_PACKAGES"
 fi
 
 if $INSTALL_LAPTOP; then
-    pacman -S $LAPTOP_PACKAGES
+    pacman -S "$LAPTOP_PACKAGES"
     echo -e "[General]\nEnableNetworkConfiguration=true" > /etc/iwd/main.conf
 fi
 
 if $INSTALL_NVIDIA; then
-    pacman -S $NVIDIA_PACKAGES
+    pacman -S "$NVIDIA_PACKAGES"
 fi
 
 if $INSTALL_CUSTOM; then
-    pacman -S $APPS_BASE $APPS_CACHY
+    pacman -S "$APPS_BASE" "$APPS_CACHY" "$NVIM_DEPS"
 fi
 
 # Services
@@ -105,23 +105,28 @@ systemctl enable --now NetworkManager.service
 #sudo mv ./temp/<CURSOR>_Extracted\ Theme /usr/share/icons/<CURSOR>-Hyprcursor
 #rm -rf temp
 
-# Hide buttons from windows
-#gsettings set org.gnome.desktop.wm.preferences button-layout :
 
+# GTK settings
+# Hide buttons from windows
+gsettings set org.gnome.desktop.wm.preferences button-layout :
 # Prefer dark settings
-#gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+
 
 # Move clear hisotry desktop entry
-#sudo cp clear-history.desktop ~/.local/share/applications
+sudo cp clear-history.desktop ~/.local/share/applications
+
 
 # Fix network in libvirt
-#systemctl enable --now libvirtd.socket
-#for server in qemud networkd storaged nodedevd secretd nwfilterd; do
-#    systemctl enable --now virt$server.socket
-#done
-#sudo echo 'firewall_backend = "iptables"' >/etc/libvirt/network.conf
-#sudo virsh net-start default
-#sudo virsh net-autostart default
+systemctl enable --now libvirtd.socket
+for server in qemud networkd storaged nodedevd secretd nwfilterd; do
+    systemctl enable --now virt$server.socket
+done
+echo 'firewall_backend = "iptables"' | sudo tee /etc/libvirt/network.conf
+sudo virsh net-start default
+sudo virsh net-autostart default
+
 
 # Fix xwayland sudo apps
-#xhost +local:root
+xhost +local:root
+
