@@ -42,7 +42,8 @@ SHELL_PACKAGES="kitty zsh mako pipewire-pulse wireplumber uwsm xdg-desktop-porta
                 ristretto sddm fastfetch hyprlock hypridle bluez bluez-utils blueman networkmanager \
                 nm-connection-editor pavucontrol gvfs gvfs-smb gvfs-mtp gvfs-gphoto2 gvfs-dnssd \
                 duf dust bat lsd fzf qt6-virtualkeyboard qt6-imageformats qt5-graphicaleffects \
-                gnome-keyring xorg-xhost"
+                gnome-keyring xorg-xhost vimiv yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide \
+                resvg imagemagick ffmpegthumbnailer tumbler"
 
 # Utilities
 UTILITY_PACKAGES="obs-studio mpv zathura zathura-pdf-poppler xarchiver unrar \

@@ -46,3 +46,20 @@ map('n', '<leader>de', vim.diagnostic.open_float, { buffer = buf, desc = 'Show D
 map('n', '<leader>dj', vim.diagnostic.goto_next, { buffer = buf, desc = 'Next Diagnostic' })
 map('n', '<leader>dk', vim.diagnostic.goto_prev, { buffer = buf, desc = 'Previous Diagnostic' })
 map('n', '<leader>dq', vim.diagnostic.setloclist, { buffer = buf, desc = 'Diagnostics to Loclist' })
+
+-- Duplicate current line (Insert mode), keeps cursor in place, stays in Insert mode
+map('i', '<C-d>', function()
+  local line = vim.api.nvim_get_current_line()
+  local row, col = unpack(vim.api.nvim_win_get_cursor(0))
+  vim.api.nvim_buf_set_lines(0, row, row, false, { line })
+  vim.api.nvim_win_set_cursor(0, { row + 1, col })
+end, { desc = 'Duplicate line' })
+
+-- Duplicate selected lines (Visual mode), places duplicate below selection
+map('v', '<C-d>', function()
+  local start_line = vim.fn.line("'<")
+  local end_line = vim.fn.line("'>")
+  local lines = vim.api.nvim_buf_get_lines(0, start_line - 1, end_line, false)
+  vim.api.nvim_buf_set_lines(0, end_line, end_line, false, lines)
+  vim.api.nvim_win_set_cursor(0, { end_line + #lines, col or 0 })
+end, { desc = 'Duplicate selection' })

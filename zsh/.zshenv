@@ -19,6 +19,7 @@ alias copy='wl-copy <'
 alias clfile='cat /dev/null >'
 alias gosmb='cd /run/user/1000/gvfs'
 alias vim='nvim'
+alias vi='nvim'
 
 # typos uwu
 alias ,,='cd ..'
