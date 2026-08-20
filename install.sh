@@ -4,6 +4,8 @@
 # along minimal utilities that I use everyday, and linking all required files
 # in the respective folders
 
+sudo pacman -Syy
+
 INSTALL_PACKAGES=false
 INSTALL_UTILS=false
 INSTALL_LAPTOP=false
@@ -43,7 +45,8 @@ SHELL_PACKAGES="kitty zsh mako pipewire-pulse wireplumber uwsm xdg-desktop-porta
                 nm-connection-editor pavucontrol gvfs gvfs-smb gvfs-mtp gvfs-gphoto2 gvfs-dnssd \
                 duf dust bat lsd fzf qt6-virtualkeyboard qt6-imageformats qt5-graphicaleffects \
                 gnome-keyring xorg-xhost vimiv yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide \
-                resvg imagemagick ffmpegthumbnailer tumbler"
+                resvg imagemagick ffmpegthumbnailer tumbler qt5-quickcontrols qt5-quickcontrols2 \
+                qt6-declarative qt6-svg xdg-utils shared-mime-info xdg-desktop-portal"
 
 # Utilities
 UTILITY_PACKAGES="obs-studio mpv zathura zathura-pdf-poppler xarchiver unrar \
@@ -73,38 +76,42 @@ NVIM_DEPS="nodejs npm python python-pip ripgrep fd prettier"
 # INSTALL_CUSTOM
 
 if $INSTALL_PACKAGES; then
-    pacman -S "$MAIN_PACKAGES" "$SHELL_PACKAGES"
+    sudo pacman -S $MAIN_PACKAGES $SHELL_PACKAGES
 fi
 
 if $INSTALL_UTILS; then
-    pacman -S "$UTILITY_PACKAGES"
+    sudo pacman -S $UTILITY_PACKAGES
 fi
 
 if $INSTALL_LAPTOP; then
-    pacman -S "$LAPTOP_PACKAGES"
+    sudo pacman -S $LAPTOP_PACKAGES
     echo -e "[General]\nEnableNetworkConfiguration=true" > /etc/iwd/main.conf
 fi
 
 if $INSTALL_NVIDIA; then
-    pacman -S "$NVIDIA_PACKAGES"
+    sudo pacman -S $NVIDIA_PACKAGES
 fi
 
 if $INSTALL_CUSTOM; then
-    pacman -S "$APPS_BASE" "$APPS_CACHY" "$NVIM_DEPS"
+    sudo pacman -S $APPS_BASE $APPS_CACHY $NVIM_DEPS
 fi
+
 
 # Services
 systemctl --user enable --now hyprpolkitagent.service
 systemctl --user enable --now waybar.service
+systemctl --user enable --now gnome-keyring-daemon.service
 systemctl enable --now bluetooth.service
 systemctl enable --now NetworkManager.service
+systemctl enable --now sddm.service
+
 
 # Install cursor systemwide
-#mkdir temp
-#hyprcursor-util -x /usr/share/icons/<CURSOR> -o temp
-#hyprcursor-util -c temp/<CURSOR> -o temp
-#sudo mv ./temp/<CURSOR>_Extracted\ Theme /usr/share/icons/<CURSOR>-Hyprcursor
-#rm -rf temp
+mkdir temp
+hyprcursor-util -x /usr/share/icons/Bibata-Modern-Ice -o temp
+hyprcursor-util -c temp/Bibata-Modern-Ice -o temp
+sudo mv ./temp/extracted_Bibata-Modern-Ice /usr/share/icons/Bibata-Modern-Ice-Hyprcursor
+rm -rf temp
 
 
 # GTK settings
