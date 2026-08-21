@@ -120,6 +120,8 @@ gsettings set org.gnome.desktop.wm.preferences button-layout :
 # Prefer dark settings
 gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
 
+# Make Git use libsecret for store
+git config --global credential.helper /usr/lib/git-core/git-credential-libsecret
 
 # Move clear hisotry desktop entry
 sudo cp clear-history.desktop ~/.local/share/applications
