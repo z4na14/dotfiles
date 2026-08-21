@@ -63,3 +63,5 @@ map('v', '<C-d>', function()
   vim.api.nvim_buf_set_lines(0, end_line, end_line, false, lines)
   vim.api.nvim_win_set_cursor(0, { end_line + #lines, col or 0 })
 end, { desc = 'Duplicate selection' })
+
+map('n', '<C-q>', ':bp<bar>bd #<CR>', { desc = 'Close buffer, keep window layout' })
