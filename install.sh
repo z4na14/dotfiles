@@ -50,7 +50,7 @@ SHELL_PACKAGES="kitty zsh mako pipewire-pulse wireplumber uwsm xdg-desktop-porta
 
 # Utilities
 UTILITY_PACKAGES="obs-studio mpv zathura zathura-pdf-poppler xarchiver unrar \
-                  nwg-displays nwg-look qt5ct qt6ct matugen qalculate-qt firefox btop"
+                  nwg-displays nwg-look qt5ct qt6ct matugen qalculate-qt firefox btop paru"
 
 # Laptop (Battery driven devives)
 LAPTOP_PACKAGES="brightnessctl tlp iwd impala"
