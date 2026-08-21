@@ -101,6 +101,7 @@ return {
        sections = {
          lualine_z = {},
        },
+       extensions = { "neo-tree" },
      },
   },
 
@@ -129,4 +130,44 @@ return {
       end,
     },
   },
+
+
+  -- File explorer
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "MunifTanjim/nui.nvim",
+      "nvim-tree/nvim-web-devicons", -- optional, but recommended
+    },
+
+    lazy = false, -- neo-tree will lazily load itself
+    cmd = "Neotree",
+
+    keys = {
+      { "<leader>e", "<cmd>Neotree toggle<CR>", desc = "Toggle file explorer (Neo-tree)" },
+    },
+
+    opts = {
+      close_if_last_window = true,
+      filesystem = {
+        follow_current_file = { enabled = true },
+        use_libuv_file_watcher = true,
+        filtered_items = {
+          visible = false,
+          hide_dotfiles = false,
+          hide_gitignored = true,
+        },
+      },
+    },
+
+    window = {
+      width = 30,
+      mappings = {
+        ["<CR>"] = "open",
+      }
+    },
+  }
+
 }
