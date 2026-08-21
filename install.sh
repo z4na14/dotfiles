@@ -46,7 +46,7 @@ SHELL_PACKAGES="kitty zsh mako pipewire-pulse wireplumber uwsm xdg-desktop-porta
                 duf dust bat lsd fzf qt6-virtualkeyboard qt6-imageformats qt5-graphicaleffects \
                 gnome-keyring xorg-xhost vimiv yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide \
                 resvg imagemagick ffmpegthumbnailer tumbler qt5-quickcontrols qt5-quickcontrols2 \
-                qt6-declarative qt6-svg xdg-utils shared-mime-info xdg-desktop-portal"
+                qt6-declarative qt6-svg xdg-utils shared-mime-info xdg-desktop-portal seahorse"
 
 # Utilities
 UTILITY_PACKAGES="obs-studio mpv zathura zathura-pdf-poppler xarchiver unrar \
