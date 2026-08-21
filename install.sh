@@ -86,6 +86,8 @@ fi
 if $INSTALL_LAPTOP; then
     sudo pacman -S $LAPTOP_PACKAGES
     echo -e "[General]\nEnableNetworkConfiguration=true" > /etc/iwd/main.conf
+    sudo mkdir -p /etc/NetworkManager/conf.d && echo -e "[device]\nwifi.backend=iwd" | sudo tee /etc/NetworkManager/conf.d/wifi_backend.conf
+    sudo systemctl enable --now iwd.service
 fi
 
 if $INSTALL_NVIDIA; then
