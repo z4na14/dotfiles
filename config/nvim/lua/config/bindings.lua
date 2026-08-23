@@ -1,9 +1,6 @@
 -- Insert Mode Keybindings
 local map = vim.keymap.set
 
-vim.opt.number = true
-vim.opt.relativenumber = true
-
 -- "lk" to exit any mode
 map({ "i", "v" }, "lk", "<esc>")
 -- Set up copy-paste buffer to the one from the system

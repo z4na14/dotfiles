@@ -1,11 +1,11 @@
 return {
-  
+
   -- Autoformatter
   {
     'stevearc/conform.nvim',
     opts = {},
   },
- 
+
 
   -- LSP manager
   {
@@ -13,21 +13,21 @@ return {
     cmd = "Mason",
     config = true,
   },
-  
+
 
   -- LSP handler
   {
     "neovim/nvim-lspconfig",
-    
+
     dependencies = {
       "williamboman/mason.nvim",
       "williamboman/mason-lspconfig.nvim",
       "saghen/blink.cmp",
     },
-    
+
     config = function()
       local capabilities = require("blink.cmp").get_lsp_capabilities()
-      
+
       local servers = {
         "clangd",
         "pyright",
@@ -39,12 +39,12 @@ return {
         "jsonls",
         "bashls",
       }
-      
+
       require("mason-lspconfig").setup({
         ensure_installed = servers,
         automatic_installation = true,
       })
-      
+
       -- Configure servers using native Neovim 0.11+ API
       for _, server in ipairs(servers) do
         vim.lsp.config(server, {
