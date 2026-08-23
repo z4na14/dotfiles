@@ -34,6 +34,47 @@ for arg in "$@"; do
     fi
 done
 
+
+##############################################################################################
+# INSTALL ALL CONFIGS                                                                        #
+##############################################################################################
+
+# ./config folders directly linked
+for dir in "$PWD/config"/*/; do
+  name="$(basename "$dir")"
+  target="$XDG_CONFIG_HOME/$name"
+
+  rm -rf "$target"
+  ln -s "${dir%/}" "$target"
+done
+
+# Link desktop waybar config
+# (If laptop is used, config is different. See laptop flag)
+ln ~/.config/waybar/config_desktop.jsonc ~/.config/waybar/config.jsonc 
+
+# Custom cursor
+mkdir temp
+hyprcursor-util -x /usr/share/icons/Bibata-Modern-Ice -o temp
+hyprcursor-util -c temp/Bibata-Modern-Ice -o temp
+sudo mv ./temp/extracted_Bibata-Modern-Ice /usr/share/icons/Bibata-Modern-Ice-Hyprcursor
+rm -rf temp
+
+# Required GTK theme
+sudo cp -r ./gtk_theme/* /usr/share/themes
+
+# SDDM theme
+sudo cp -r ./sddm/terminal /usr/share/sddm/themes
+sudo cp ./sddm/sddm.conf /etc/sddm.conf
+
+# Link zsh config
+ln -s $PWD/zsh/.zshenv ~/
+ln -s $PWD/zsh/.zshrc  ~/
+
+
+##############################################################################################
+# INSTALL ALL PACKAGES                                                                       #
+##############################################################################################
+
 # Main packages
 MAIN_PACKAGES="hyprland aquamarine hyprlang hyprcursor hyprutils \
                hyprgraphics hyprshutdown"
@@ -44,7 +85,7 @@ SHELL_PACKAGES="kitty zsh mako pipewire-pulse wireplumber uwsm xdg-desktop-porta
                 ristretto sddm fastfetch hyprlock hypridle bluez bluez-utils blueman networkmanager \
                 nm-connection-editor pavucontrol gvfs gvfs-smb gvfs-mtp gvfs-gphoto2 gvfs-dnssd \
                 duf dust bat lsd fzf qt6-virtualkeyboard qt6-imageformats qt5-graphicaleffects \
-                gnome-keyring xorg-xhost vimiv yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide \
+                gnome-keyring xorg-xhost pqiv yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide \
                 resvg imagemagick ffmpegthumbnailer tumbler qt5-quickcontrols qt5-quickcontrols2 \
                 qt6-declarative qt6-svg xdg-utils shared-mime-info xdg-desktop-portal seahorse"
 
@@ -67,8 +108,6 @@ APPS_BASE="anki obsidian gimp inkscape blender dolphin-emu yt-dlp easytag filezi
 
 NVIM_DEPS="nodejs npm python python-pip ripgrep fd prettier" 
 
-# Install required packages
-#
 # INSTALL_PACKAGES
 # INSTALL_UTILS
 # INSTALL_LAPTOP
@@ -85,9 +124,15 @@ fi
 
 if $INSTALL_LAPTOP; then
     sudo pacman -S $LAPTOP_PACKAGES
+   
+    # Set iwd as wifi backend
     echo -e "[General]\nEnableNetworkConfiguration=true" > /etc/iwd/main.conf
     sudo mkdir -p /etc/NetworkManager/conf.d && echo -e "[device]\nwifi.backend=iwd" | sudo tee /etc/NetworkManager/conf.d/wifi_backend.conf
     sudo systemctl enable --now iwd.service
+
+    # Modify copied waybar config to the laptop one
+    rm ~/.config/waybar/config.jsonc
+    ln ~/.config/waybar/config_laptop.jsonc ~/.config/waybar/config.jsonc
 fi
 
 if $INSTALL_NVIDIA; then
@@ -99,7 +144,10 @@ if $INSTALL_CUSTOM; then
 fi
 
 
-# Services
+##############################################################################################
+# ENABLE REQUIRED SERVICES                                                                   #
+##############################################################################################
+
 systemctl --user enable --now hyprpolkitagent.service
 systemctl --user enable --now waybar.service
 systemctl --user enable --now gnome-keyring-daemon.service
@@ -108,15 +156,10 @@ systemctl enable --now NetworkManager.service
 systemctl enable --now sddm.service
 
 
-# Install cursor systemwide
-mkdir temp
-hyprcursor-util -x /usr/share/icons/Bibata-Modern-Ice -o temp
-hyprcursor-util -c temp/Bibata-Modern-Ice -o temp
-sudo mv ./temp/extracted_Bibata-Modern-Ice /usr/share/icons/Bibata-Modern-Ice-Hyprcursor
-rm -rf temp
+##############################################################################################
+# VARIOUS SETTINGS                                                                           #
+##############################################################################################
 
-
-# GTK settings
 # Hide buttons from windows
 gsettings set org.gnome.desktop.wm.preferences button-layout :
 # Prefer dark settings
@@ -128,7 +171,6 @@ git config --global credential.helper /usr/lib/git-core/git-credential-libsecret
 # Move clear hisotry desktop entry
 sudo cp clear-history.desktop ~/.local/share/applications
 
-
 # Fix network in libvirt
 systemctl enable --now libvirtd.socket
 for server in qemud networkd storaged nodedevd secretd nwfilterd; do
@@ -137,7 +179,6 @@ done
 echo 'firewall_backend = "iptables"' | sudo tee /etc/libvirt/network.conf
 sudo virsh net-start default
 sudo virsh net-autostart default
-
 
 # Fix xwayland sudo apps
 xhost +local:root
