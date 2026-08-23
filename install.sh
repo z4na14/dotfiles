@@ -50,8 +50,8 @@ for arg in "$@"; do
         ENABLE_SERVICES=true
     fi
 
-    if [[ $arg == "-O"]]; then
-        CONMFIGURE_OPTS=true
+    if [[ $arg == "-O" ]]; then
+        CONFIGURE_OPTS=true
     fi
 done
 
