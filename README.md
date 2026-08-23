@@ -52,80 +52,90 @@
 | Category | Key | Action |
 |---|---|---|
 | tmux - Splits | `Ctrl+a e` | Split pane down (horizontal line) |
-| tmux - Splits | `Ctrl+a r` | Split pane right (vertical line) |
-| tmux - Splits | `Ctrl+a x` | Close current pane |
+| | `Ctrl+a r` | Split pane right (vertical line) |
+| | `Ctrl+a x` | Close current pane |
 | tmux - Pane Navigation | `Ctrl+a ←/→/↑/↓` | Move between panes |
-| tmux - Pane Navigation | `Ctrl+a q` | Show pane numbers (then press number to jump) |
-| tmux - Pane Navigation | `Ctrl+a z` | Zoom/unzoom current pane (fullscreen toggle) |
-| tmux - Pane Navigation | `Ctrl+a {` / `Ctrl+a }` | Swap pane left/right |
+| | `Ctrl+a q` | Show pane numbers (then press number to jump) |
+| | `Ctrl+a z` | Zoom/unzoom current pane |
+| | `Ctrl+a {` / `Ctrl+a }` | Swap pane left/right |
 | tmux - Windows | `Ctrl+a c` | Create new window |
-| tmux - Windows | `Ctrl+a n` / `Ctrl+a p` | Next / previous window |
-| tmux - Windows | `Ctrl+a 1-9` | Jump to window by number |
-| tmux - Windows | `Ctrl+a ,` | Rename current window |
-| tmux - Windows | `Ctrl+a &` | Close current window |
+| | `Ctrl+a n` / `Ctrl+a p` | Next / previous window |
+| | `Ctrl+a 1-9` | Jump to window by number |
+| | `Ctrl+a ,` | Rename current window |
+| | `Ctrl+a &` | Close current window |
 | tmux - Sessions | `Ctrl+a d` | Detach from session |
-| tmux - Sessions | `Ctrl+a s` | List/switch sessions |
+| | `Ctrl+a s` | List/switch sessions |
 | tmux - Copy Mode | `Ctrl+a [` | Enter copy/scroll mode |
-| tmux - Copy Mode | `q` | Exit copy mode |
+| | `q` | Exit copy mode |
 | tmux - Mouse | *(enabled)* | Click to select pane, drag to resize, scroll for copy mode |
 | nvim - Window Navigation | `Ctrl+w h/j/k/l` | Move between splits |
-| nvim - Window Navigation | `Ctrl+w v` | Vertical split |
-| nvim - Window Navigation | `Ctrl+w s` | Horizontal split |
-| nvim - Window Navigation | `Ctrl+w q` | Close current split (window) |
-| nvim - Window Navigation | `Ctrl+w =` | Equalize split sizes |
+| | `Ctrl+w v` | Vertical split |
+| | `Ctrl+w s` | Horizontal split |
+| | `Ctrl+w q` | Close current split (window) |
+| | `Ctrl+w =` | Equalize split sizes |
 | nvim - Window Resize | `Ctrl+w +` | Increase height |
-| nvim - Window Resize | `Ctrl+w -` | Decrease height |
-| nvim - Window Resize | `Ctrl+w >` | Increase width |
-| nvim - Window Resize | `Ctrl+w <` | Decrease width |
-| nvim - Window Resize | `Ctrl+w _` | Maximize height |
-| nvim - Window Resize | `Ctrl+w \|` | Maximize width |
+| | `Ctrl+w -` | Decrease height |
+| | `Ctrl+w >` | Increase width |
+| | `Ctrl+w <` | Decrease width |
+| | `Ctrl+w _` | Maximize height |
+| | `Ctrl+w \|` | Maximize width |
+| nvim - Word Jump (Normal/Visual) | `Ctrl+Right` / `Ctrl+l` | Jump forward one word |
+| | `Ctrl+Left` / `Ctrl+h` | Jump backward one word |
+| nvim - Scroll View (Normal & Visual, cursor stays) | `Ctrl+Down` / `Ctrl+j` | Scroll view down |
+| | `Ctrl+Up` / `Ctrl+k` | Scroll view up |
+| nvim - Move Line/Selection (Normal & Visual) | `Alt+Up` / `Alt+k` | Move line/selection up |
+| | `Alt+Down` / `Alt+j` | Move line/selection down |
+| nvim - Search & Replace | `Ctrl+f` (Normal) | Search (like `/`) |
+| | `Ctrl+r` (Normal) | Find and replace (current line) |
+| | `Ctrl+r` (Visual) | Find and replace (in selection) |
 | nvim - Folding | `<leader>za` | Toggle fold under cursor |
-| nvim - Folding | `<leader>zo` | Open fold under cursor |
-| nvim - Folding | `<leader>zc` | Close fold under cursor |
-| nvim - Folding | `<leader>zr` | Open all folds |
-| nvim - Folding | `<leader>zm` | Close all folds |
-| nvim - Folding | `<leader>zj` | Jump to next fold |
-| nvim - Folding | `<leader>zk` | Jump to previous fold |
-| nvim - Folding | `<leader>zp` | Peek folded lines under cursor |
+| | `<leader>zo` | Open fold under cursor |
+| | `<leader>zc` | Close fold under cursor |
+| | `<leader>zr` | Open all folds |
+| | `<leader>zm` | Close all folds |
+| | `<leader>zj` | Jump to next fold |
+| | `<leader>zk` | Jump to previous fold |
+| | `<leader>zp` | Peek folded lines under cursor |
 | nvim - Buffers | `Ctrl+q` (Normal) | Close current buffer, keep window layout |
-| nvim - Buffers | `:bnext` / `:bprev` | Next / previous buffer |
-| nvim - Buffers | `<leader>fb` | Fuzzy-find buffers (Telescope) |
+| | `Tab` / `Shift+Tab` (Normal) | Next / previous buffer |
+| | `<leader>fb` | Fuzzy-find buffers (Telescope) |
 | nvim - Files | `<leader>e` | Toggle file explorer (Neo-tree) |
-| nvim - Files | `<leader>ff` | Find files (Telescope) |
-| nvim - Files | `<leader>fg` | Live grep (Telescope) |
-| nvim - Files | `<leader>fh` | Search help tags (Telescope) |
+| | `<leader>ff` | Find files (Telescope) |
+| | `<leader>fg` | Live grep (Telescope) |
+| | `<leader>fh` | Search help tags (Telescope) |
 | nvim - Files (Neo-tree window) | `<CR>` | Open file/folder |
-| nvim - Files (Neo-tree window) | `l` | Open file/folder |
-| nvim - Files (Neo-tree window) | `h` | Close/collapse folder |
 | nvim - Git (gitsigns) | `<leader>gp` | Preview hunk diff |
-| nvim - Git (gitsigns) | `<leader>gi` | Toggle inline hunk diff |
-| nvim - Git (gitsigns) | `<leader>gr` | Reset/restore hunk (normal + visual) |
+| | `<leader>gi` | Toggle inline hunk diff |
+| | `<leader>gr` | Reset/restore hunk (Normal + Visual) |
 | nvim - LSP | `<leader>ld` | Go to Definition |
-| nvim - LSP | `<leader>lD` | Go to Declaration |
-| nvim - LSP | `<leader>lr` | Find References |
-| nvim - LSP | `<leader>li` | Go to Implementation |
-| nvim - LSP | `<leader>lw` | Hover Documentation |
-| nvim - LSP | `<leader>rn` | Rename Symbol |
-| nvim - LSP | `<leader>ca` | Code Action |
+| | `<leader>lD` | Go to Declaration |
+| | `<leader>lr` | Find References |
+| | `<leader>li` | Go to Implementation |
+| | `<leader>lw` | Hover Documentation |
+| | `<leader>rn` | Rename Symbol |
+| | `<leader>ca` | Code Action |
 | nvim - Diagnostics | `<leader>de` | Show diagnostic under cursor |
-| nvim - Diagnostics | `<leader>dj` | Jump to next diagnostic |
-| nvim - Diagnostics | `<leader>dk` | Jump to previous diagnostic |
-| nvim - Diagnostics | `<leader>dq` | Diagnostics to location list |
-| nvim - Completion (blink.cmp) | `<leader>cs` | Show completion menu / toggle documentation |
-| nvim - Completion (blink.cmp) | `<leader>ch` | Hide completion menu |
-| nvim - Completion (blink.cmp) | `<leader>cy` | Select and accept current item |
-| nvim - Completion (blink.cmp) | `<leader>cn` | Select next item |
-| nvim - Completion (blink.cmp) | `<leader>cp` | Select previous item |
-| nvim - Completion (blink.cmp) | `<leader>cf` | Jump forward in snippet |
-| nvim - Completion (blink.cmp) | `<leader>cb` | Jump backward in snippet |
-| nvim - Completion (blink.cmp) | `<leader>cu` | Scroll documentation up |
-| nvim - Completion (blink.cmp) | `<leader>cd` | Scroll documentation down |
+| | `<leader>dj` | Jump to next diagnostic |
+| | `<leader>dk` | Jump to previous diagnostic |
+| | `<leader>dq` | Diagnostics to location list |
+| nvim - Completion (blink.cmp, Insert) | `Ctrl+Enter` | Show completion menu / accept selected item |
+| | `Ctrl+Space` | Hide completion menu |
+| | `Tab` | Select next item / snippet forward |
+| | `Shift+Tab` | Select previous item / snippet backward |
+| nvim - Which-key | `<leader>?` | Show buffer-local keymaps |
 | nvim - Insert Mode Extras | `lk` | Exit to Normal mode |
-| nvim - Insert Mode Extras | `Ctrl+z` / `Ctrl+Shift+z` | Undo / Redo without leaving Insert |
-| nvim - Insert Mode Extras | `Ctrl+Left/Right` | Jump word backward/forward |
-| nvim - Insert Mode Extras | `Ctrl+Backspace` | Delete word backward |
+| | `Ctrl+z` / `Ctrl+Shift+z` | Undo / Redo without leaving Insert |
+| | `Ctrl+Right/Left` | Jump word forward/backward |
+| | `Ctrl+Backspace` / `Ctrl+h` | Delete word backward |
+| | `Del` | Delete character forward |
+| | `Ctrl+Delete` | Delete word forward |
+| | `Ctrl+Down/Up` / `Ctrl+j/k` | Scroll view down/up (keep cursor line) |
+| | `Ctrl+f` | Search (like `/`) |
+| | `Ctrl+r` | Find and replace (current line) |
 | nvim - Insert/Visual Extras | `Ctrl+d` (Insert) | Duplicate current line |
-| nvim - Insert/Visual Extras | `Ctrl+d` (Visual) | Duplicate selected lines |
+| | `Ctrl+d` (Visual) | Duplicate selected lines |
+| nvim - Command-line Mode | `Ctrl+Right/Left` | Jump word forward/backward |
+| | `Ctrl+Backspace` / `Ctrl+h` | Delete word backward |
 
 ## Prerequisites for apps
 

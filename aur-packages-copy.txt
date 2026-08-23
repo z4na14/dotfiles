@@ -1,0 +1,11 @@
+azahar
+eden
+fsearch
+gelly
+melonds
+millennium
+osu-lazer-bin
+pcsx2-git
+qdiskinfo
+r2modman-bin
+rpcs3-git
