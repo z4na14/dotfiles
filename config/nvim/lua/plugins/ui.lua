@@ -23,6 +23,54 @@ end
 
 local palette = get_palette() or {}
 
+local function apply_float_highlights()
+  local set = vim.api.nvim_set_hl
+  local bg = palette.surface
+  local fg = palette.on_surface
+  local border = palette.outline
+
+  set(0, "NormalFloat", { bg = bg, fg = fg })
+  set(0, "FloatBorder", { bg = bg, fg = border })
+
+  set(0, "WhichKeyFloat", { bg = bg })
+  set(0, "WhichKeyBorder", { bg = bg, fg = border })
+
+  set(0, "NeoTreeNormal", { bg = bg, fg = fg })
+  set(0, "NeoTreeNormalNC", { bg = bg, fg = fg })
+
+  -- Telescope: overall + per-section (prompt/results/preview each have their own bg)
+  set(0, "TelescopeNormal", { bg = bg, fg = fg })
+  set(0, "TelescopeBorder", { bg = bg, fg = border })
+
+  set(0, "TelescopePromptNormal", { bg = bg, fg = fg })
+  set(0, "TelescopePromptBorder", { bg = bg, fg = border })
+  set(0, "TelescopePromptTitle", { bg = bg, fg = palette.primary })
+
+  set(0, "TelescopeResultsNormal", { bg = bg, fg = fg })
+  set(0, "TelescopeResultsBorder", { bg = bg, fg = border })
+  set(0, "TelescopeResultsTitle", { bg = bg, fg = palette.primary })
+
+  set(0, "TelescopePreviewNormal", { bg = bg, fg = fg })
+  set(0, "TelescopePreviewBorder", { bg = bg, fg = border })
+  set(0, "TelescopePreviewTitle", { bg = bg, fg = palette.primary })
+
+  set(0, "NoicePopup", { bg = bg })
+  set(0, "NoicePopupBorder", { bg = bg, fg = border })
+  set(0, "NoiceCmdlinePopup", { bg = bg })
+  set(0, "NoiceCmdlinePopupBorder", { bg = bg, fg = border })
+  set(0, "NoiceCmdlinePopupBorderSearch", { bg = bg, fg = border })
+  set(0, "NoiceCmdlineIcon", { bg = bg, fg = fg })
+  set(0, "NoiceCmdlineIconSearch", { bg = bg, fg = fg })
+
+  set(0, "Cursor", { bg = palette.primary, fg = palette.on_primary })
+end
+
+apply_float_highlights()
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+  callback = apply_float_highlights,
+})
+
 -- #######################################################################################################
 
 return {
@@ -168,6 +216,37 @@ return {
         ["<CR>"] = "open",
       }
     },
+  },
+
+
+  -- Binding looker
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    opts = { },
+    keys = {
+      {
+        "<leader>?",
+        function()
+          require("which-key").show({ global = false })
+        end,
+        desc = "Buffer Local Keymaps (which-key)",
+      },
+    },
+  },
+
+
+  -- CMDLine replacement
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+    -- add any options here
+    },
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      "MunifTanjim/nui.nvim",
+    }
   }
 
 }

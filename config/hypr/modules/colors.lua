@@ -1,5 +1,5 @@
 return {
-    image = "/home/z4na14/Documentos/dotfiles/wallpapers/bg19.jpg",
+    image = "/home/z4na14/.dotfiles/wallpapers/bg19.jpg",
 
     background = "rgba(15, 20, 22, 1)",
 

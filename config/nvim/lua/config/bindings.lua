@@ -3,6 +3,7 @@ local map = vim.keymap.set
 
 -- "lk" to exit any mode
 map({ "i", "v" }, "lk", "<esc>")
+
 -- Set up copy-paste buffer to the one from the system
 vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
     pattern = "*",
@@ -11,9 +12,17 @@ vim.api.nvim_create_autocmd({ "BufReadPost", "BufNewFile" }, {
     end,
 })
 
--- Ctrl + Left / Right to jump words forward/backward
+-- Ctrl + Left / Right to jump words forward/backward (Insert)
 map('i', '<C-Right>', '<S-Right>', { desc = 'Jump forward one word' })
 map('i', '<C-Left>',  '<S-Left>',  { desc = 'Jump backward one word' })
+
+-- Ctrl + Left / Right to jump words forward/backward (Normal & Visual, arrows)
+map({ 'n', 'v' }, '<C-Right>', 'w', { desc = 'Jump forward one word' })
+map({ 'n', 'v' }, '<C-Left>',  'b', { desc = 'Jump backward one word' })
+
+-- Ctrl + l / h to jump words forward/backward (Normal & Visual, vim movement keys)
+map({ 'n', 'v' }, '<C-l>', 'w', { desc = 'Jump forward one word' })
+map({ 'n', 'v' }, '<C-h>', 'b', { desc = 'Jump backward one word' })
 
 -- Ctrl + Backspace to delete previous word (^H is often received as <C-BS> or <C-h>)
 map('i', '<C-BS>', '<C-w>', { desc = 'Delete word backward' })
@@ -39,10 +48,10 @@ map('n', '<Tab>', ':bnext<CR>', { desc = 'Next buffer' })
 map('n', '<S-Tab>', ':bprev<CR>', { desc = 'Previous buffer' })
 
 -- Diagnostics
-map('n', '<leader>de', vim.diagnostic.open_float, { buffer = buf, desc = 'Show Diagnostic' })
-map('n', '<leader>dj', vim.diagnostic.goto_next, { buffer = buf, desc = 'Next Diagnostic' })
-map('n', '<leader>dk', vim.diagnostic.goto_prev, { buffer = buf, desc = 'Previous Diagnostic' })
-map('n', '<leader>dq', vim.diagnostic.setloclist, { buffer = buf, desc = 'Diagnostics to Loclist' })
+map('n', '<leader>de', vim.diagnostic.open_float, { desc = 'Show Diagnostic' })
+map('n', '<leader>dj', vim.diagnostic.goto_next, { desc = 'Next Diagnostic' })
+map('n', '<leader>dk', vim.diagnostic.goto_prev, { desc = 'Previous Diagnostic' })
+map('n', '<leader>dq', vim.diagnostic.setloclist, { desc = 'Diagnostics to Loclist' })
 
 -- Duplicate current line (Insert mode), keeps cursor in place, stays in Insert mode
 map('i', '<C-d>', function()
@@ -62,3 +71,61 @@ map('v', '<C-d>', function()
 end, { desc = 'Duplicate selection' })
 
 map('n', '<C-q>', ':bp<bar>bd #<CR>', { desc = 'Close buffer, keep window layout' })
+
+-- Move current line up/down (Normal mode, arrows)
+map('n', '<A-Up>',   ':move .-2<CR>==',  { desc = 'Move line up' })
+map('n', '<A-Down>', ':move .+1<CR>==',  { desc = 'Move line down' })
+
+-- Move selected lines up/down (Visual mode, arrows)
+map('v', '<A-Up>',   ":move '<-2<CR>gv=gv",  { desc = 'Move selection up' })
+map('v', '<A-Down>', ":move '>+1<CR>gv=gv",  { desc = 'Move selection down' })
+
+-- Move current line up/down (Normal mode, vim movement keys)
+map('n', '<A-k>', ':move .-2<CR>==',  { desc = 'Move line up' })
+map('n', '<A-j>', ':move .+1<CR>==',  { desc = 'Move line down' })
+
+-- Move selected lines up/down (Visual mode, vim movement keys)
+map('v', '<A-k>', ":move '<-2<CR>gv=gv",  { desc = 'Move selection up' })
+map('v', '<A-j>', ":move '>+1<CR>gv=gv",  { desc = 'Move selection down' })
+
+-- Scroll view down/up, keep cursor line (Normal mode, arrows)
+map('n', '<C-Down>', '<C-e>', { desc = 'Scroll view down (keep cursor line)' })
+map('n', '<C-Up>',   '<C-y>', { desc = 'Scroll view up (keep cursor line)' })
+
+-- Scroll view down/up, keep cursor line (Normal mode, vim movement keys)
+map('n', '<C-j>', '<C-e>', { desc = 'Scroll view down (keep cursor line)' })
+map('n', '<C-k>', '<C-y>', { desc = 'Scroll view up (keep cursor line)' })
+
+-- Scroll view down/up, keep cursor line (Insert mode, arrows)
+map('i', '<C-Down>', '<C-o><C-e>', { desc = 'Scroll view down (keep cursor line)' })
+map('i', '<C-Up>',   '<C-o><C-y>', { desc = 'Scroll view up (keep cursor line)' })
+
+-- Scroll view down/up, keep cursor line (Insert mode, vim movement keys)
+map('i', '<C-j>', '<C-o><C-e>', { desc = 'Scroll view down (keep cursor line)' })
+map('i', '<C-k>', '<C-o><C-y>', { desc = 'Scroll view up (keep cursor line)' })
+
+-- Remap Ctrl+r to Ctrl+U for redo 
+map('n', 'U', '<C-r>', { desc = 'Redo' })
+
+-- Search (Normal mode)
+map('n', '<C-f>', '/', { desc = 'Search' })
+
+-- Search (Insert mode)
+map('i', '<C-f>', '<C-o>/', { desc = 'Search' })
+
+-- Find and Replace on current line (Normal mode)
+map('n', '<C-r>', ':%s/', { desc = 'Find and Replace (current line)' })
+
+-- Find and Replace on current line (Insert mode)
+map('i', '<C-r>', '<C-o>:%s/', { desc = 'Find and Replace (current line)' })
+
+-- Find and Replace within selection (Visual mode)
+map('v', '<C-r>', ':s/', { desc = 'Find and Replace in selection' })
+
+-- Scroll view down/up, keep cursor line (Visual mode, arrows)
+map('v', '<C-Down>', '<C-e>', { desc = 'Scroll view down (keep cursor line)' })
+map('v', '<C-Up>',   '<C-y>', { desc = 'Scroll view up (keep cursor line)' })
+
+-- Scroll view down/up, keep cursor line (Visual mode, vim movement keys)
+map('v', '<C-j>', '<C-e>', { desc = 'Scroll view down (keep cursor line)' })
+map('v', '<C-k>', '<C-y>', { desc = 'Scroll view up (keep cursor line)' })
