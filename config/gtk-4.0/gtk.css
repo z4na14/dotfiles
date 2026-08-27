@@ -1,2 +1,14 @@
 @import 'colors.css';
 
+window.messagedialog,
+window.background.csd.messagedialog {
+    background-color: @window_bg_color;
+    color: @window_fg_color;
+}
+
+window.messagedialog .titlebar,
+window.messagedialog headerbar {
+    background-color: @headerbar_bg_color;
+    color: @headerbar_fg_color;
+}
+

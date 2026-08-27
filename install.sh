@@ -110,7 +110,8 @@ SHELL_PACKAGES="kitty zsh mako pipewire-pulse wireplumber uwsm xdg-desktop-porta
                 duf dust bat lsd fzf qt6-virtualkeyboard qt6-imageformats qt5-graphicaleffects \
                 gnome-keyring xorg-xhost pqiv yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide \
                 resvg imagemagick ffmpegthumbnailer tumbler qt5-quickcontrols qt5-quickcontrols2 \
-                qt6-declarative qt6-svg xdg-utils shared-mime-info xdg-desktop-portal seahorse"
+                qt6-declarative qt6-svg xdg-utils shared-mime-info xdg-desktop-portal seahorse \
+                v4l2loopback-dkms perl-image-exiftool"
 
 # Utilities
 UTILITY_PACKAGES="obs-studio mpv zathura zathura-pdf-poppler xarchiver unrar \
@@ -135,6 +136,10 @@ NVIDIA_PACKAGES="nvidia-utils lib32-nvidia-utils libva-nvidia-driver"
 
 if $INSTALL_PACKAGES; then
     sudo pacman -Syyu $MAIN_PACKAGES $SHELL_PACKAGES $UTILITY_PACKAGES $APPS_BASE $APPS_CACHY $NVIM_DEPS
+
+    # For apps like obs
+    sudo modprobe v4l2loopback exclusive_caps=1 devices=1 video_nr=5 card_label="ExternalWebCam"
+
 fi
 
 if $INSTALL_LAPTOP; then
