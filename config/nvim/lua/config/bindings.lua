@@ -88,22 +88,6 @@ map('n', '<A-j>', ':move .+1<CR>==',  { desc = 'Move line down' })
 map('v', '<A-k>', ":move '<-2<CR>gv=gv",  { desc = 'Move selection up' })
 map('v', '<A-j>', ":move '>+1<CR>gv=gv",  { desc = 'Move selection down' })
 
--- Scroll view down/up, keep cursor line (Normal mode, arrows)
-map('n', '<C-Down>', '<C-e>', { desc = 'Scroll view down (keep cursor line)' })
-map('n', '<C-Up>',   '<C-y>', { desc = 'Scroll view up (keep cursor line)' })
-
--- Scroll view down/up, keep cursor line (Normal mode, vim movement keys)
-map('n', '<C-j>', '<C-e>', { desc = 'Scroll view down (keep cursor line)' })
-map('n', '<C-k>', '<C-y>', { desc = 'Scroll view up (keep cursor line)' })
-
--- Scroll view down/up, keep cursor line (Insert mode, arrows)
-map('i', '<C-Down>', '<C-o><C-e>', { desc = 'Scroll view down (keep cursor line)' })
-map('i', '<C-Up>',   '<C-o><C-y>', { desc = 'Scroll view up (keep cursor line)' })
-
--- Scroll view down/up, keep cursor line (Insert mode, vim movement keys)
-map('i', '<C-j>', '<C-o><C-e>', { desc = 'Scroll view down (keep cursor line)' })
-map('i', '<C-k>', '<C-o><C-y>', { desc = 'Scroll view up (keep cursor line)' })
-
 -- Remap Ctrl+r to Ctrl+U for redo 
 map('n', 'U', '<C-r>', { desc = 'Redo' })
 
@@ -126,6 +110,50 @@ map('v', '<C-r>', ':s/', { desc = 'Find and Replace in selection' })
 map('v', '<C-Down>', '<C-e>', { desc = 'Scroll view down (keep cursor line)' })
 map('v', '<C-Up>',   '<C-y>', { desc = 'Scroll view up (keep cursor line)' })
 
+-- Scroll view down/up, keep cursor line (Normal mode, arrows)
+map('n', '<C-Down>', '<C-e>', { desc = 'Scroll view down (keep cursor line)' })
+map('n', '<C-Up>',   '<C-y>', { desc = 'Scroll view up (keep cursor line)' })
+
+-- Scroll view down/up, keep cursor line (Normal mode, vim movement keys)
+map('n', '<C-j>', '<C-e>', { desc = 'Scroll view down (keep cursor line)' })
+map('n', '<C-k>', '<C-y>', { desc = 'Scroll view up (keep cursor line)' })
+
+-- Scroll view down/up, keep cursor line (Insert mode, arrows)
+map('i', '<C-Down>', '<C-o><C-e>', { desc = 'Scroll view down (keep cursor line)' })
+map('i', '<C-Up>',   '<C-o><C-y>', { desc = 'Scroll view up (keep cursor line)' })
+
+-- Scroll view down/up, keep cursor line (Insert mode, vim movement keys)
+map('i', '<C-j>', '<C-o><C-e>', { desc = 'Scroll view down (keep cursor line)' })
+map('i', '<C-k>', '<C-o><C-y>', { desc = 'Scroll view up (keep cursor line)' })
+
+-- Scroll view down/up, keep cursor line (Visual mode, arrows)
+map('v', '<C-Down>', '<C-e>', { desc = 'Scroll view down (keep cursor line)' })
+map('v', '<C-Up>',   '<C-y>', { desc = 'Scroll view up (keep cursor line)' })
+
 -- Scroll view down/up, keep cursor line (Visual mode, vim movement keys)
 map('v', '<C-j>', '<C-e>', { desc = 'Scroll view down (keep cursor line)' })
 map('v', '<C-k>', '<C-y>', { desc = 'Scroll view up (keep cursor line)' })
+
+-- Scroll view right/left when content overflows (Normal mode, arrows)
+map('n', '<A-Right>', 'zl', { desc = 'Scroll view right' })
+map('n', '<A-Left>',  'zh', { desc = 'Scroll view left' })
+
+-- Scroll view right/left when content overflows (Normal mode, vim movement keys)
+map('n', '<A-l>', 'zl', { desc = 'Scroll view right' })
+map('n', '<A-h>', 'zh', { desc = 'Scroll view left' })
+
+-- Scroll view right/left when content overflows (Insert mode, arrows)
+map('i', '<A-Right>', '<C-o>zl', { desc = 'Scroll view right' })
+map('i', '<A-Left>',  '<C-o>zh', { desc = 'Scroll view left' })
+
+-- Scroll view right/left when content overflows (Insert mode, vim movement keys)
+map('i', '<A-l>', '<C-o>zl', { desc = 'Scroll view right' })
+map('i', '<A-h>', '<C-o>zh', { desc = 'Scroll view left' })
+
+-- Scroll view right/left when content overflows (Visual mode, arrows)
+map('v', '<A-Right>', 'zl', { desc = 'Scroll view right' })
+map('v', '<A-Left>',  'zh', { desc = 'Scroll view left' })
+
+-- Scroll view right/left when content overflows (Visual mode, vim movement keys)
+map('v', '<A-l>', 'zl', { desc = 'Scroll view right' })
+map('v', '<A-h>', 'zh', { desc = 'Scroll view left' })
