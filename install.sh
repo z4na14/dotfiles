@@ -115,7 +115,8 @@ SHELL_PACKAGES="kitty zsh mako pipewire-pulse wireplumber uwsm xdg-desktop-porta
 
 # Utilities
 UTILITY_PACKAGES="obs-studio mpv zathura zathura-pdf-poppler xarchiver unrar \
-                  nwg-displays nwg-look qt5ct qt6ct matugen qalculate-qt firefox btop paru"
+                  nwg-displays nwg-look qt5ct qt6ct matugen qalculate-qt firefox btop paru \
+                  atuin"
 
 # CachyOS specifics
 APPS_CACHY="protonup-qt ventoy-bin helium-browser-bin proton-cachyos-slr"
@@ -123,7 +124,7 @@ APPS_CACHY="protonup-qt ventoy-bin helium-browser-bin proton-cachyos-slr"
 # Normal apps for myself
 APPS_BASE="anki obsidian gimp inkscape blender dolphin-emu yt-dlp easytag filezilla keepassxc \
            virt-manager edk2-ovmf swtpm gparted grsync libreoffice-fresh-es nvim tmux gamescope \
-           steam thunderbird qemu-full tenacity"
+           steam qemu-full tenacity claws-mail"
 
 NVIM_DEPS="nodejs npm python python-pip ripgrep fd prettier" 
 
