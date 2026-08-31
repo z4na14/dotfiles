@@ -3,9 +3,62 @@ return {
   -- Autoformatter
   {
     'stevearc/conform.nvim',
-    opts = {},
-  },
+    event = { 'BufWritePre' },
+    cmd = { 'ConformInfo' },
+    keys = {
+      {
+        '<leader>fo',
+        function() require('conform').format({ async = true }) end,
+        mode = '',
+        desc = 'Format buffer',
+      },
+    },
+    ---@module "conform"
+    ---@type conform.setupOpts
+    opts = {
+      formatters_by_ft = {
+        -- C / C++
+        c = { 'clang-format' },
+        cpp = { 'clang-format' },
+        cs = { 'clang-format' },   -- C#, clang-format handles it fine too
 
+        -- Python
+        python = { 'black' },
+
+        -- Everything prettier covers
+        javascript = { 'prettier' },
+        typescript = { 'prettier' },
+        javascriptreact = { 'prettier' },
+        typescriptreact = { 'prettier' },
+        json = { 'prettier' },
+        jsonc = { 'prettier' },
+        yaml = { 'prettier' },
+        html = { 'prettier' },
+        css = { 'prettier' },
+        scss = { 'prettier' },
+        markdown = { 'prettier' },
+        graphql = { 'prettier' },
+        vue = { 'prettier' },
+      },
+
+      format_on_save = {
+        timeout_ms = 500,
+        lsp_format = 'fallback',
+      },
+
+      -- optional: tweak clang-format / black behavior
+      formatters = {
+        ['clang-format'] = {
+          -- example: force a specific style if you don't have a .clang-format file
+          -- prepend_args = { '--style=Google' },
+        },
+        black = {
+          -- example: set line length
+          -- prepend_args = { '--line-length', '100' },
+        },
+      },
+    },
+  },
 
   -- LSP manager
   {

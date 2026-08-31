@@ -1,28 +1,28 @@
 :root {
     /* Main Window Background & Accent Colors */
-    --lwt-accent-color: #0e1416 !important;
+    --lwt-accent-color: #0f1416 !important;
     --lwt-text-color: #dee3e5 !important;
 
     /* Toolbars & Address Bar */
-    --toolbar-bgcolor: #0e1416 !important;
+    --toolbar-bgcolor: #0f1416 !important;
     --toolbar-color: #dee3e5 !important;
-    --toolbar-field-background-color: #0e1416 !important;
+    --toolbar-field-background-color: #0f1416 !important;
     --toolbar-field-color: #dee3e5 !important;
-    --toolbar-field-focus-background-color: #0e1416 !important;
+    --toolbar-field-focus-background-color: #0f1416 !important;
     --toolbar-field-focus-color: #dee3e5 !important;
     --toolbar-field-border-color: #899295 !important;
 
     /* Tabs */
     --tab-background-color: transparent !important;
     --tab-text-color: #dee3e5 !important;
-    --tab-selected-bgcolor: #83d2e3 !important;
-    --tab-selected-textcolor: #00363e !important;
+    --tab-selected-bgcolor: #84d2e6 !important;
+    --tab-selected-textcolor: #003640 !important;
 
     /* Buttons & Selection */
-    --purple-30: #83d2e3 !important;
-    --button-primary-bgcolor: #83d2e3 !important;
-    --button-primary-color: #00363e !important;
-    --ui-text-select-background-color: #83d2e3 !important;
+    --purple-30: #84d2e6 !important;
+    --button-primary-bgcolor: #84d2e6 !important;
+    --button-primary-color: #003640 !important;
+    --ui-text-select-background-color: #84d2e6 !important;
 }
 
 #navigator-toolbox,
@@ -71,7 +71,7 @@
 
 /* Tab Hover state */
 .tabbrowser-tab:hover:not([selected="true"]) .tab-background {
-    background-color: #3f484a !important;
+    background-color: #3f484b !important;
 }
 
 #back-button, #forward-button, #reload-button, #stop-button, #PanelUI-menu-button {
