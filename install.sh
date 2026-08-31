@@ -111,7 +111,7 @@ SHELL_PACKAGES="kitty zsh mako pipewire-pulse wireplumber uwsm xdg-desktop-porta
                 gnome-keyring xorg-xhost pqiv yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide \
                 resvg imagemagick ffmpegthumbnailer tumbler qt5-quickcontrols qt5-quickcontrols2 \
                 qt6-declarative qt6-svg xdg-utils shared-mime-info xdg-desktop-portal seahorse \
-                v4l2loopback-dkms perl-image-exiftool"
+                v4l2loopback-dkms perl-image-exiftool senpai"
 
 # Utilities
 UTILITY_PACKAGES="obs-studio mpv zathura zathura-pdf-poppler xarchiver unrar \
@@ -126,7 +126,8 @@ APPS_BASE="anki obsidian gimp inkscape blender dolphin-emu yt-dlp easytag filezi
            virt-manager edk2-ovmf swtpm gparted grsync libreoffice-fresh-es nvim tmux gamescope \
            steam qemu-full tenacity claws-mail"
 
-NVIM_DEPS="nodejs npm python python-pip ripgrep fd prettier" 
+# NVIM dependencies, including linters 
+NVIM_DEPS="nodejs npm python python-pip ripgrep fd clang prettier python-black" 
 
 # Laptop (Battery driven devives)
 LAPTOP_PACKAGES="brightnessctl tlp iwd impala"
