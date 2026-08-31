@@ -7,7 +7,7 @@ return {
     cmd = { 'ConformInfo' },
     keys = {
       {
-        '<leader>fo',
+        '<leader>f',
         function() require('conform').format({ async = true }) end,
         mode = '',
         desc = 'Format buffer',
@@ -20,12 +20,17 @@ return {
         -- C / C++
         c = { 'clang-format' },
         cpp = { 'clang-format' },
-        cs = { 'clang-format' },   -- C#, clang-format handles it fine too
+        cs = { 'clang-format' },
 
         -- Python
         python = { 'black' },
 
-        -- Everything prettier covers
+        -- 2-space indent
+        css = { 'prettier_2' },
+        scss = { 'prettier_2' },
+        html = { 'prettier_2' },
+
+        -- 4-space indent (default prettier)
         javascript = { 'prettier' },
         typescript = { 'prettier' },
         javascriptreact = { 'prettier' },
@@ -33,9 +38,6 @@ return {
         json = { 'prettier' },
         jsonc = { 'prettier' },
         yaml = { 'prettier' },
-        html = { 'prettier' },
-        css = { 'prettier' },
-        scss = { 'prettier' },
         markdown = { 'prettier' },
         graphql = { 'prettier' },
         vue = { 'prettier' },
@@ -46,19 +48,25 @@ return {
         lsp_format = 'fallback',
       },
 
-      -- optional: tweak clang-format / black behavior
       formatters = {
         ['clang-format'] = {
-          -- example: force a specific style if you don't have a .clang-format file
-          -- prepend_args = { '--style=Google' },
+          prepend_args = { '--style={IndentWidth: 4}' },
         },
         black = {
-          -- example: set line length
-          -- prepend_args = { '--line-length', '100' },
+          prepend_args = { '--line-length', '100' }, -- black doesn't do "indent width", it's always 4 spaces
+        },
+        prettier = {
+          prepend_args = { '--tab-width', '4' },
+        },
+        -- custom variant of prettier just for css/html
+        prettier_2 = {
+          inherit = true,      -- inherit prettier's base config
+          prepend_args = { '--tab-width', '2' },
         },
       },
     },
   },
+
 
   -- LSP manager
   {
