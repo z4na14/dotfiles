@@ -216,9 +216,9 @@
 
 ### Formatting (conform.nvim)
 
-| Key         | Action        |
-| ----------- | ------------- |
-| `<leader>f` | Format buffer |
+| Key          | Action        |
+| ------------ | ------------- |
+| `<leader>fo` | Format buffer |
 
 ### Folding (nvim-ufo)
 
