@@ -130,7 +130,7 @@ APPS_BASE="anki obsidian gimp inkscape blender dolphin-emu yt-dlp easytag filezi
 NVIM_DEPS="nodejs npm python python-pip ripgrep fd clang prettier python-black" 
 
 # Laptop (Battery driven devives)
-LAPTOP_PACKAGES="brightnessctl tlp iwd impala"
+LAPTOP_PACKAGES="brightnessctl tlp iwd networkmanager_dmenu"
 
 # NVIDIA specifics
 NVIDIA_PACKAGES="nvidia-utils lib32-nvidia-utils libva-nvidia-driver"
