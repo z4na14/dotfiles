@@ -106,7 +106,7 @@ SHELL_PACKAGES="kitty zsh mako pipewire-pulse wireplumber uwsm xdg-desktop-porta
                 ttf-lilex-nerd ttf-jetbrains-mono-nerd noto-fonts noto-fonts-emoji \
                 waybar awww grim slurp swappy fuzzel cliphist thunar thunar-volman \
                 ristretto sddm fastfetch hyprlock hypridle bluez bluez-utils blueman networkmanager \
-                nm-connection-editor pavucontrol gvfs gvfs-smb gvfs-mtp gvfs-gphoto2 gvfs-dnssd \
+                networkmanager-dmenu nm-connection-editor pavucontrol gvfs gvfs-smb gvfs-mtp gvfs-gphoto2 gvfs-dnssd \
                 duf dust bat lsd fzf qt6-virtualkeyboard qt6-imageformats qt5-graphicaleffects \
                 gnome-keyring xorg-xhost pqiv yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide \
                 resvg imagemagick ffmpegthumbnailer tumbler qt5-quickcontrols qt5-quickcontrols2 \
@@ -130,7 +130,7 @@ APPS_BASE="anki obsidian gimp inkscape blender dolphin-emu yt-dlp easytag filezi
 NVIM_DEPS="nodejs npm python python-pip ripgrep fd clang prettier python-black" 
 
 # Laptop (Battery driven devives)
-LAPTOP_PACKAGES="brightnessctl tlp iwd networkmanager_dmenu"
+LAPTOP_PACKAGES="brightnessctl tlp iwd" 
 
 # NVIDIA specifics
 NVIDIA_PACKAGES="nvidia-utils lib32-nvidia-utils libva-nvidia-driver"
