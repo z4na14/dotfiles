@@ -130,7 +130,7 @@ APPS_BASE="anki obsidian gimp inkscape blender dolphin-emu yt-dlp easytag filezi
 NVIM_DEPS="nodejs npm python python-pip ripgrep fd clang prettier python-black" 
 
 # Laptop (Battery driven devives)
-LAPTOP_PACKAGES="brightnessctl tlp iwd" 
+LAPTOP_PACKAGES="brightnessctl tlp networkmanager_dmenu wpa_supplicant"
 
 # NVIDIA specifics
 NVIDIA_PACKAGES="nvidia-utils lib32-nvidia-utils libva-nvidia-driver"
@@ -146,11 +146,6 @@ fi
 
 if $INSTALL_LAPTOP; then
     sudo pacman -Syyu $LAPTOP_PACKAGES
-   
-    # Set iwd as wifi backend
-    echo -e "[General]\nEnableNetworkConfiguration=true" > /etc/iwd/main.conf
-    sudo mkdir -p /etc/NetworkManager/conf.d && echo -e "[device]\nwifi.backend=iwd" | sudo tee /etc/NetworkManager/conf.d/wifi_backend.conf
-    sudo systemctl enable --now iwd.service
 
     # Modify copied waybar config to the laptop one
     rm ~/.config/waybar/config.jsonc
@@ -168,7 +163,7 @@ if $ENABLE_SERVICES; then
 
     systemctl --user enable --now hyprpolkitagent.service
     systemctl --user enable --now waybar.service
-    systemctl --user enable --now gnome-keyring-daemon.service
+        systemctl --user enable --now gnome-keyring-daemon.service
     systemctl enable --now bluetooth.service
     systemctl enable --now NetworkManager.service
     systemctl enable --now sddm.service
