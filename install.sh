@@ -122,9 +122,9 @@ UTILITY_PACKAGES="obs-studio mpv zathura zathura-pdf-poppler xarchiver unrar \
 APPS_CACHY="protonup-qt ventoy-bin helium-browser-bin proton-cachyos-slr"
 
 # Normal apps for myself
-APPS_BASE="anki obsidian gimp inkscape blender dolphin-emu yt-dlp easytag filezilla keepassxc \
-           virt-manager edk2-ovmf swtpm gparted grsync libreoffice-fresh-es nvim tmux gamescope \
-           steam qemu-full tenacity claws-mail"
+APPS_BASE="anki obsidian gimp inkscape blender yt-dlp easytag filezilla keepassxc \
+           libvirt qemu-full virt-manager edk2-ovmf swtpm gparted grsync libreoffice-fresh-es \
+           nvim tmux gamescope steam claws-mail"
 
 # NVIM dependencies, including linters 
 NVIM_DEPS="nodejs npm python python-pip ripgrep fd clang prettier python-black" 
