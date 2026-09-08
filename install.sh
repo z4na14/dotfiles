@@ -111,12 +111,12 @@ SHELL_PACKAGES="kitty zsh mako pipewire-pulse wireplumber uwsm xdg-desktop-porta
                 gnome-keyring xorg-xhost pqiv yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide \
                 resvg imagemagick ffmpegthumbnailer tumbler qt5-quickcontrols qt5-quickcontrols2 \
                 qt6-declarative qt6-svg xdg-utils shared-mime-info xdg-desktop-portal seahorse \
-                v4l2loopback-dkms perl-image-exiftool senpai"
+                v4l2loopback-dkms perl-image-exiftool python-jinja python-pillow python-pystray python-pywebview"
 
 # Utilities
 UTILITY_PACKAGES="obs-studio mpv zathura zathura-pdf-poppler xarchiver unrar \
                   nwg-displays nwg-look qt5ct qt6ct matugen qalculate-qt firefox btop paru \
-                  atuin"
+                  atuin senpai"
 
 # CachyOS specifics
 APPS_CACHY="protonup-qt ventoy-bin helium-browser-bin proton-cachyos-slr"
