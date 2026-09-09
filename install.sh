@@ -73,7 +73,8 @@ SHELL_PACKAGES="kitty zsh mako pipewire-pulse wireplumber uwsm xdg-desktop-porta
                 gnome-keyring xorg-xhost pqiv yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide \
                 resvg imagemagick ffmpegthumbnailer tumbler qt5-quickcontrols qt5-quickcontrols2 \
                 qt6-declarative qt6-svg xdg-utils shared-mime-info xdg-desktop-portal seahorse \
-                v4l2loopback-dkms perl-image-exiftool python-jinja python-pillow python-pystray python-pywebview"
+                v4l2loopback-dkms perl-image-exiftool python-jinja python-pillow python-pystray \
+                python-pywebview python-pipx"
 
 # Utilities
 UTILITY_PACKAGES="obs-studio mpv zathura zathura-pdf-poppler xarchiver unrar \
@@ -104,6 +105,8 @@ if $INSTALL_PACKAGES; then
     # For apps like obs
     sudo modprobe v4l2loopback exclusive_caps=1 devices=1 video_nr=5 card_label="ExternalWebCam"
 
+    # For theming firefox and thunderbird
+    pipx install pywalfox && pywalfox install
 fi
 
 if $INSTALL_LAPTOP; then
@@ -174,14 +177,9 @@ if $MOVE_CONFIG; then
     firefox     & sleep 5 && killall firefox
     # Variable with the profile
     th_profile=( ~/.thunderbird/*.default-release(N/) )
-    mkdir -p "$th_profile[1]/chrome"
-    ln -s $PWD/firefox/userChrome-thunderbird.css "$th_profile[1]/chrome/userChrome.css"
-    ln -s $PWD/firefox/user-thunderbird.js "$th_profile[1]/user.js"
-    # And for ff
     ff_profile=( ~/.config/mozilla/firefox/*.default-release(N/) )
-    mkdir -p "$ff_profile[1]/chrome"
-    ln -sf "$PWD/firefox/userChrome-firefox.css" "$ff_profile[1]/chrome/userChrome.css"
-    ln -sf "$PWD/firefox/user-firefox.js" "$ff_profile[1]/user.js"
+    ln -s $PWD/firefox/user-firefox.js $ff_profile/user.js
+    ln -s $PWD/firefox/user-thunderbird.js $th_profile/user.js        
 fi
 
 ##############################################################################################
