@@ -19,7 +19,11 @@ post_hook = 'systemctl --user restart waybar.service'
 
 [templates.firefox]
 input_path = '~/.config/matugen/templates/firefox-colors.css'
-output_path = '~/.dotfiles/firefox/userChrome.css'
+output_path = '~/.dotfiles/firefox/userChrome-firefox.css'
+
+[templates.thunderbird]
+input_path = '~/.config/matugen/templates/thunderbird-colors.css'
+output_path = '~/.dotfiles/firefox/userChrome-thunderbird.css'
 
 [templates.gtk3]
 input_path = '~/.config/matugen/templates/gtk-colors.css'

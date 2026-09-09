@@ -55,44 +55,6 @@ for arg in "$@"; do
     fi
 done
 
-
-##############################################################################################
-# INSTALL ALL CONFIGS                                                                        #
-##############################################################################################
-if $MOVE_CONFIG; then
-
-    # ./config folders directly linked
-    for dir in "$PWD/config"/*/; do
-      name="$(basename "$dir")"
-      target="$XDG_CONFIG_HOME/$name"
-
-      rm -rf "$target"
-      ln -s "${dir%/}" "$target"
-    done
-
-    # Link desktop waybar config
-    # (If laptop is used, config is different. See laptop flag)
-    ln ~/.config/waybar/config_desktop.jsonc ~/.config/waybar/config.jsonc 
-
-    # Custom cursor
-    mkdir temp
-    hyprcursor-util -x /usr/share/icons/Bibata-Modern-Ice -o temp
-    hyprcursor-util -c temp/Bibata-Modern-Ice -o temp
-    sudo mv ./temp/extracted_Bibata-Modern-Ice /usr/share/icons/Bibata-Modern-Ice-Hyprcursor
-    rm -rf temp
-
-    # Required GTK theme
-    sudo cp -r ./gtk_theme/* /usr/share/themes
-
-    # SDDM theme
-    sudo cp -r ./sddm/terminal /usr/share/sddm/themes
-    sudo cp ./sddm/sddm.conf /etc/sddm.conf
-
-    # Link zsh config
-    ln -s $PWD/zsh/.zshenv ~/
-    ln -s $PWD/zsh/.zshrc  ~/
-
-fi
 ##############################################################################################
 # INSTALL ALL PACKAGES                                                                       #
 ##############################################################################################
@@ -124,7 +86,7 @@ APPS_CACHY="protonup-qt ventoy-bin helium-browser-bin proton-cachyos-slr"
 # Normal apps for myself
 APPS_BASE="anki obsidian gimp inkscape blender yt-dlp easytag filezilla keepassxc \
            libvirt qemu-full virt-manager edk2-ovmf swtpm gparted grsync libreoffice-fresh-es \
-           nvim tmux gamescope steam" 
+           nvim tmux gamescope steam thunderbird" 
 
 # NVIM dependencies, including linters 
 NVIM_DEPS="nodejs npm python python-pip ripgrep fd clang prettier python-black" 
@@ -169,6 +131,59 @@ if $ENABLE_SERVICES; then
     systemctl enable --now sddm.service
 
 fi
+
+##############################################################################################
+# INSTALL ALL CONFIGS                                                                        #
+##############################################################################################
+if $MOVE_CONFIG; then
+
+    # ./config folders directly linked
+    for dir in "$PWD/config"/*/; do
+      name="$(basename "$dir")"
+      target="$XDG_CONFIG_HOME/$name"
+
+      rm -rf "$target"
+      ln -s "${dir%/}" "$target"
+    done
+
+    # Link desktop waybar config
+    # (If laptop is used, config is different. See laptop flag)
+    ln ~/.config/waybar/config_desktop.jsonc ~/.config/waybar/config.jsonc 
+
+    # Custom cursor
+    mkdir temp
+    hyprcursor-util -x /usr/share/icons/Bibata-Modern-Ice -o temp
+    hyprcursor-util -c temp/Bibata-Modern-Ice -o temp
+    sudo mv ./temp/extracted_Bibata-Modern-Ice /usr/share/icons/Bibata-Modern-Ice-Hyprcursor
+    rm -rf temp
+
+    # Required GTK theme
+    sudo cp -r ./gtk_theme/* /usr/share/themes
+
+    # SDDM theme
+    sudo cp -r ./sddm/terminal /usr/share/sddm/themes
+    sudo cp ./sddm/sddm.conf /etc/sddm.conf
+
+    # Link zsh config
+    ln -s $PWD/zsh/.zshenv ~/
+    ln -s $PWD/zsh/.zshrc  ~/
+
+    # Link ff and thunderbird profiles
+    # Launch for the first time to create profile folder
+    thunderbird & sleep 5 && killall thunderbird
+    firefox     & sleep 5 && killall firefox
+    # Variable with the profile
+    th_profile=( ~/.thunderbird/*.default-release(N/) )
+    mkdir -p "$th_profile[1]/chrome"
+    ln -s $PWD/firefox/userChrome-thunderbird.css "$th_profile[1]/chrome/userChrome.css"
+    ln -s $PWD/firefox/user-thunderbird.js "$th_profile[1]/user.js"
+    # And for ff
+    ff_profile=( ~/.config/mozilla/firefox/*.default-release(N/) )
+    mkdir -p "$ff_profile[1]/chrome"
+    ln -sf "$PWD/firefox/userChrome-firefox.css" "$ff_profile[1]/chrome/userChrome.css"
+    ln -sf "$PWD/firefox/user-firefox.js" "$ff_profile[1]/user.js"
+fi
+
 ##############################################################################################
 # VARIOUS SETTINGS                                                                           #
 ##############################################################################################
