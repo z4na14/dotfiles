@@ -70,7 +70,7 @@ SHELL_PACKAGES="kitty zsh mako pipewire-pulse wireplumber uwsm xdg-desktop-porta
                 ristretto sddm fastfetch hyprlock hypridle bluez bluez-utils blueman networkmanager \
                 networkmanager-dmenu nm-connection-editor pavucontrol gvfs gvfs-smb gvfs-mtp gvfs-gphoto2 gvfs-dnssd \
                 duf dust bat lsd fzf qt6-virtualkeyboard qt6-imageformats qt5-graphicaleffects \
-                gnome-keyring xorg-xhost pqiv yazi ffmpeg 7zip jq poppler fd ripgrep fzf zoxide \
+                gnome-keyring xorg-xhost pqiv yazi ffmpeg 7zip zip unzip jq poppler fd ripgrep fzf zoxide \
                 resvg imagemagick ffmpegthumbnailer tumbler qt5-quickcontrols qt5-quickcontrols2 \
                 qt6-declarative qt6-svg xdg-utils shared-mime-info xdg-desktop-portal seahorse \
                 v4l2loopback-dkms perl-image-exiftool python-jinja python-pillow python-pystray \
@@ -176,10 +176,11 @@ if $MOVE_CONFIG; then
     thunderbird & sleep 5 && killall thunderbird
     firefox     & sleep 5 && killall firefox
     # Variable with the profile
-    th_profile=( ~/.thunderbird/*.default-release(N/) )
-    ff_profile=( ~/.config/mozilla/firefox/*.default-release(N/) )
-    ln -s $PWD/firefox/user-firefox.js $ff_profile/user.js
-    ln -s $PWD/firefox/user-thunderbird.js $th_profile/user.js        
+    th_profile=( ~/.thunderbird/*.default-release(N/) ~/.config/thunderbird/*.default-release(N/) )
+    ff_profile=( ~/.mozilla/firefox/*.default-release(N/) ~/.config/mozilla/firefox/*.default-release(N/) )
+
+    [[ -n $ff_profile ]] && ln -s "$PWD/firefox/user-firefox.js" "$ff_profile/user.js"
+    [[ -n $th_profile ]] && ln -s "$PWD/firefox/user-thunderbird.js" "$th_profile/user.js"
 fi
 
 ##############################################################################################
