@@ -284,7 +284,9 @@
 
 ### Firefox / Thunderbird
 
-README available inside `~/firefox`, but basically, stylesheets need to be enabled, and required files moved inside the respective folders.
+Pywalfox needs to be installed on both apps for them to pick up the theme.
+
+https://addons.mozilla.org/en-US/firefox/addon/pywalfox/
 
 ### GTK
 

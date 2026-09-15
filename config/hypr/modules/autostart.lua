@@ -7,4 +7,6 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("awww-daemon")
     -- Theming?
     hl.exec_cmd("systemctl --user import-environment QT_QPA_PLATFORMTHEME")
+    -- Sudo apps
+    hl.exec_cmd("xhost +local:root")
 end)
