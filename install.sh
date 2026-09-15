@@ -81,9 +81,6 @@ UTILITY_PACKAGES="obs-studio mpv zathura zathura-pdf-poppler xarchiver unrar \
                   nwg-displays nwg-look qt5ct qt6ct matugen qalculate-qt firefox btop paru \
                   atuin senpai"
 
-# CachyOS specifics
-APPS_CACHY="protonup-qt ventoy-bin helium-browser-bin proton-cachyos-slr"
-
 # Normal apps for myself
 APPS_BASE="anki obsidian gimp inkscape blender yt-dlp easytag filezilla keepassxc \
            libvirt qemu-full virt-manager edk2-ovmf swtpm gparted grsync libreoffice-fresh-es \
@@ -100,7 +97,7 @@ NVIDIA_PACKAGES="nvidia-utils lib32-nvidia-utils libva-nvidia-driver"
 
 
 if $INSTALL_PACKAGES; then
-    sudo pacman -Syyu $MAIN_PACKAGES $SHELL_PACKAGES $UTILITY_PACKAGES $APPS_BASE $APPS_CACHY $NVIM_DEPS
+    sudo pacman -Syyu $MAIN_PACKAGES $SHELL_PACKAGES $UTILITY_PACKAGES $APPS_BASE $NVIM_DEPS
 
     # For apps like obs
     sudo modprobe v4l2loopback exclusive_caps=1 devices=1 video_nr=5 card_label="ExternalWebCam"
@@ -210,5 +207,4 @@ if $CONFIGURE_OPTS; then
 
     # Fix xwayland sudo apps
     xhost +local:root
-
 fi

@@ -14,6 +14,7 @@ hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + F", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R", hl.dsp.exec_cmd(menu))
+hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("nwg-displays"))
 --hl.bind(mainMod .. " + A",         hl.dsp.exec_cmd("hyprworm"))
 hl.bind("CTRL + SHIFT + escape", hl.dsp.exec_cmd("kitty btop"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("networkmanager_dmenu"))
@@ -21,10 +22,10 @@ hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("networkmanager_dmenu"))
 -- Change background
 hl.bind(mainMod .. " + P",
     hl.dsp.exec_cmd(
-    'matugen image "$(ls $HOME/.dotfiles/wallpapers | fuzzel -d --width=30 -l 8 | sed "s|^|$HOME/.dotfiles/wallpapers/|")" --prefer=saturation'))
+        'matugen image "$(ls $HOME/.dotfiles/wallpapers | fuzzel -d --width=30 -l 8 | sed "s|^|$HOME/.dotfiles/wallpapers/|")" --prefer=saturation'))
 hl.bind(mainMod .. " + SHIFT + P",
     hl.dsp.exec_cmd(
-    'matugen image "$HOME/.dotfiles/wallpapers/bg$(( $(od -An -N4 -tu4 /dev/random) % $(ls -1 $HOME/.dotfiles/wallpapers/bg*.jpg | wc -l) )).jpg" --prefer=saturation'))
+        'matugen image "$HOME/.dotfiles/wallpapers/bg$(( $(od -An -N4 -tu4 /dev/random) % $(ls -1 $HOME/.dotfiles/wallpapers/bg*.jpg | wc -l) )).jpg" --prefer=saturation'))
 
 -- Screenshots
 -- Select a region and copy directly to clipboard (No Swappy, no file saved)
@@ -34,7 +35,7 @@ hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("grim -g \"$(slurp)\" - | swa
 -- Capture active window and copy to clipboard
 hl.bind(mainMod .. " + PRINT",
     hl.dsp.exec_cmd(
-    "grim -g \"$(hyprctl activewindow -j | jq -r '\"\\(.at[0]),\\(.at[1]) \\(.size[0])x\\(.size[1])\"')\" - | wl-copy"))
+        "grim -g \"$(hyprctl activewindow -j | jq -r '\"\\(.at[0]),\\(.at[1]) \\(.size[0])x\\(.size[1])\"')\" - | wl-copy"))
 -- Capture current monitor/output and copy to clipboard
 hl.bind("PRINT",
     hl.dsp.exec_cmd("grim -o \"$(hyprctl monitors -j | jq -r '.[] | select(.focused) | .name')\" - | wl-copy"))

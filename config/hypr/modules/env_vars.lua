@@ -12,6 +12,7 @@ hl.env("SSH_AUTH_SOCK", "$XDG_RUNTIME_DIR/ssh-agent.socket")
 hl.env("GDK_BACKEND", "wayland")
 hl.env("QT_QPA_PLATFORM", "wayland")
 hl.env("QT_QPA_PLATFORMTHEME", "qt5ct")
+hl.env("GTK_THEME", "adw-gtk3-dark")
 
 hl.env("HYPRCURSOR_THEME", "Bibata-Modern-Ice-Hyprcursor")
 hl.env("HYPRCURSOR_SIZE", "24")
