@@ -18,11 +18,13 @@ SHELL_PACKAGES="kitty zsh mako pipewire-pulse wireplumber uwsm xdg-desktop-porta
                 resvg imagemagick ffmpegthumbnailer tumbler qt5-quickcontrols qt5-quickcontrols2 \
                 qt6-declarative qt6-svg xdg-utils shared-mime-info xdg-desktop-portal seahorse \
                 v4l2loopback-dkms perl-image-exiftool python-jinja python-pillow python-pystray \
-                python-pywebview python-pipx less xcur2png"
+                python-pywebview python-pipx less xcur2png nwg-dnsmasq pipewire-libcamera \
+                sof-firmware alsa-ucm-conf which v4l2loopback-dkms"
 
 # Utilities
 UTILITY_PACKAGES="obs-studio mpv zathura zathura-pdf-poppler xarchiver unrar \
-                  nwg-displays nwg-look qt5ct qt6ct matugen qalculate-qt firefox btop atuin senpai"
+                  nwg-displays nwg-look qt5ct qt6ct matugen qalculate-qt firefox \
+                  btop atuin senpai"
 
 # Normal apps for myself
 APPS_BASE="anki obsidian gimp inkscape blender yt-dlp easytag filezilla keepassxc \
@@ -45,12 +47,6 @@ install_packages () {
     sudo pacman -Syyu $UTILITY_PACKAGES
     sudo pacman -Syyu $APPS_BASE
     sudo pacman -Syyu $NVIM_DEPS
-
-    # For apps like obs
-    #sudo modprobe v4l2loopback exclusive_caps=1 devices=1 video_nr=5 card_label="ExternalWebCam"
-
-    # For theming firefox and thunderbird
-    #pipx install pywalfox && pywalfox install
 }
 
 install_laptop () {
@@ -72,6 +68,9 @@ enable_services () {
     systemctl --user enable hyprpolkitagent.service
     systemctl --user enable waybar.service
     systemctl --user enable gnome-keyring-daemon.service
+    systemctl --user enable pipewire.service
+    systemctl --user enable pipewire-pulse.service
+    systemctl --user enable wireplumber.service
     systemctl enable bluetooth.service
     systemctl enable NetworkManager.service
     systemctl enable sddm.service
@@ -99,8 +98,8 @@ move_config () {
     sudo cp -r ./cursor/Bibata-Modern-Ice /usr/share/icons/
     mkdir temp
     hyprcursor-util -x /usr/share/icons/Bibata-Modern-Ice -o temp
-    hyprcursor-util -c temp/Bibata-Modern-Ice -o temp
-    sudo mv ./temp/extracted_Bibata-Modern-Ice /usr/share/icons/Bibata-Modern-Ice-Hyprcursor
+    hyprcursor-util -c temp/extracted_Bibata-Modern-Ice -o temp
+    sudo mv ./temp/theme_Extracted\ Theme /usr/share/icons/Bibata-Modern-Ice-Hyprcursor
     rm -rf temp
 
     # Required GTK theme
@@ -114,17 +113,6 @@ move_config () {
     rm ~/.zshenv ~/.zshrc
     ln -s $PWD/zsh/.zshenv ~/
     ln -s $PWD/zsh/.zshrc  ~/
-
-    # Link ff and thunderbird profiles
-    # Launch for the first time to create profile folder
-    #thunderbird & sleep 5 && killall thunderbird
-    #firefox     & sleep 5 && killall firefox
-    # Variable with the profile
-    #th_profile=( ~/.thunderbird/*.default-release(N/) ~/.config/thunderbird/*.default-release(N/) )
-    #ff_profile=( ~/.mozilla/firefox/*.default-release(N/) ~/.config/mozilla/firefox/*.default-release(N/) )
-
-    #[[ -n $ff_profile ]] && ln -s "$PWD/firefox/user-firefox.js" "$ff_profile/user.js"
-    #[[ -n $th_profile ]] && ln -s "$PWD/firefox/user-thunderbird.js" "$th_profile/user.js"
 }
 
 ##############################################################################################
@@ -155,8 +143,36 @@ configure_opts () {
     xhost +local:root
 
     # Create user folders
-    xdg-user-dirs-update 
+    xdg-user-dirs-update
+
+    # For apps like obs
+    sudo modprobe v4l2loopback exclusive_caps=1 devices=1 video_nr=5 card_label="ExternalWebCam"
+
+    # For theming firefox and thunderbird
+    pipx install pywalfox && pywalfox install
+
+    # Link ff and thunderbird profiles
+    # Launch for the first time to create profile folder
+    thunderbird & sleep 5 && killall thunderbird
+    firefox     & sleep 5 && killall firefox
+    # Variable with the profile
+    th_profile=( ~/.thunderbird/*.default-release(N/) ~/.config/thunderbird/*.default-release(N/) )
+    ff_profile=( ~/.mozilla/firefox/*.default-release(N/) ~/.config/mozilla/firefox/*.default-release(N/) )
+
+    rm "$ff_profile/user.js" "$th_profile/user.js"
+    [[ -n $ff_profile ]] && ln -s "$PWD/firefox/user-firefox.js" "$ff_profile/user.js"
+    [[ -n $th_profile ]] && ln -s "$PWD/firefox/user-thunderbird.js" "$th_profile/user.js"
+
+    # Change shell
+    chsh -s $(which zsh)
+
+    # Install oh-my-posh for theme
+    curl -s https://ohmyposh.dev/install.sh | bash -s
 }
+
+
+##############################################################################################
+##############################################################################################
 
 
 if [[ $# -eq 0 ]]; then
@@ -172,7 +188,7 @@ Arguments:
     -L: Install and configure required options for laptop installs.
     -N: Install NVIDIA required packages.
     -S: Enable the required services.
-    -O: Set certain environment options.
+    -O: Set post install requirements.
 
 EOF
 
