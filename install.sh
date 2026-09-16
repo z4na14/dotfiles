@@ -1,64 +1,8 @@
 #!/bin/bash
 
-
-if [[ $# -eq 0 ]]; then
-cat << EOF
-
-    Custom script to install all required packages for 
-    the dotfiles along minimal utilities that I use everyday, 
-    and linking all required files in the respective folders.
-
-    Arguments:
-        - "-C": Links all custom configs into the required directories (Idempotent operation).
-        - "-P": Install all required packages for the custom dotfiles to work.
-        - "-L": Install and configure required options for laptop installs.
-        - "-N": Install NVIDIA required packages.
-        - "-S": Enable the required services.
-        - "-O": Set certain environment options.
-
-EOF
-
-    exit 0
-fi
-
-
-MOVE_CONFIG=false
-INSTALL_PACKAGES=false
-INSTALL_LAPTOP=false
-INSTALL_NVIDIA=false
-ENABLE_SERVICES=false
-CONFIGURE_OPTS=false
-
-for arg in "$@"; do
-    if [[ $arg == "-C" ]]; then
-        MOVE_CONFIG=true
-    fi
-
-    if [[ $arg == "-P" ]]; then
-        INSTALL_PACKAGES=true
-    fi
-
-    if [[ $arg == "-L" ]]; then
-        INSTALL_LAPTOP=true
-    fi
-
-    if [[ $arg == "-N" ]]; then
-        INSTALL_NVIDIA=true
-    fi
-
-    if [[ $arg == "-S" ]]; then
-        ENABLE_SERVICES=true
-    fi
-
-    if [[ $arg == "-O" ]]; then
-        CONFIGURE_OPTS=true
-    fi
-done
-
 ##############################################################################################
 # INSTALL ALL PACKAGES                                                                       #
 ##############################################################################################
-
 # Main packages
 MAIN_PACKAGES="hyprland aquamarine hyprlang hyprcursor hyprutils \
                hyprgraphics hyprshutdown"
@@ -74,7 +18,7 @@ SHELL_PACKAGES="kitty zsh mako pipewire-pulse wireplumber uwsm xdg-desktop-porta
                 resvg imagemagick ffmpegthumbnailer tumbler qt5-quickcontrols qt5-quickcontrols2 \
                 qt6-declarative qt6-svg xdg-utils shared-mime-info xdg-desktop-portal seahorse \
                 v4l2loopback-dkms perl-image-exiftool python-jinja python-pillow python-pystray \
-                python-pywebview python-pipx"
+                python-pywebview python-pipx less"
 
 # Utilities
 UTILITY_PACKAGES="obs-studio mpv zathura zathura-pdf-poppler xarchiver unrar \
@@ -96,47 +40,48 @@ LAPTOP_PACKAGES="brightnessctl tlp wpa_supplicant"
 NVIDIA_PACKAGES="nvidia-utils lib32-nvidia-utils libva-nvidia-driver"
 
 
-if $INSTALL_PACKAGES; then
-    sudo pacman -Syyu $MAIN_PACKAGES $SHELL_PACKAGES $UTILITY_PACKAGES $APPS_BASE $NVIM_DEPS
+install_packages () {
+    sudo pacman -Syyu $MAIN_PACKAGES    
+    sudo pacman -Syyu $SHELL_PACKAGES
+    sudo pacman -Syyu $UTILITY_PACKAGES
+    sudo pacman -Syyu $APPS_BASE
+    sudo pacman -Syyu $NVIM_DEPS
 
     # For apps like obs
     sudo modprobe v4l2loopback exclusive_caps=1 devices=1 video_nr=5 card_label="ExternalWebCam"
 
     # For theming firefox and thunderbird
-    pipx install pywalfox && pywalfox install
-fi
+    #pipx install pywalfox && pywalfox install
+}
 
-if $INSTALL_LAPTOP; then
+install_laptop () {
     sudo pacman -Syyu $LAPTOP_PACKAGES
 
     # Modify copied waybar config to the laptop one
     rm ~/.config/waybar/config.jsonc
     ln ~/.config/waybar/config_laptop.jsonc ~/.config/waybar/config.jsonc
-fi
+}
 
-if $INSTALL_NVIDIA; then
+install_nvidia () {
     sudo pacman -Syyu $NVIDIA_PACKAGES
-fi
+}
 
 ##############################################################################################
 # ENABLE REQUIRED SERVICES                                                                   #
 ##############################################################################################
-if $ENABLE_SERVICES; then
-
-    systemctl --user enable --now hyprpolkitagent.service
-    systemctl --user enable --now waybar.service
-        systemctl --user enable --now gnome-keyring-daemon.service
-    systemctl enable --now bluetooth.service
-    systemctl enable --now NetworkManager.service
-    systemctl enable --now sddm.service
-
-fi
+enable_services () {
+    systemctl --user enable hyprpolkitagent.service
+    systemctl --user enable waybar.service
+    systemctl --user enable gnome-keyring-daemon.service
+    systemctl enable bluetooth.service
+    systemctl enable NetworkManager.service
+    systemctl enable sddm.service
+}
 
 ##############################################################################################
 # INSTALL ALL CONFIGS                                                                        #
 ##############################################################################################
-if $MOVE_CONFIG; then
-
+move_config () {
     # ./config folders directly linked
     for dir in "$PWD/config"/*/; do
       name="$(basename "$dir")"
@@ -170,21 +115,20 @@ if $MOVE_CONFIG; then
 
     # Link ff and thunderbird profiles
     # Launch for the first time to create profile folder
-    thunderbird & sleep 5 && killall thunderbird
-    firefox     & sleep 5 && killall firefox
+    #thunderbird & sleep 5 && killall thunderbird
+    #firefox     & sleep 5 && killall firefox
     # Variable with the profile
-    th_profile=( ~/.thunderbird/*.default-release(N/) ~/.config/thunderbird/*.default-release(N/) )
-    ff_profile=( ~/.mozilla/firefox/*.default-release(N/) ~/.config/mozilla/firefox/*.default-release(N/) )
+    #th_profile=( ~/.thunderbird/*.default-release(N/) ~/.config/thunderbird/*.default-release(N/) )
+    #ff_profile=( ~/.mozilla/firefox/*.default-release(N/) ~/.config/mozilla/firefox/*.default-release(N/) )
 
-    [[ -n $ff_profile ]] && ln -s "$PWD/firefox/user-firefox.js" "$ff_profile/user.js"
-    [[ -n $th_profile ]] && ln -s "$PWD/firefox/user-thunderbird.js" "$th_profile/user.js"
-fi
+    #[[ -n $ff_profile ]] && ln -s "$PWD/firefox/user-firefox.js" "$ff_profile/user.js"
+    #[[ -n $th_profile ]] && ln -s "$PWD/firefox/user-thunderbird.js" "$th_profile/user.js"
+}
 
 ##############################################################################################
 # VARIOUS SETTINGS                                                                           #
 ##############################################################################################
-if $CONFIGURE_OPTS; then
-
+configure_opts () {
     # Hide buttons from windows
     gsettings set org.gnome.desktop.wm.preferences button-layout :
     # Prefer dark settings
@@ -207,4 +151,55 @@ if $CONFIGURE_OPTS; then
 
     # Fix xwayland sudo apps
     xhost +local:root
+
+    # Create user folders
+    xdg-user-dirs-update 
+}
+
+
+if [[ $# -eq 0 ]]; then
+cat << EOF
+
+Custom script to install all required packages for 
+the dotfiles along minimal utilities that I use everyday, 
+and linking all required files in the respective folders.
+
+Arguments:
+    -C: Links all custom configs into the required directories (Idempotent operation).
+    -P: Install all required packages for the custom dotfiles to work.
+    -L: Install and configure required options for laptop installs.
+    -N: Install NVIDIA required packages.
+    -S: Enable the required services.
+    -O: Set certain environment options.
+
+EOF
+
+    exit 0
 fi
+
+for arg in "$@"; do
+    if [[ $arg == "-C" ]]; then
+        move_config
+    fi
+
+    if [[ $arg == "-P" ]]; then
+        install_packages 
+    fi
+
+    if [[ $arg == "-L" ]]; then
+        install_laptop 
+    fi
+
+    if [[ $arg == "-N" ]]; then
+        install_nvidia 
+    fi
+
+    if [[ $arg == "-S" ]]; then
+        enable_services 
+    fi
+
+    if [[ $arg == "-O" ]]; then
+        configure_opts
+    fi
+done
+
