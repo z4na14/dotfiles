@@ -18,12 +18,11 @@ SHELL_PACKAGES="kitty zsh mako pipewire-pulse wireplumber uwsm xdg-desktop-porta
                 resvg imagemagick ffmpegthumbnailer tumbler qt5-quickcontrols qt5-quickcontrols2 \
                 qt6-declarative qt6-svg xdg-utils shared-mime-info xdg-desktop-portal seahorse \
                 v4l2loopback-dkms perl-image-exiftool python-jinja python-pillow python-pystray \
-                python-pywebview python-pipx less"
+                python-pywebview python-pipx less xcur2png"
 
 # Utilities
 UTILITY_PACKAGES="obs-studio mpv zathura zathura-pdf-poppler xarchiver unrar \
-                  nwg-displays nwg-look qt5ct qt6ct matugen qalculate-qt firefox btop paru \
-                  atuin senpai"
+                  nwg-displays nwg-look qt5ct qt6ct matugen qalculate-qt firefox btop atuin senpai"
 
 # Normal apps for myself
 APPS_BASE="anki obsidian gimp inkscape blender yt-dlp easytag filezilla keepassxc \
@@ -48,7 +47,7 @@ install_packages () {
     sudo pacman -Syyu $NVIM_DEPS
 
     # For apps like obs
-    sudo modprobe v4l2loopback exclusive_caps=1 devices=1 video_nr=5 card_label="ExternalWebCam"
+    #sudo modprobe v4l2loopback exclusive_caps=1 devices=1 video_nr=5 card_label="ExternalWebCam"
 
     # For theming firefox and thunderbird
     #pipx install pywalfox && pywalfox install
@@ -93,9 +92,11 @@ move_config () {
 
     # Link desktop waybar config
     # (If laptop is used, config is different. See laptop flag)
+    rm ~/.config/waybar/config.jsonc
     ln ~/.config/waybar/config_desktop.jsonc ~/.config/waybar/config.jsonc 
 
     # Custom cursor
+    sudo cp -r ./cursor/Bibata-Modern-Ice /usr/share/icons/
     mkdir temp
     hyprcursor-util -x /usr/share/icons/Bibata-Modern-Ice -o temp
     hyprcursor-util -c temp/Bibata-Modern-Ice -o temp
@@ -110,6 +111,7 @@ move_config () {
     sudo cp ./sddm/sddm.conf /etc/sddm.conf
 
     # Link zsh config
+    rm ~/.zshenv ~/.zshrc
     ln -s $PWD/zsh/.zshenv ~/
     ln -s $PWD/zsh/.zshrc  ~/
 
@@ -178,12 +180,16 @@ EOF
 fi
 
 for arg in "$@"; do
-    if [[ $arg == "-C" ]]; then
-        move_config
-    fi
-
     if [[ $arg == "-P" ]]; then
         install_packages 
+    fi
+
+    if [[ $arg == "-S" ]]; then
+        enable_services 
+    fi
+
+    if [[ $arg == "-C" ]]; then
+        move_config
     fi
 
     if [[ $arg == "-L" ]]; then
@@ -192,10 +198,6 @@ for arg in "$@"; do
 
     if [[ $arg == "-N" ]]; then
         install_nvidia 
-    fi
-
-    if [[ $arg == "-S" ]]; then
-        enable_services 
     fi
 
     if [[ $arg == "-O" ]]; then
