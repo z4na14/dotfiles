@@ -282,29 +282,15 @@
 
 ## Prerequisites for apps
 
-### Firefox / Thunderbird
+### Zen browser
 
-Pywalfox needs to be installed on both apps for them to pick up the theme.
+First, it must be installed throught the preferred way. Then,
 
-https://addons.mozilla.org/en-US/firefox/addon/pywalfox/
+```
+toolkit.legacyUserProfileCustomizations.stylesheets
+```
 
-### GTK
-
-`THEME` folders must be installed as systemwide GTK theme, inside `/usr/share/themes`.
-
-### Zed
-
-Theme must be selected inside the config.
-
-### Vesktop
-
-https://github.com/refact0r/midnight-discord
-
-Vesktop client must be installed.
-
-https://github.com/Vencord/Vesktop
-
-Custom client theme must be installed first, so CSS variables are applied correctly.
+set to `true`.
 
 ### Obsidian
 
@@ -314,7 +300,7 @@ Matugen config must point to the user vault.
 
 Theme must be selected in the config.
 
-### Steam
+### Steam (Not used right now, check commits for when config actually was there)
 
 https://github.com/kuska1/Material-Theme/
 
