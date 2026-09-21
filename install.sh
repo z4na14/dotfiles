@@ -18,7 +18,7 @@ SHELL_PACKAGES="kitty zsh mako pipewire-pulse wireplumber uwsm xdg-desktop-porta
                 resvg imagemagick ffmpegthumbnailer tumbler qt5-quickcontrols qt5-quickcontrols2 \
                 qt6-declarative qt6-svg xdg-utils shared-mime-info xdg-desktop-portal seahorse \
                 v4l2loopback-dkms perl-image-exiftool python-jinja python-pillow python-pystray \
-                python-pywebview python-pipx less xcur2png nwg-dnsmasq pipewire-libcamera \
+                python-pywebview python-pipx less xcur2png dnsmasq pipewire-libcamera \
                 sof-firmware alsa-ucm-conf which v4l2loopback-dkms"
 
 # Utilities
@@ -82,8 +82,8 @@ enable_services () {
 move_config () {
     # ./config folders directly linked
     for dir in "$PWD/config"/*/; do
-      name="$(basename "$dir")"
-      target="$XDG_CONFIG_HOME/$name"
+      name=$(basename "$dir")
+      target=~/.config/$name
 
       rm -rf "$target"
       ln -s "${dir%/}" "$target"
@@ -94,11 +94,14 @@ move_config () {
     rm ~/.config/waybar/config.jsonc
     ln ~/.config/waybar/config_desktop.jsonc ~/.config/waybar/config.jsonc 
 
+    sleep 10
+
     # Custom cursor
     sudo cp -r ./cursor/Bibata-Modern-Ice /usr/share/icons/
     mkdir temp
     hyprcursor-util -x /usr/share/icons/Bibata-Modern-Ice -o temp
     hyprcursor-util -c temp/extracted_Bibata-Modern-Ice -o temp
+    sudo rm -rf /usr/share/icons/Bibata-Modern-Ice-Hyprcursor 
     sudo mv ./temp/theme_Extracted\ Theme /usr/share/icons/Bibata-Modern-Ice-Hyprcursor
     rm -rf temp
 
