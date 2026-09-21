@@ -1,5 +1,7 @@
 echo "\n"
-fastfetch --config ~/.config/fastfetch/config-init.jsonc
+if [[ $TERM == "xterm-kitty" ]]; then
+	fastfetch --config ~/.config/fastfetch/config-init.jsonc
+fi
 
 alias ls='lsd -a'
 alias cat='bat'
