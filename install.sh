@@ -29,7 +29,7 @@ UTILITY_PACKAGES="obs-studio mpv zathura zathura-pdf-poppler xarchiver unrar \
 # Normal apps for myself
 APPS_BASE="anki obsidian gimp inkscape blender yt-dlp easytag filezilla keepassxc \
            libvirt qemu-full virt-manager edk2-ovmf swtpm gparted grsync libreoffice-fresh-es \
-           nvim tmux gamescope steam thunderbird" 
+           nvim tmux gamescope steam" 
 
 # NVIM dependencies, including linters 
 NVIM_DEPS="nodejs npm python python-pip ripgrep fd clang prettier python-black" 
@@ -147,22 +147,7 @@ configure_opts () {
 
     # For apps like obs
     sudo modprobe v4l2loopback exclusive_caps=1 devices=1 video_nr=5 card_label="ExternalWebCam"
-
-    # For theming firefox and thunderbird
-    pipx install pywalfox && pywalfox install
-
-    # Link ff and thunderbird profiles
-    # Launch for the first time to create profile folder
-    thunderbird & sleep 5 && killall thunderbird
-    firefox     & sleep 5 && killall firefox
-    # Variable with the profile
-    th_profile=( ~/.thunderbird/*.default-release(N/) ~/.config/thunderbird/*.default-release(N/) )
-    ff_profile=( ~/.mozilla/firefox/*.default-release(N/) ~/.config/mozilla/firefox/*.default-release(N/) )
-
-    rm "$ff_profile/user.js" "$th_profile/user.js"
-    [[ -n $ff_profile ]] && ln -s "$PWD/firefox/user-firefox.js" "$ff_profile/user.js"
-    [[ -n $th_profile ]] && ln -s "$PWD/firefox/user-thunderbird.js" "$th_profile/user.js"
-
+ 
     # Change shell
     chsh -s $(which zsh)
 

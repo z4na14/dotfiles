@@ -18,6 +18,7 @@ hl.bind(mainMod .. " + O", hl.dsp.exec_cmd("nwg-displays"))
 --hl.bind(mainMod .. " + A",         hl.dsp.exec_cmd("hyprworm"))
 hl.bind("CTRL + SHIFT + escape", hl.dsp.exec_cmd("kitty btop"))
 hl.bind(mainMod .. " + N", hl.dsp.exec_cmd("networkmanager_dmenu"))
+hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("blueman-manager"))
 
 -- Change background
 hl.bind(mainMod .. " + P",

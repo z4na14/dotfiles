@@ -35,11 +35,6 @@ output_path = '~/.config/qt5ct/colors/matugen.conf'
 input_path = '~/.config/matugen/templates/qtct-colors.css'
 output_path = '~/.config/qt6ct/colors/matugen.conf'
 
-[templates.pywalfox]
-input_path = '~/.config/matugen/templates/pywalfox-colors.json'
-output_path = '~/.cache/wal/colors.json'
-post_hook = 'pywalfox update'
-
 [templates.kitty]
 input_path = '~/.config/matugen/templates/kitty-colors.css'
 output_path = '~/.config/kitty/themes/Matugen.conf'
@@ -80,6 +75,3 @@ output_path = '~/.config/obs-studio/themes/matugen.obt'
 input_path = '~/.config/matugen/templates/steam-colors.css'
 output_path = '~/.steam/steam/millennium/themes/Material-Theme/css/main/colors/matugen.css'
 
-[templates.opencode]
-input_path = '~/.config/matugen/templates/opencode-colors.json'
-output_path = '~/.config/opencode/themes/matugen.json'
