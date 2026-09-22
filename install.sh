@@ -158,6 +158,19 @@ configure_opts () {
     curl -s https://ohmyposh.dev/install.sh | bash -s
 }
 
+install_aur_helper () {
+    sudo pacman -S --needed base-devel
+    
+    git clone https://aur.archlinux.org/paru.git ~/Downloads/paru
+    cd ~/Downloads/paru
+    makepkg -si
+    cd ~/.dotfiles
+}
+
+get_aur_apps () {
+    AUR_APPS="millennium zen-browser-bin ungoogled-chromium-bin protonup-qt fsearch"
+    paru -Syy $AUR_APPS
+}
 
 ##############################################################################################
 ##############################################################################################
@@ -171,13 +184,17 @@ the dotfiles along minimal utilities that I use everyday,
 and linking all required files in the respective folders.
 
 Arguments:
-    -C: Links all custom configs into the required directories (Idempotent operation).
+    -A: Install all in order
+
     -P: Install all required packages for the custom dotfiles to work.
+    -S: Enable the required services.
+    -C: Links all custom configs into the required directories (Idempotent operation).
     -L: Install and configure required options for laptop installs.
     -N: Install NVIDIA required packages.
-    -S: Enable the required services.
     -O: Set post install requirements.
 
+    -R: Install paru
+    -U: Get needed AUR apps
 EOF
 
     exit 0
@@ -206,6 +223,14 @@ for arg in "$@"; do
 
     if [[ $arg == "-O" ]]; then
         configure_opts
+    fi
+
+    if [[ $arg == "-R" ]]; then
+        install_aur_helper
+    fi
+
+    if [[ $arg == "-U" ]]; then
+        get_aur_apps 
     fi
 done
 
