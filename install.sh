@@ -24,7 +24,7 @@ SHELL_PACKAGES="kitty zsh mako pipewire-pulse wireplumber uwsm xdg-desktop-porta
 # Utilities
 UTILITY_PACKAGES="obs-studio mpv zathura zathura-pdf-poppler xarchiver unrar \
                   nwg-displays nwg-look qt5ct qt6ct matugen qalculate-qt firefox \
-                  btop atuin senpai"
+                  btop atuin senpai syncthing"
 
 # Normal apps for myself
 APPS_BASE="anki obsidian gimp inkscape blender yt-dlp easytag filezilla keepassxc \
@@ -71,9 +71,9 @@ enable_services () {
     systemctl --user enable pipewire.service
     systemctl --user enable pipewire-pulse.service
     systemctl --user enable wireplumber.service
-    systemctl enable bluetooth.service
-    systemctl enable NetworkManager.service
-    systemctl enable sddm.service
+    sudo systemctl enable bluetooth.service
+    sudo systemctl enable NetworkManager.service
+    sudo systemctl enable sddm.service
 }
 
 ##############################################################################################
@@ -134,9 +134,9 @@ configure_opts () {
     sudo cp clear-history.desktop ~/.local/share/applications
 
     # Fix network in libvirt
-    systemctl enable --now libvirtd.socket
+    sudo systemctl enable --now libvirtd.socket
     for server in qemud networkd storaged nodedevd secretd nwfilterd; do
-        systemctl enable --now virt$server.socket
+        sudo systemctl enable --now virt$server.socket
     done
     echo 'firewall_backend = "iptables"' | sudo tee /etc/libvirt/network.conf
     sudo virsh net-start default
@@ -184,8 +184,6 @@ the dotfiles along minimal utilities that I use everyday,
 and linking all required files in the respective folders.
 
 Arguments:
-    -A: Install all in order
-
     -P: Install all required packages for the custom dotfiles to work.
     -S: Enable the required services.
     -C: Links all custom configs into the required directories (Idempotent operation).
