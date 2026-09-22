@@ -19,7 +19,7 @@ SHELL_PACKAGES="kitty zsh mako pipewire-pulse wireplumber uwsm xdg-desktop-porta
                 qt6-declarative qt6-svg xdg-utils shared-mime-info xdg-desktop-portal seahorse \
                 v4l2loopback-dkms perl-image-exiftool python-jinja python-pillow python-pystray \
                 python-pywebview python-pipx less xcur2png dnsmasq pipewire-libcamera \
-                sof-firmware alsa-ucm-conf which v4l2loopback-dkms font-manager"
+                sof-firmware alsa-ucm-conf which v4l2loopback-dkms font-manager dosfstools mtools"
 
 # Utilities
 UTILITY_PACKAGES="obs-studio mpv zathura zathura-pdf-poppler xarchiver unrar \
