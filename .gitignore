@@ -1,5 +1,6 @@
 # Temp files
 temp
+config/nvim/lazy-lock.json
 
 # Custom for each device
 config/hypr/monitors*
