@@ -5,7 +5,7 @@
 ##############################################################################################
 # Main packages
 MAIN_PACKAGES="hyprland aquamarine hyprlang hyprcursor hyprutils \
-               hyprgraphics hyprshutdown"
+               hyprgraphics hyprshutdown linux-zen linux-zen-headers"
 
 SHELL_PACKAGES="kitty zsh mako pipewire-pulse wireplumber uwsm xdg-desktop-portal-hyprland \
                 xdg-desktop-portal-gtk xdg-user-dirs hyprpolkitagent qt5-wayland qt6-wayland \
@@ -38,7 +38,7 @@ NVIM_DEPS="nodejs npm python python-pip ripgrep fd clang prettier python-black"
 LAPTOP_PACKAGES="brightnessctl tlp wpa_supplicant"
 
 # NVIDIA specifics
-NVIDIA_PACKAGES="nvidia-utils lib32-nvidia-utils libva-nvidia-driver"
+NVIDIA_PACKAGES="nvidia-dkms nvidia-utils lib32-nvidia-utils nvidia-settings vulkan-intel lib32-vulkan-intel vulkan-tools nvidia-prime libva-nvidia-driver"
 
 
 install_packages () {
