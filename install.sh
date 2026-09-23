@@ -74,6 +74,10 @@ enable_services () {
     sudo systemctl enable bluetooth.service
     sudo systemctl enable NetworkManager.service
     sudo systemctl enable sddm.service
+    sudo systemctl enable --now libvirtd.socket
+    for server in qemud networkd storaged nodedevd secretd nwfilterd; do
+        sudo systemctl enable --now virt$server.socket
+    done
 }
 
 ##############################################################################################
@@ -133,11 +137,7 @@ configure_opts () {
     # Move clear hisotry desktop entry
     sudo cp clear-history.desktop ~/.local/share/applications
 
-    # Fix network in libvirt
-    sudo systemctl enable --now libvirtd.socket
-    for server in qemud networkd storaged nodedevd secretd nwfilterd; do
-        sudo systemctl enable --now virt$server.socket
-    done
+    # Fix network in libvirt 
     echo 'firewall_backend = "iptables"' | sudo tee /etc/libvirt/network.conf
     sudo virsh net-start default
     sudo virsh net-autostart default
