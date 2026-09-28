@@ -19,12 +19,13 @@ SHELL_PACKAGES="kitty zsh mako pipewire-pulse wireplumber uwsm xdg-desktop-porta
                 qt6-declarative qt6-svg xdg-utils shared-mime-info xdg-desktop-portal seahorse \
                 v4l2loopback-dkms perl-image-exiftool python-jinja python-pillow python-pystray \
                 python-pywebview python-pipx less xcur2png dnsmasq pipewire-libcamera \
-                sof-firmware alsa-ucm-conf which v4l2loopback-dkms font-manager dosfstools mtools"
+                sof-firmware alsa-ucm-conf which v4l2loopback-dkms font-manager dosfstools mtools man-db \
+                ghostscript libappindicator libcanberra libical libnotify poppler-glib"
 
 # Utilities
 UTILITY_PACKAGES="obs-studio mpv zathura zathura-pdf-poppler xarchiver unrar \
                   nwg-displays nwg-look qt5ct qt6ct matugen qalculate-qt firefox \
-                  btop atuin senpai syncthing"
+                  btop atuin senpai syncthing claws-mail termdown"
 
 # Normal apps for myself
 APPS_BASE="anki obsidian gimp inkscape blender yt-dlp easytag filezilla keepassxc \
