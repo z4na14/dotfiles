@@ -20,7 +20,8 @@ SHELL_PACKAGES="kitty zsh mako pipewire-pulse wireplumber uwsm xdg-desktop-porta
                 v4l2loopback-dkms perl-image-exiftool python-jinja python-pillow python-pystray \
                 python-pywebview python-pipx less xcur2png dnsmasq pipewire-libcamera \
                 sof-firmware alsa-ucm-conf which v4l2loopback-dkms font-manager dosfstools mtools man-db \
-                ghostscript libappindicator libcanberra libical libnotify poppler-glib ttf-unifont noto-fonts-cjk"
+                ghostscript libappindicator libcanberra libical libnotify poppler-glib ttf-unifont noto-fonts-cjk \
+                go"
 
 # Utilities
 UTILITY_PACKAGES="obs-studio mpv zathura zathura-pdf-poppler xarchiver unrar \
@@ -33,7 +34,7 @@ APPS_BASE="anki obsidian gimp inkscape blender yt-dlp easytag filezilla keepassx
            nvim tmux gamescope steam" 
 
 # NVIM dependencies, including linters 
-NVIM_DEPS="nodejs npm python python-pip ripgrep fd clang prettier python-black" 
+NVIM_DEPS="nodejs npm python python-pip ripgrep fd clang prettier python-black"
 
 # Laptop (Battery driven devives)
 LAPTOP_PACKAGES="brightnessctl tlp wpa_supplicant"
@@ -157,6 +158,9 @@ configure_opts () {
 
     # Install oh-my-posh for theme
     curl -s https://ohmyposh.dev/install.sh | bash -s
+
+    # Dev shit
+    go env -w GOPATH=$HOME/.go
 }
 
 install_aur_helper () {
