@@ -14,8 +14,9 @@ hl.bind(mainMod .. " + L",           hl.dsp.exec_cmd("hyprlock"))
 hl.bind(mainMod .. " + E",           hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + F",           hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + R",           hl.dsp.exec_cmd(menu))
---hl.bind(mainMod .. " + A",           hl.dsp.exec_cmd("hyprworm"))
-hl.bind("CTRL + SHIFT + escape",       hl.dsp.exec_cmd("kitty btop"))
+--hl.bind(mainMod .. " + A",         hl.dsp.exec_cmd("hyprworm"))
+hl.bind("CTRL + SHIFT + escape",     hl.dsp.exec_cmd("kitty btop"))
+hl.bind(mainMod .. " + N",           hl.dsp.exec_cmd("kitty impala"))
 
 hl.bind(mainMod .. " + P", hl.dsp.exec_cmd('ls ~/Imágenes/wallpapers | fuzzel -d --width=30 -l 8 | sed "s|^|$HOME/Imágenes/wallpapers/|" | xargs -I {} kitty matugen image {}'))
 
