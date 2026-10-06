@@ -1,6 +1,6 @@
 # z4na14's dotfiles
 
-![screenshot.png]
+![screenshot](screenshot.png)
 
 ## Prerequisites for apps
 
