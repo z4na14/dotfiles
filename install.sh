@@ -24,7 +24,7 @@ SHELL_PACKAGES="kitty zsh mako pipewire-pulse wireplumber uwsm xdg-desktop-porta
                 go"
 
 # Utilities
-UTILITY_PACKAGES="obs-studio mpv zathura zathura-pdf-poppler xarchiver unrar \
+UTILITY_PACKAGES="obs-studio mpv zathura zathura-pdf-poppler papers xarchiver unrar \
                   nwg-displays nwg-look qt5ct qt6ct matugen qalculate-qt firefox \
                   btop atuin senpai syncthing syncthingtray claws-mail termdown"
 

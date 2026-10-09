@@ -60,7 +60,7 @@ return {
         },
         -- custom variant of prettier just for css/html
         prettier_2 = {
-          inherit = true,      -- inherit prettier's base config
+          inherit = true, -- inherit prettier's base config
           prepend_args = { '--tab-width', '2' },
         },
       },
@@ -108,9 +108,18 @@ return {
 
       -- Configure servers using native Neovim 0.11+ API
       for _, server in ipairs(servers) do
-        vim.lsp.config(server, {
+        local server_opts = {
           capabilities = capabilities,
-        })
+        }
+
+        -- Silence progress updates specifically for Pyright
+        if server == "pyright" then
+          server_opts.handlers = {
+            ["$/progress"] = function() end,
+          }
+        end
+
+        vim.lsp.config(server, server_opts)
         vim.lsp.enable(server)
       end
 
