@@ -23,11 +23,11 @@ hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("blueman-manager"))
 -- Change background
 hl.bind(mainMod .. " + P",
     hl.dsp.exec_cmd([==[
-        matugen image "$(ls -v $HOME/.dotfiles/wallpapers | sed 's/\.jpg$//' | fuzzel -d --width=30 -l 8 | sed "s|^|$HOME/.dotfiles/wallpapers/|; s|$|.jpg|")" --prefer=saturation
+        matugen image "$(ls -v $HOME/.dotfiles/wallpapers | sed 's/\.jpg$//' | fuzzel -d --width=30 -l 8 | sed "s|^|$HOME/.dotfiles/wallpapers/|; s|$|.jpg|")" --prefer=lightness
         ]==]))
 hl.bind(mainMod .. " + SHIFT + P",
     hl.dsp.exec_cmd([==[
-        matugen image "$(ls -v $HOME/.dotfiles/wallpapers/bg*.jpg | shuf -n 1)" --prefer=saturation
+        matugen image "$(ls -v $HOME/.dotfiles/wallpapers/bg*.jpg | shuf -n 1)" --prefer=lightness
         ]==]))
 
 -- Screenshots
