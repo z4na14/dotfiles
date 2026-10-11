@@ -31,7 +31,7 @@ UTILITY_PACKAGES="obs-studio mpv zathura zathura-pdf-poppler papers xarchiver un
 # Normal apps for myself
 APPS_BASE="anki obsidian gimp inkscape blender yt-dlp easytag filezilla keepassxc \
            libvirt qemu-full virt-manager edk2-ovmf swtpm gparted grsync libreoffice-fresh-es \
-           nvim tmux gamescope steam" 
+           nvim tmux gamescope steam opencode" 
 
 # NVIM dependencies, including linters 
 NVIM_DEPS="nodejs npm python python-pip ripgrep fd clang prettier python-black"
@@ -173,7 +173,7 @@ install_aur_helper () {
 }
 
 get_aur_apps () {
-    AUR_APPS="millennium zen-browser-bin ungoogled-chromium-bin protonup-qt fsearch opentabletdriver vesktop-bin"
+    AUR_APPS="millennium zen-browser-bin ungoogled-chromium-bin protonup-qt fsearch opentabletdriver vesktop-bin qdiskinfo"
     paru -Syy $AUR_APPS
 }
 

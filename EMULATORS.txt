@@ -1,0 +1,2 @@
+extra: dolphin
+aur: melonds azahar eden duckstation-git pcsx2-git rpcs3-git

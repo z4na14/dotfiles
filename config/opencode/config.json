@@ -1,0 +1,16 @@
+{
+    "$schema": "https://opencode.ai/config.json",
+    "theme": "matugen",
+    "permission": {
+        "*": "allow",
+        "bash": {
+            "*": "ask",
+            "grep *": "allow",
+            "find *": "allow"
+        },
+        "edit": "ask",
+        "*.env": "deny",
+        "*.env.*": "deny",
+        "*.env.example": "allow"
+    }
+}
