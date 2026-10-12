@@ -25,6 +25,9 @@ return {
         -- Python
         python = { 'black' },
 
+        -- Go
+        go = { 'goimports' },
+
         -- 2-space indent
         css = { 'prettier_2' },
         scss = { 'prettier_2' },
@@ -99,6 +102,7 @@ return {
         "lua_ls",
         "jsonls",
         "bashls",
+        "gopls",
       }
 
       require("mason-lspconfig").setup({

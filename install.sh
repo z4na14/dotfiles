@@ -173,7 +173,7 @@ install_aur_helper () {
 }
 
 get_aur_apps () {
-    AUR_APPS="millennium zen-browser-bin ungoogled-chromium-bin protonup-qt fsearch opentabletdriver vesktop-bin qdiskinfo"
+    AUR_APPS="millennium zen-browser-bin ungoogled-chromium-bin protonup-qt fsearch opentabletdriver qdiskinfo"
     paru -Syy $AUR_APPS
 }
 
