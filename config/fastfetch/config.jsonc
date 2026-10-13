@@ -1,88 +1,100 @@
 {
     "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
     "logo": {
-        "type": "small",
+        "source": "~/.config/fastfetch/ascii.txt",
         "padding": {
-            "top": 1,
-            "right": 2
+            "top": 3,
+            "right": 2,
+            "left": 6
+        },
+        "color": {
+            "1": "magenta"
         }
     },
     "display": {
-        "separator": ">  ",
+        "separator": "    \u001b[90m󰇙\u001b[0m    ",
         "color": {
-            "separator": "red"
+            "keys": "cyan"
         },
-        "constants": [
-            "───────────────────────────────────────────────────────────────────────────",
-            "│\u001b[75C│\u001b[75D"
-        ]
+        "key": {
+            "width": 24
+        }
     },
     "modules": [
+        "break",
         {
-            "format": "{#1}{#keys}╭{$1}╮\u001b[76D {user-name-colored}{at-symbol-colored}{host-name-colored} ",
-            "type": "title"
+            "type": "title",
+            "key": "     \u001b[35m󰮯 \u001b[0m  IDENTITY",
+            "format": "{1}@{2}"
+        },
+        "break",
+        {
+            "type": "custom",
+            "format": "     \u001b[35m╭──────────────────────────────────────────────────────────╮\u001b[0m"
+        },
+        "break",
+        {
+            "type": "custom",
+            "format": "     \u001b[35m\u001b[45m\u001b[30m  SYSTEM RESONANCE  \u001b[0m\u001b[35m\u001b[0m"
+        },
+        "break",
+        {
+            "type": "os",
+            "key": "     󱄅  ENVIRONMENT  󱞩",
+            "format": "{3} {12}"
         },
         {
-            "key": "{$2}{#31} kernel   ",
-            "type": "kernel"
+            "type": "kernel",
+            "key": "     󰏗  DATA STREAM  󱞩",
+            "format": "{2}"
         },
         {
-            "key": "{$2}{#32}󰅐 uptime   ",
-            "type": "uptime"
+            "type": "uptime",
+            "key": "     󱑎  VITAL PULSE  󱞩",
+            "format": "{1}h {2}m"
         },
+        "break",
         {
-            "key": "{$2}{#33}{icon} distro   ",
-            "type": "os"
+            "type": "custom",
+            "format": "     \u001b[36m\u001b[46m\u001b[30m  PHYSICAL ENTITY  \u001b[0m\u001b[36m\u001b[0m"
         },
+        "break",
         {
-            "key": "{$2}{#34}󰇄 desktop  ",
-            "type": "de"
-        },
-        {
-            "key": "{$2}{#35} term     ",
-            "type": "terminal"
-        },
-        {
-            "key": "{$2}{#36} shell    ",
-            "type": "shell"
-        },
-        {
-            "key": "{$2}{#35}󰍛 cpu      ",
             "type": "cpu",
-            "showPeCoreCount": true,
-            "temp": true
+            "key": "     󰘚  NEURAL CORE  󱞩",
+            "format": "{1}"
         },
         {
-            "key": "{$2}{#34}󰍛 gpu      ",
-            "type": "gpu"
+            "type": "gpu",
+            "key": "     󰢮  VISUAL PATH  󱞩",
+            "format": "{2}"
         },
         {
-            "key": "{$2}{#33}󰉉 disk     ",
+            "type": "memory",
+            "key": "     󰍛  ACTIVE LOAD  󱞩",
+            "format": "{1} / {2}"
+        },
+        {
             "type": "disk",
-            "folders": "/"
+            "key": "     󰋊  ECHO STORAGE 󱞩",
+            "format": "{1} / {2} ({9})"
         },
+        "break",
         {
-            "key": "{$2}{#32} memory   ",
-            "type": "memory"
+            "type": "custom",
+            "format": "     \u001b[95m\u001b[105m\u001b[30m  AETHER SPECTRUM  \u001b[0m\u001b[95m\u001b[0m"
         },
+        "break",
         {
-            "key": "{$2}{#31}󰩟 network  ",
-            "type": "localip",
-            "format": "{ipv4} ({ifname})"
-        },
-        {
-            "format": "{#1}{#keys}├{$1}┤",
-            "type": "custom"
-        },
-        {
-            "key": "{$2}{#39} colors   ",
             "type": "colors",
-            "symbol": "circle"
+            "symbol": "diamond",
+            "paddingLeft": 5
         },
+        "break",
         {
-            "format": "{#1}{#keys}╰{$1}╯",
-            "type": "custom"
-        }
+            "type": "custom",
+            "format": "     \u001b[35m╰──────────────────────────────────────────────────────────╯\u001b[0m"
+        },
+        "break"
     ]
 }
-
