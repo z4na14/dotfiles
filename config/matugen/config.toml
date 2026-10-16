@@ -87,3 +87,7 @@ output_path = '~/.steam/steam/millennium/themes/Material-Theme/css/main/colors/m
 [templates.opencode]
 input_path = '~/.config/matugen/templates/opencode-colors.json'
 output_path = '~/.config/opencode/themes/matugen.json'
+
+[templates.sonora]
+input_path = '~/.config/matugen/templates/sonora-colors.json'
+output_path = '~/.config/sonora/themes/matugen.json'
