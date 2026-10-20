@@ -294,7 +294,11 @@ set to `true`.
 
 ### Obsidian
 
-Matugen config must point to the user vault.
+Matugen css must be linked to the snippets folder in your vault.
+
+```
+ln -s ~/.cache/obsidian-colors.css ~/Documents/<vault>/.obsidian/snippets/matugen.css
+```
 
 ### OBS
 

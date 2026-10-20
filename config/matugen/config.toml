@@ -65,7 +65,7 @@ post_hook = 'makoctl reload'
 
 [templates.obsidian]
 input_path = '~/.config/matugen/templates/obsidian-colors.css'
-output_path = '~/Documents/personal-vlt/.obsidian/snippets/matugen.css'
+output_path = '~/.cache/obsidian-colors.css'
 
 #[templates.zathura]
 #input_path = '~/.config/matugen/templates/zathura-colors'
