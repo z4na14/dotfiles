@@ -91,3 +91,8 @@ output_path = '~/.config/opencode/themes/matugen.json'
 [templates.sonora]
 input_path = '~/.config/matugen/templates/sonora-colors.json'
 output_path = '~/.config/sonora/themes/matugen.json'
+
+[templates.tmux]
+input_path = '~/.config/matugen/templates/tmux-colors.conf'
+output_path = '~/.config/tmux/theme.conf'
+post_hook = 'tmux source-file ~/.config/tmux/theme.conf'
