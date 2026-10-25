@@ -29,7 +29,7 @@ UTILITY_PACKAGES="obs-studio mpv zathura zathura-pdf-poppler papers xarchiver un
                   btop atuin senpai syncthing syncthingtray claws-mail termdown"
 
 # Normal apps for myself
-APPS_BASE="anki obsidian gimp inkscape blender yt-dlp easytag filezilla keepassxc \
+APPS_BASE="obsidian gimp inkscape blender yt-dlp easytag filezilla keepassxc \
            libvirt qemu-full virt-manager edk2-ovmf swtpm gparted grsync libreoffice-fresh-es \
            nvim tmux gamescope steam opencode" 
 
