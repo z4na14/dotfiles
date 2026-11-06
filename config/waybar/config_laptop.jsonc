@@ -1,140 +1,141 @@
 {
-  "layer": "top",
-  "position": "top",
-  "output": "eDP-1",
-  "height": 30,
-  "spacing": 0,
-  "margin-top": 7,
-  "margin-left": 7,
-  "margin-right": 7,
-  "exclusive": true,
-  "passthrough": false,
-  "gtk-layer-shell": true,
+    "layer": "top",
+    "position": "top",
+    "output": "eDP-1",
+    "height": 30,
+    "spacing": 0,
+    "margin-top": 4,
+    "margin-left": 4,
+    "margin-right": 4,
+    "margin-bot": 4,
+    "exclusive": true,
+    "passthrough": false,
+    "gtk-layer-shell": true,
 
-  "modules-left": [
-    "hyprland/workspaces",
-    "custom/notification-toggle",
-    "hyprland/language",
-  ],
-  "modules-center": ["hyprland/window"],
-  "modules-right": [
-    "tray",
-    "backlight",
-    "pulseaudio",
-    "bluetooth",
-    "network",
-    "battery",
-    "clock",
-  ],
+    "modules-left": [
+        "hyprland/workspaces",
+        "custom/notification-toggle",
+        "hyprland/language",
+    ],
+    "modules-center": ["hyprland/window"],
+    "modules-right": [
+        "tray",
+        "backlight",
+        "pulseaudio",
+        "bluetooth",
+        "network",
+        "battery",
+        "clock",
+    ],
 
-  "hyprland/workspaces": {
-    "format": "󰘧",
-    "persistent-workspaces": {
-      "*": [1, 2, 3, 4, 5],
+    "hyprland/workspaces": {
+        "format": "󰘧",
+        "persistent-workspaces": {
+            "*": [1, 2, 3, 4, 5],
+        },
+        "active-only": false,
+        "all-outputs": false,
+        "on-click": "activate",
     },
-    "active-only": false,
-    "all-outputs": false,
-    "on-click": "activate",
-  },
 
-  "hyprland/language": {
-    "format": " 󰌌 {}",
-    "format-en": "US",
-    "format-es": "ES",
-    "on-click": "hyprctl switchxkblayout all next",
-  },
-
-  "hyprland/window": {
-    "format": "{title}",
-    "max-length": 55,
-    "separate-outputs": true,
-    "rewrite": {
-      "": "(>^_^)>",
+    "hyprland/language": {
+        "format": " 󰌌 {}",
+        "format-en": "US",
+        "format-es": "ES",
+        "on-click": "hyprctl switchxkblayout all next",
     },
-  },
 
-  "clock": {
-    "format": "{:%I:%M %p}",
-    "format-alt": "{:%A, %B %d}",
-    "tooltip-format": "<tt>{calendar}</tt>",
-    "calendar": {
-      "mode": "month",
-      "format": {
-        "months": "<b>{}</b>",
-        "today": "<b><u>{}</u></b>",
-      },
+    "hyprland/window": {
+        "format": "{title}",
+        "max-length": 55,
+        "separate-outputs": true,
+        "rewrite": {
+            "": "(>^_^)>",
+        },
     },
-  },
 
-  "tray": {
-    "icon-size": 16,
-    "spacing": 6,
-    "show-passive-items": false,
-  },
-
-  "bluetooth": {
-    "format": "",
-    "format-disabled": "󰂲",
-    "format-connected": "󰂱",
-    "on-click": "blueman-manager",
-    "tooltip-format": "{controller_alias}\t{controller_address}",
-    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-  },
-
-  "pulseaudio": {
-    "format": "{volume} {icon}",
-    "on-click": "pavucontrol",
-    "tooltip-format": "Playing at {volume}%",
-    "scroll-step": 5,
-    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
-    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
-    "format-muted": "",
-    "format-icons": {
-      "headphone": "",
-      "headset": "",
-      "default": ["", "", ""],
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "format-alt": "{:%A, %B %d}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "month",
+            "format": {
+                "months": "<b>{}</b>",
+                "today": "<b><u>{}</u></b>",
+            },
+        },
     },
-  },
 
-  "backlight": {
-    "device": "intel_backlight",
-    "format": "{percent} 󰹑",
-  },
-
-  "battery": {
-    "interval": 30,
-    "states": {
-      "warning": 30,
-      "critical": 15,
+    "tray": {
+        "icon-size": 16,
+        "spacing": 6,
+        "show-passive-items": false,
     },
-    "format": "{capacity} {icon}",
-    "format-charging": "󰂄",
-    "format-plugged": "󰚥",
-    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-    "tooltip-format": "{capacity}% · {timeTo}",
-  },
 
-  "network": {
-    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
-    "format": "{icon}",
-    "format-wifi": "{icon}",
-    "format-ethernet": "󰀂",
-    "format-disconnected": "󰤮",
-    "tooltip-format-wifi": "{essid} ({frequency} GHz)",
-    "tooltip-format-ethernet": "Connected",
-    "tooltip-format-disconnected": "Disconnected",
-    "interval": 3,
-    "spacing": 1,
-    "on-click": "nm-connection-editor",
-  },
+    "bluetooth": {
+        "format": "",
+        "format-disabled": "󰂲",
+        "format-connected": "󰂱",
+        "on-click": "blueman-manager",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+    },
 
-  "custom/notification-toggle": {
-    "exec": "~/.config/waybar/scripts/notifications.sh",
-    "return-type": "json",
-    "format": "{text}",
-    "interval": "once",
-    "on-click": "notify-send 'Changing notification mode'",
-    "exec-on-event": "true",
-  },
+    "pulseaudio": {
+        "format": "{volume} {icon}",
+        "on-click": "pavucontrol",
+        "tooltip-format": "Playing at {volume}%",
+        "scroll-step": 5,
+        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "headset": "",
+            "default": ["", "", ""],
+        },
+    },
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{percent} 󰹑",
+    },
+
+    "battery": {
+        "interval": 30,
+        "states": {
+            "warning": 30,
+            "critical": 15,
+        },
+        "format": "{capacity} {icon}",
+        "format-charging": "󰂄",
+        "format-plugged": "󰚥",
+        "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "tooltip-format": "{capacity}% · {timeTo}",
+    },
+
+    "network": {
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "format": "{icon}",
+        "format-wifi": "{icon}",
+        "format-ethernet": "󰀂",
+        "format-disconnected": "󰤮",
+        "tooltip-format-wifi": "{essid} ({frequency} GHz)",
+        "tooltip-format-ethernet": "Connected",
+        "tooltip-format-disconnected": "Disconnected",
+        "interval": 3,
+        "spacing": 1,
+        "on-click": "nm-connection-editor",
+    },
+
+    "custom/notification-toggle": {
+        "exec": "~/.config/waybar/scripts/notifications.sh",
+        "return-type": "json",
+        "format": "{text}",
+        "interval": "once",
+        "on-click": "notify-send 'Changing notification mode'",
+        "exec-on-event": "true",
+    },
 }

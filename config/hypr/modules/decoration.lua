@@ -1,37 +1,37 @@
 local colors = require("modules/colors")
 
 hl.config({
-    general = {
-        border_size      = 2,
-        gaps_in          = 3.5,
-        gaps_out         = 7,
+	general = {
+		border_size      = 2,
+		gaps_in          = 1,
+		gaps_out         = 3,
 
-        col              = {
-            inactive_border = { colors = { colors.outline_variant, colors.surface }, angle = 45 },
-            active_border   = { colors = { colors.primary, colors.surface }, angle = 45 },
-        },
+		col              = {
+			inactive_border = { colors = { colors.outline_variant } },
+			active_border = { colors = { colors.primary } },
+		},
 
-        resize_on_border = true,
-        allow_tearing    = false,
-        layout           = "scrolling",
-    },
+		resize_on_border = true,
+		allow_tearing    = false,
+		layout           = "scrolling",
+	},
 
-    decoration = {
-        rounding = 0,
-        shadow = { enabled = false },
-        blur = { enabled = false },
-    },
+	decoration = {
+		rounding = 0,
+		shadow = { enabled = false },
+		blur = { enabled = false },
+	},
 
-    misc = {
-        force_default_wallpaper    = -1,
-        disable_hyprland_logo      = true,
-        allow_session_lock_restore = true,
-        focus_on_activate          = true,
-    },
+	misc = {
+		force_default_wallpaper    = -1,
+		disable_hyprland_logo      = true,
+		allow_session_lock_restore = true,
+		focus_on_activate          = true,
+	},
 
-    xwayland = {
-        force_zero_scaling = true
-    }
+	xwayland = {
+		force_zero_scaling = true
+	}
 })
 
 -- Bezier curves

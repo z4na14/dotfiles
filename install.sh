@@ -21,7 +21,7 @@ SHELL_PACKAGES="kitty zsh mako pipewire-pulse wireplumber uwsm xdg-desktop-porta
                 python-pywebview python-pipx less xcur2png dnsmasq pipewire-libcamera \
                 sof-firmware alsa-ucm-conf which v4l2loopback-dkms font-manager dosfstools mtools man-db \
                 ghostscript libappindicator libcanberra libical libnotify poppler-glib noto-fonts-cjk \
-                go"
+                go scrcpy"
 
 # Utilities
 UTILITY_PACKAGES="obs-studio mpv zathura zathura-pdf-poppler papers xarchiver unrar \
