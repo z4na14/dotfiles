@@ -23,14 +23,22 @@ hl.bind(mainMod .. " + B", hl.dsp.exec_cmd("blueman-manager"))
 hl.bind(mainMod .. " + CTRL + ALT + SHIFT + L", hl.dsp.exec_cmd("xdg-open https://linkedin.com"))
 
 -- Change background
-hl.bind(mainMod .. " + P",
+--[[ hl.bind(mainMod .. " + P",
 	hl.dsp.exec_cmd([==[
         matugen image "$(ls -v $HOME/.dotfiles/wallpapers | sed 's/\.jpg$//' | fuzzel -d --width=30 -l 8 | sed "s|^|$HOME/.dotfiles/wallpapers/|; s|$|.jpg|")" --prefer=lightness
         ]==]))
 hl.bind(mainMod .. " + SHIFT + P",
 	hl.dsp.exec_cmd([==[
         matugen image "$(ls -v $HOME/.dotfiles/wallpapers/bg*.jpg | shuf -n 1)" --prefer=lightness
-        ]==]))
+        ]==])) ]]
+
+-- After changing colors to a grey colorscheme neutral, background just changes without colors
+hl.bind(mainMod .. " + P",
+	hl.dsp.exec_cmd(
+	[==[awww img --transition-type center "$(ls -v $HOME/.dotfiles/wallpapers | sed 's/\.jpg$//' | fuzzel -d --width=30 -l 8 | sed "s|^|$HOME/.dotfiles/wallpapers/|; s|$|.jpg|")"]==]))
+hl.bind(mainMod .. " + SHIFT + P",
+	hl.dsp.exec_cmd([==[awww img --transition-type center "$(ls -v $HOME/.dotfiles/wallpapers/bg*.jpg | shuf -n 1)"]==]))
+
 
 -- Screenshots
 -- Select a region and copy directly to clipboard (No Swappy, no file saved)

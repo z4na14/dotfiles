@@ -21,7 +21,7 @@ SHELL_PACKAGES="kitty zsh mako pipewire-pulse wireplumber uwsm xdg-desktop-porta
                 python-pywebview python-pipx less xcur2png dnsmasq pipewire-libcamera \
                 sof-firmware alsa-ucm-conf which v4l2loopback-dkms font-manager dosfstools mtools man-db \
                 ghostscript libappindicator libcanberra libical libnotify poppler-glib noto-fonts-cjk \
-                go scrcpy"
+                go scrcpy aspell-en aspell-es"
 
 # Utilities
 UTILITY_PACKAGES="obs-studio mpv zathura zathura-pdf-poppler papers xarchiver unrar \
@@ -161,6 +161,9 @@ configure_opts () {
 
     # Dev shit
     go env -w GOPATH=$HOME/.go
+
+	# Neutral color, in case of wanting full app colorscheme see config/hypr/modules/keybindings.lua
+	matugen color hex "#3C3C3C" -t scheme-neutral
 }
 
 install_aur_helper () {
