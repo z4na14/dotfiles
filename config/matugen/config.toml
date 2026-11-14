@@ -96,3 +96,7 @@ output_path = '~/.config/sonora/themes/matugen.json'
 input_path = '~/.config/matugen/templates/tmux-colors.conf'
 output_path = '~/.config/tmux/theme.conf'
 post_hook = 'tmux source-file ~/.config/tmux/theme.conf'
+
+[templates.imhex]
+input_path  = '~/.config/matugen/templates/imhex-colors.json'
+output_path = '~/.local/share/imhex/themes/matugen.json'

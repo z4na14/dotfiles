@@ -1,0 +1,364 @@
+{
+    "base": "Dark",
+    "colors": {
+        "imgui": {
+            "border": "{{colors.outline.default.hex}}7F",
+            "border-shadow": "{{colors.surface_dim.default.hex}}00",
+            "button": "{{colors.primary.default.hex}}66",
+            "button-active": "{{colors.primary_fixed.default.hex}}FF",
+            "button-hovered": "{{colors.primary.default.hex}}FF",
+            "check-mark": "{{colors.primary.default.hex}}FF",
+            "child-background": "{{colors.surface_dim.default.hex}}00",
+            "docking-empty-background": "{{colors.surface.default.hex}}EF",
+            "docking-preview": "{{colors.primary.default.hex}}B2",
+            "drag-drop-target": "{{colors.secondary.default.hex}}E5",
+            "frame-background": "{{colors.primary.default.hex}}89",
+            "frame-background-active": "{{colors.primary_fixed.default.hex}}AA",
+            "frame-background-hovered": "{{colors.primary.default.hex}}66",
+            "header": "{{colors.primary.default.hex}}4F",
+            "header-active": "{{colors.primary_fixed.default.hex}}FF",
+            "header-hovered": "{{colors.primary.default.hex}}CC",
+            "menu-bar-background": "{{colors.surface_container.default.hex}}FF",
+            "modal-window-dim-background": "{{colors.on_surface.default.hex}}59",
+            "nav-highlight": "{{colors.primary_fixed.default.hex}}FF",
+            "nav-windowing-background": "{{colors.on_surface.default.hex}}33",
+            "nav-windowing-highlight": "{{colors.on_surface.default.hex}}B2",
+            "plot-histogram": "{{colors.tertiary.default.hex}}FF",
+            "plot-histogram-hovered": "{{colors.secondary.default.hex}}FF",
+            "plot-lines": "{{colors.outline.default.hex}}FF",
+            "plot-lines-hovered": "{{colors.error.default.hex}}FF",
+            "popup-background": "{{colors.surface_container.default.hex}}FF",
+            "resize-grip": "{{colors.primary.default.hex}}33",
+            "resize-grip-active": "{{colors.primary_fixed.default.hex}}F2",
+            "resize-grip-hovered": "{{colors.primary.default.hex}}AA",
+            "scrollbar-background": "{{colors.surface.default.hex}}87",
+            "scrollbar-grab": "{{colors.outline_variant.default.hex}}FF",
+            "scrollbar-grab-active": "{{colors.on_surface_variant.default.hex}}FF",
+            "scrollbar-grab-hovered": "{{colors.outline.default.hex}}FF",
+            "separator": "{{colors.outline.default.hex}}7F",
+            "separator-active": "{{colors.primary_fixed.default.hex}}FF",
+            "separator-hovered": "{{colors.primary.default.hex}}C6",
+            "slider-grab": "{{colors.primary_container.default.hex}}FF",
+            "slider-grab-active": "{{colors.primary.default.hex}}FF",
+            "tab": "{{colors.primary_container.default.hex}}DB",
+            "tab-active": "{{colors.primary.default.hex}}FF",
+            "tab-hovered": "{{colors.primary_fixed.default.hex}}CC",
+            "tab-unfocused": "{{colors.surface_dim.default.hex}}F7",
+            "tab-unfocused-active": "{{colors.primary_container.default.hex}}FF",
+            "table-border-light": "{{colors.outline_variant.default.hex}}FF",
+            "table-border-strong": "{{colors.outline.default.hex}}FF",
+            "table-header-background": "{{colors.surface_container_low.default.hex}}FF",
+            "table-row-background": "{{colors.surface.default.hex}}6A",
+            "table-row-background-alt": "{{colors.on_surface.default.hex}}0F",
+            "text": "{{colors.on_surface.default.hex}}FF",
+            "text-disabled": "{{colors.outline_variant.default.hex}}FF",
+            "text-selected-background": "{{colors.primary.default.hex}}59",
+            "title-background": "{{colors.surface_container.default.hex}}FF",
+            "title-background-active": "{{colors.surface_dim.default.hex}}FF",
+            "title-background-collapse": "{{colors.surface_dim.default.hex}}FF",
+            "window-background": "{{colors.surface.default.hex}}FF",
+            "window-shadow": "{{colors.surface_container_lowest.default.hex}}FF"
+        },
+        "imhex": {
+            "IEEE-tool-exp": "{{colors.tertiary.default.hex}}FF",
+            "IEEE-tool-mantissa": "{{colors.error.default.hex}}FF",
+            "IEEE-tool-sign": "{{colors.primary.default.hex}}FF",
+            "achievement-unlocked": "{{colors.secondary.default.hex}}FF",
+            "advanced-encoding-ascii": "{{colors.primary_container.default.hex}}FF",
+            "advanced-encoding-multi": "{{colors.secondary.default.hex}}FF",
+            "advanced-encoding-single": "{{colors.error.default.hex}}FF",
+            "advanced-encoding-unknown": "{{colors.error.default.hex}}FF",
+            "blur-background": "{{colors.surface.default.hex}}B0",
+            "desc-button": "{{colors.surface_container_low.default.hex}}FF",
+            "desc-button-active": "{{colors.surface_container_high.default.hex}}FF",
+            "desc-button-hovered": "{{colors.surface_container_highest.default.hex}}FF",
+            "diff-added": "{{colors.tertiary.default.hex}}FF",
+            "diff-changed": "{{colors.secondary.default.hex}}FF",
+            "diff-removed": "{{colors.error.default.hex}}FF",
+            "find-highlight": "{{colors.primary_container.default.hex}}FF",
+            "highlight": "{{colors.tertiary.default.hex}}FF",
+            "logger-debug": "{{colors.tertiary.default.hex}}FF",
+            "logger-error": "{{colors.error.default.hex}}FF",
+            "logger-fatal": "{{colors.error_container.default.hex}}FF",
+            "logger-info": "{{colors.primary.default.hex}}FF",
+            "logger-warning": "{{colors.secondary.default.hex}}FF",
+            "patches": "{{colors.error.default.hex}}FF",
+            "pattern-selected": "{{colors.primary_container.default.hex}}FF",
+            "toolbar-blue": "{{colors.primary.default.hex}}FF",
+            "toolbar-brown": "{{colors.secondary.default.hex}}CC",
+            "toolbar-gray": "{{colors.on_surface_variant.default.hex}}FF",
+            "toolbar-green": "{{colors.tertiary.default.hex}}FF",
+            "toolbar-purple": "{{colors.primary_fixed.default.hex}}FF",
+            "toolbar-red": "{{colors.error.default.hex}}FF",
+            "toolbar-yellow": "{{colors.secondary.default.hex}}FF"
+        },
+        "imnodes": {
+            "box-selector": "{{colors.primary.default.hex}}1E",
+            "box-selector-outline": "{{colors.primary.default.hex}}96",
+            "grid-background": "{{colors.surface_dim.default.hex}}C8",
+            "grid-line": "{{colors.on_surface.default.hex}}28",
+            "grid-line-primary": "{{colors.on_surface.default.hex}}3C",
+            "link": "{{colors.primary.default.hex}}C8",
+            "link-hovered": "{{colors.primary.default.hex}}FF",
+            "link-selected": "{{colors.primary_fixed.default.hex}}FF",
+            "mini-map-background": "{{colors.surface_container_lowest.default.hex}}96",
+            "mini-map-background-hovered": "{{colors.surface_container_lowest.default.hex}}C8",
+            "mini-map-canvas": "{{colors.on_surface.default.hex}}19",
+            "mini-map-canvas-outline": "{{colors.on_surface.default.hex}}C8",
+            "mini-map-link": "{{colors.primary.default.hex}}C8",
+            "mini-map-link-selected": "{{colors.primary_fixed.default.hex}}FF",
+            "mini-map-node-background": "{{colors.on_surface_variant.default.hex}}64",
+            "mini-map-node-background-hovered": "{{colors.on_surface.default.hex}}FF",
+            "mini-map-node-background-selected": "{{colors.primary_fixed.default.hex}}FF",
+            "mini-map-node-outline": "{{colors.on_surface_variant.default.hex}}64",
+            "mini-map-outline": "{{colors.outline.default.hex}}64",
+            "mini-map-outline-hovered": "{{colors.outline.default.hex}}C8",
+            "node-background": "{{colors.surface_container.default.hex}}FF",
+            "node-background-hovered": "{{colors.surface_container_high.default.hex}}FF",
+            "node-background-selected": "{{colors.surface_container_high.default.hex}}FF",
+            "node-outline": "{{colors.outline_variant.default.hex}}FF",
+            "pin": "{{colors.secondary.default.hex}}FF",
+            "pin-hovered": "{{colors.primary_fixed.default.hex}}FF",
+            "title-bar": "{{colors.primary_container.default.hex}}FF",
+            "title-bar-hovered": "{{colors.primary.default.hex}}FF",
+            "title-bar-selected": "{{colors.primary_fixed.default.hex}}FF"
+        },
+        "implot": {
+            "axis-bg": "#00000000",
+            "axis-bg-active": "#00000000",
+            "axis-bg-hovered": "#00000000",
+            "axis-grid": "{{colors.on_surface.default.hex}}3F",
+            "axis-text": "{{colors.on_surface.default.hex}}FF",
+            "axis-tick": "#00000000",
+            "crosshairs": "{{colors.on_surface.default.hex}}7F",
+            "error-bar": "#00000000",
+            "fill": "#00000000",
+            "frame-bg": "{{colors.on_surface.default.hex}}11",
+            "inlay-text": "{{colors.on_surface.default.hex}}FF",
+            "legend-bg": "{{colors.surface_container_low.default.hex}}EF",
+            "legend-border": "{{colors.outline.default.hex}}7F",
+            "legend-text": "{{colors.on_surface.default.hex}}FF",
+            "line": "#00000000",
+            "marker-fill": "#00000000",
+            "marker-outline": "#00000000",
+            "plot-bg": "{{colors.surface_container_lowest.default.hex}}7F",
+            "plot-border": "{{colors.outline.default.hex}}7F",
+            "selection": "{{colors.secondary.default.hex}}FF",
+            "title-text": "{{colors.on_surface.default.hex}}FF"
+        },
+        "text-editor": {
+            "attribute": "{{colors.primary.default.hex}}FF",
+            "background": "{{colors.surface.default.hex}}FF",
+            "multi-line-comment": "{{colors.on_surface_variant.default.hex}}FF",
+            "breakpoint": "{{colors.error_container.default.hex}}FF",
+            "known-identifier": "{{colors.secondary.default.hex}}FF",
+            "calculated-pointer": "{{colors.primary_fixed.default.hex}}FF",
+            "char-literal": "{{colors.tertiary.default.hex}}FF",
+            "comment": "{{colors.outline_variant.default.hex}}FF",
+            "current-line-edge": "{{colors.on_surface.default.hex}}40",
+            "current-line-fill": "{{colors.surface_container_lowest.default.hex}}40",
+            "current-line-fill-inactive": "{{colors.outline_variant.default.hex}}40",
+            "cursor": "{{colors.on_surface.default.hex}}FF",
+            "debug-text": "{{colors.on_surface_variant.default.hex}}CC",
+            "default": "{{colors.outline.default.hex}}FF",
+            "default-text": "{{colors.outline.default.hex}}FF",
+            "preprocessor": "{{colors.secondary.default.hex}}CC",
+            "doc-block-comment": "{{colors.tertiary.default.hex}}66",
+            "doc-comment": "{{colors.tertiary.default.hex}}99",
+            "doc-global-comment": "{{colors.tertiary.default.hex}}CC",
+            "error-marker": "{{colors.error.default.hex}}80",
+            "error-text": "{{colors.error.default.hex}}80",
+            "function": "{{colors.secondary.default.hex}}FF",
+            "function-parameter": "{{colors.on_surface.default.hex}}FF",
+            "function-variable": "{{colors.primary.default.hex}}CC",
+            "global-variable": "{{colors.on_surface_variant.default.hex}}FF",
+            "identifier": "{{colors.on_surface_variant.default.hex}}FF",
+            "keyword": "{{colors.secondary.default.hex}}FF",
+            "line-number": "{{colors.outline_variant.default.hex}}FF",
+            "local-variable": "{{colors.primary_fixed.default.hex}}FF",
+            "namespace": "{{colors.primary_fixed.default.hex}}CC",
+            "number": "{{colors.primary.default.hex}}FF",
+            "punctuation": "{{colors.tertiary.default.hex}}CC",
+            "pattern-variable": "{{colors.primary_fixed.default.hex}}CC",
+            "placed-variable": "{{colors.on_surface.default.hex}}FF",
+            "preprocessor-deactivated": "{{colors.secondary.default.hex}}66",
+            "preproc-identifier": "{{colors.secondary.default.hex}}CC",
+            "selection": "{{colors.primary.default.hex}}80",
+            "separator": "{{colors.outline.default.hex}}CC",
+            "string": "{{colors.tertiary.default.hex}}FF",
+            "template-variable": "{{colors.primary_fixed.default.hex}}99",
+            "typedef": "{{colors.primary_fixed.default.hex}}CC",
+            "unknown-identifier": "{{colors.error.default.hex}}FF",
+            "user-defined-type": "{{colors.primary_fixed.default.hex}}FF",
+            "view": "{{colors.primary_fixed.default.hex}}FF",
+            "warning-text": "{{colors.secondary.default.hex}}FF"
+        }
+    },
+    "image_postfix": "dark",
+    "name": "Matugen",
+    "styles": {
+        "imgui": {
+            "alpha": 1.0,
+            "button-text-align": [
+                0.5,
+                0.5
+            ],
+            "cell-padding": [
+                4.0,
+                2.0
+            ],
+            "child-border-size": 1.0,
+            "child-rounding": 0.0,
+            "disabled-alpha": 0.6000000238418579,
+            "frame-border-size": 0.0,
+            "frame-padding": [
+                4.0,
+                3.0
+            ],
+            "frame-rounding": 0.0,
+            "grab-min-size": 12.0,
+            "grab-rounding": 0.0,
+            "indent-spacing": 10.0,
+            "item-inner-spacing": [
+                4.0,
+                4.0
+            ],
+            "item-spacing": [
+                8.0,
+                4.0
+            ],
+            "popup-border-size": 1.0,
+            "popup-rounding": 0.0,
+            "scrollbar-rounding": 9.0,
+            "scrollbar-size": 14.0,
+            "selectable-text-align": [
+                0.0,
+                0.0
+            ],
+            "tab-rounding": 4.0,
+            "window-border-size": 1.0,
+            "window-min-size": [
+                32.0,
+                32.0
+            ],
+            "window-padding": [
+                8.0,
+                8.0
+            ],
+            "window-rounding": 0.0,
+            "window-shadow-angle": 0.0,
+            "window-shadow-offset": 0.0,
+            "window-shadow-size": 64.0,
+            "window-title-align": [
+                0.0,
+                0.5
+            ]
+        },
+        "imhex": {
+            "popup-alpha": 0.6499999761581421,
+            "window-blur": 0.0
+        },
+        "imnodes": {
+            "grid-spacing": 24.0,
+            "link-hover-distance": 10.0,
+            "link-line-segments-per-length": 0.10000000149011612,
+            "link-thickness": 3.0,
+            "mini-map-offset": [
+                4.0,
+                4.0
+            ],
+            "mini-map-padding": [
+                8.0,
+                8.0
+            ],
+            "node-border-thickness": 1.0,
+            "node-corner-rounding": 4.0,
+            "node-padding": [
+                8.0,
+                8.0
+            ],
+            "pin-circle-radius": 4.0,
+            "pin-hover-radius": 10.0,
+            "pin-line-thickness": 1.0,
+            "pin-offset": 0.0,
+            "pin-quad-side-length": 7.0,
+            "pin-triangle-side-length": 9.5
+        },
+        "implot": {
+            "annotation-padding": [
+                2.0,
+                2.0
+            ],
+            "digital-bit-gap": 4.0,
+            "digital-bit-height": 8.0,
+            "error-bar-size": 5.0,
+            "error-bar-weight": 1.5,
+            "fill-alpha": 1.0,
+            "fit-padding": [
+                0.0,
+                0.0
+            ],
+            "label-padding": [
+                5.0,
+                5.0
+            ],
+            "legend-inner-padding": [
+                5.0,
+                5.0
+            ],
+            "legend-padding": [
+                10.0,
+                10.0
+            ],
+            "legend-spacing": [
+                5.0,
+                0.0
+            ],
+            "line-weight": 1.0,
+            "major-grid-size": [
+                1.0,
+                1.0
+            ],
+            "major-tick-len": [
+                10.0,
+                10.0
+            ],
+            "major-tick-size": [
+                1.0,
+                1.0
+            ],
+            "marker-size": 4.0,
+            "marker-weight": 1.0,
+            "minor-alpha": 0.25,
+            "minor-grid-size": [
+                1.0,
+                1.0
+            ],
+            "minor-tick-len": [
+                5.0,
+                5.0
+            ],
+            "minor-tick-size": [
+                1.0,
+                1.0
+            ],
+            "mouse-pos-padding": [
+                10.0,
+                10.0
+            ],
+            "plot-border-size": 1.0,
+            "plot-default-size": [
+                400.0,
+                300.0
+            ],
+            "plot-min-size": [
+                200.0,
+                150.0
+            ],
+            "plot-padding": [
+                10.0,
+                10.0
+            ]
+        }
+    }
+}
