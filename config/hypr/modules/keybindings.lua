@@ -25,11 +25,11 @@ hl.bind(mainMod .. " + CTRL + ALT + SHIFT + L", hl.dsp.exec_cmd("xdg-open https:
 -- Change background
 hl.bind(mainMod .. " + P",
 	hl.dsp.exec_cmd([==[
-        matugen image "$(ls -v $HOME/.dotfiles/wallpapers | sed 's/\.jpg$//' | fuzzel -d --width=30 -l 8 | sed "s|^|$HOME/.dotfiles/wallpapers/|; s|$|.jpg|")" --prefer=lightness
+        matugen image "$(ls -v $HOME/.dotfiles/wallpapers | sed 's/\.jpg$//' | fuzzel -d --width=30 -l 8 | sed "s|^|$HOME/.dotfiles/wallpapers/|; s|$|.jpg|")" --prefer=value
         ]==]))
 hl.bind(mainMod .. " + SHIFT + P",
 	hl.dsp.exec_cmd([==[
-        matugen image "$(ls -v $HOME/.dotfiles/wallpapers/bg*.jpg | shuf -n 1)" --prefer=lightness
+        matugen image "$(ls -v $HOME/.dotfiles/wallpapers/bg*.jpg | shuf -n 1)" --prefer=less-saturation
         ]==]))
 
 -- Screenshots
