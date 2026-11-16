@@ -70,6 +70,7 @@ enable_services () {
     systemctl --user enable hyprpolkitagent.service
     systemctl --user enable waybar.service
     systemctl --user enable gnome-keyring-daemon.service
+	systemctl --user enable ssh-agent
     systemctl --user enable pipewire.service
     systemctl --user enable pipewire-pulse.service
     systemctl --user enable wireplumber.service
