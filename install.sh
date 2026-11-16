@@ -162,6 +162,9 @@ configure_opts () {
 
     # Dev shit
     go env -w GOPATH=$HOME/.go
+
+	# GnuPG config
+	echo "no-allow-external-cache" | tee ~/.gnupg/gpg-agent.conf
 }
 
 install_aur_helper () {
