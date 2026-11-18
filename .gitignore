@@ -14,7 +14,7 @@ config/gtk-4.0/colors.css
 config/hypr/hyprlock.conf
 config/hypr/modules/colors.lua
 config/kitty/current-theme.conf
-config/kitty/themes/Matugen.conf
+config/kitty/kitty.conf.bak
 config/mako/mako-colors
 config/nvim/colorscheme.json
 config/qt5ct/colors/matugen.conf
