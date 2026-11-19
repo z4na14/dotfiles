@@ -10,7 +10,6 @@ alias '33'='nano'
 alias ld='lazydocker'
 alias get_idf='. /home/z4na14/Documentos/esp-idf/export.sh'
 alias latex-cmp='latexmk -pdf --output-directory=PDF -aux-directory=AuxDirectory -silent'
-alias zed='zeditor'
 
 alias df='duf'
 alias du='dust'
@@ -19,8 +18,6 @@ alias cmm='history 0 | grep'
 alias sybau='sudo pacman -Syyu'
 alias open='xdg-open'
 alias copy='wl-copy <'
-alias clfile='cat /dev/null >'
-alias gosmb='cd /run/user/1000/gvfs'
 alias vim='nvim'
 alias vi='nvim'
 
@@ -33,32 +30,3 @@ alias mdkir='mkdir'
 alias dc='cd'
 alias sl='ls'
 alias sudp='sudo'
-
-# uni shet
-alias uni-vpn='sudo -E gpclient connect --browser default myvpn.uc3m.es'
-
-
-# yays and yayr, for easily installing and removing YAY packages
-# mainly stolen and adapted from omarchy and ChrisTitusTech
-alias yays="yay -Slq | \
-    fzf \
-      --multi \
-      --preview 'yay -Sii {1}' \
-      --preview-label='ctrl-p/n: select; ctrl-u/d: scroll; ctrl-g: PKGBUILD' \
-      --preview-label-pos='bottom' \
-      --preview-window 'down:65%:wrap' \
-      --bind 'ctrl-d:preview-down,ctrl-u:preview-up,ctrl-g:preview:yay -Gp {1} | tail -n +3' \
-    | \
-    xargs -ro yay -Sy"
-
-alias yayr="yay -Qqe | \
-    fzf \
-      --multi \
-      --preview 'yay -Qi {1}' \
-      --preview-label='ctrl-p/n: select; ctrl-u/d: scroll' \
-      --preview-window 'down:65%:wrap' \
-      --preview-label-pos='bottom' \
-      --bind 'ctrl-d:preview-down,ctrl-u:preview-up' \
-    | \
-    xargs -ro yay -Rns"
-
