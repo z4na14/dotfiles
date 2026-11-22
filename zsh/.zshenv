@@ -9,7 +9,7 @@ alias please='sudo'
 alias '33'='nano'
 alias ld='lazydocker'
 alias get_idf='. /home/z4na14/Documentos/esp-idf/export.sh'
-alias latex-cmp='latexmk -pdf --output-directory=PDF -aux-directory=AuxDirectory -silent'
+alias latex-cmp='latexmk -pdf --output-directory=. -aux-directory=AuxDirectory -silent'
 
 alias df='duf'
 alias du='dust'
